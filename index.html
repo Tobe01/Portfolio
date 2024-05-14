@@ -18,79 +18,75 @@
 
   <header id="nav"><!--Header Section-->
     <nav class="md:hidden">
-      <div id="navbar" class="navbar top-0 left-0 right-0 flex flex-col fixed" style="display: none;">
+     <div id="navbar" class="navbar top-0 left-0 right-0 flex flex-col fixed" style="display: none;">
 
-      <div class="tiny-nav justify-between relative flex px-5 py-1">
+        <div class="tiny-nav justify-between flex px-5 py-1">
 
-        <div onclick="goToPage('index.html');">
-          <img class="rounded-full" style="width: 50px;
-          height: 50px;" src="Thumbnails/Tobeee.jpg">
-        </div>
-
-        <div onclick="showMenu ();" class="rounded-full active:bg-gray-400 pt-2" style=" background: rgb(218, 227, 231); width: 50px; height: 50px;">
-          <span class="m-auto align-middle justify-center flex">
-            <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="36"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-          </span>
-        </div>
-
-      </div>
-
-      <div onclick="hideMenu ();" class="sidebar  hidden space-y-14 text-center flex-col px-5 py-1 pb-20 sub-links absolute right-0 left-0" style="background: rgb(218, 227, 231);">
-
-      <div class="ml-auto" style="width: 56px; height: 50px; margin-top: 9px; margin-right: -1px; padding-left: 8px;">
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" height="38" viewBox="0 -960 960 960" width="38"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-        </span>
-      </div>
-
-        <div class="flex m-auto align-middle justify-center">
-          <ul class="text-base space-y-5">
-            <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
-              <li><a onclick="goToPage('index.html');">Home</a></li>
-            </div>
-            <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
-              <li><a href="#about">About</a></li>
-            </div>
-            <div onclick="goToPage ('certifications.html')" class="links py-4 px-3 cursor-point rounded-md shadow-sm">
-              <li><a>Certifications</a></li>
-            </div>
-            <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
-              <li><a href="#projects">Projects</a></li>
-            </div>
-            <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
-              <li><a href="#stacks">Stacks</a></li>
-            </div>
-          </ul>
-        </div>
-
-        <div class="flex space-y-2 flex-col align-middle justify-center">
-          <div class="text-center">
-                <b class="desc">Socials</b>
+          <div onclick="goToPage('index.html');">
+            <img class="rounded-full" style="width: 50px;
+            height: 50px;" src="Thumbnails/Tobeee.jpg">
           </div>
-           <div class="space-x-2 m-auto flex">
-            <a href="https://github.com/Tobe01">
-              <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-brands fa-github"></i></div>
-            </a>
-            <a href="https://linkedin.com/in/tobechiduru">
-              <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-brands fa-linkedin-in"></i></div>
-            </a>
-            <a href="https://twitter.com/_engrtee">
-              <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-brands fa-x-twitter"></i></div>
-            </a>
-            <a href="tel:+2349055461913">
-              <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-solid fa-phone"></i></div>
-            </a> 
-           </div>
+  
+            <label onclick="showMenu();" for="check" class="menuButton cursor-pointer">
+              <input onclick="hideMenu();" id="check" type="checkbox" class="cursor-pointer">
+              <span class="top"></span>
+              <span class="mid"></span>
+              <span class="bot"></span>
+            </label>
+
         </div>
 
-      </div>
+        <div class="sidebar space-y-14 text-center flex-col px-5 py-1" style="background: rgb(218, 227, 231);">
 
+          <div class="flex m-auto align-middle justify-center">
+            <ul class="text-base space-y-5">
+              <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
+                <li><a onclick="goToPage('index.html');">Home</a></li>
+              </div>
+              <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
+                <li><a href="#about">About</a></li>
+              </div>
+              <div onclick="goToPage ('certifications.html')" class="links py-4 px-3 cursor-point rounded-md shadow-sm">
+                <li><a>Certifications</a></li>
+              </div>
+              <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
+                <li><a href="#projects">Projects</a></li>
+              </div>
+              <div class="links py-4 px-3 cursor-point rounded-md shadow-sm">
+                <li><a href="#stacks">Stacks</a></li>
+              </div>
+            </ul>
+          </div>
+
+          <div class="flex space-y-2 flex-col align-middle justify-center">
+            <div class="text-center">
+                  <b class="desc">Socials</b>
+            </div>
+            <div class="space-x-2 m-auto flex">
+              <a href="https://github.com/Tobe01">
+                <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-brands fa-github"></i></div>
+              </a>
+              <a href="https://linkedin.com/in/tobechiduru">
+                <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-brands fa-linkedin-in"></i></div>
+              </a>
+              <a href="https://twitter.com/_engrtee">
+                <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-brands fa-x-twitter"></i></div>
+              </a>
+              <a href="tel:+2349055461913">
+                <div class="socials m-auto text-center text-white pt-1.5 hover:bg-gray-600  cursor-pointer"><i class="fa-solid fa-phone"></i></div>
+              </a> 
+            </div>
+          </div>
+
+        </div> 
+
+     </div> 
     </nav>
 
     <nav> <!-- class="fixed top-0 left-0 right-0" -->
         <div class="nav-container flex flex-col md:flex md:flex-row justify-around">
           <div class="m-auto md:m-0 flex-col md:flex-row profile-div flex">
-            <div class="profile-photo-div m-auto md:mr-7 mb-7 md:mb-0" style="border: 2px solid grey; border-radius: 50%;">
+            <div class="profile-photo-div m-auto md:mr-7 mb-7 md:mb-0" style="border: 2px solid grey; display: ; border-radius: 50%;">
              <img class="rounded-full" style="width: 180px;
              height: 180px;" src="Thumbnails/Tobeee.jpg">
             </div>
@@ -432,6 +428,31 @@
               </div>
 
             </div>
+            
+            <div class="flex flex-col space-y-4 md:space-y-0 md:flex-row py-0 md:py-2"> <!-- Extra container starts here --> 
+
+              <div class="projects-main-container flex flex-col max-w-md p-3 space-x-2 shadow-sm rounded">
+
+                <div class="projects-img-div"><a href="https://todoapp-tobechi.vercel.app" target="_blank">
+                  <img class="rounded shadow-sm watch-img" src="Thumbnails/todo.png"></a>
+                </div>
+               <div class="flex flex-col space-y-2">
+                <b class="mt-1">TodoApp</b>
+                <p>
+                  Efficient todo app with JavaScript local storage for seamless task management and organization.
+                </p>
+
+                <div class="text-center text-green-500">
+                  <a class="flex" href="https://todoapp-tobechi.vercel.app" target="_blank">
+                  <span><i class="fa-solid fa-link"></i>
+                  </span>Live</a>
+                </div>
+        
+               </div>
+
+              </div>
+
+            </div> <!-- Extra container ends here-->
 
             <div>
             <a href="https://github.com/Tobe01?tab=repositories">

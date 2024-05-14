@@ -2,12 +2,17 @@
 
 window.addEventListener('scroll', function() {
   var navbar = document.getElementById('navbar');
-  if (window.scrollY > 0) {
+  const profilePhoto = document.querySelector('.profile-photo-div');
+  
+  if (window.innerWidth <= 768 && window.scrollY > 0) {
     navbar.style.display = 'flex';
+    profilePhoto.style.display = 'none';
   } else {
     navbar.style.display = 'none';
+    profilePhoto.style.display = 'flex';
   }
 });
+
 
 
 // smooth scroll to each section
@@ -40,15 +45,27 @@ function goToPage (url){
 
 
 // Hamburger Menu 
-function showMenu (){
-  const sidebar = document.querySelector('.sidebar')
-  sidebar.style.display = 'flex';
+
+function showMenu(){
+  const sidebar = document.querySelector('.sidebar');
+  
+  if (sidebar.style.display === 'flex'){
+   sidebar.style.display = 'none';
+  } else {
+    sidebar.style.display = 'flex';
+  }
 }
 
-function hideMenu (){
-  const sidebar = document.querySelector('.sidebar')
-  sidebar.style.display = 'none';
+function hideMenu(){
+  const sidebar = document.querySelector('.sidebar');
+
+  if (sidebar.style.display === 'none'){
+   sidebar.style.display = 'flex';
+  } else {
+    sidebar.style.display = 'none';
+  }
 }
+
 
 // Read more for About contents
 

@@ -78,6 +78,74 @@ body {
   border: 1px solid #2e8644;
 }
 
+/* Hamburger Menu */
+
+/* 
+Button insperation by @ke1221
+Menu icon transofmation insperation by @Ali-Tahmazi99
+*/
+
+.sidebar {
+  display: none;
+}
+
+.menuButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 13%;
+  color: #090909;
+  width: 3em;
+  height: 3em;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.menuButton:hover {
+  border: 1px solid white;
+}
+
+.menuButton:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+  inset -4px -4px 12px #ffffff;
+}
+
+input[type = "checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.menuButton span {
+  width: 30px;
+  height: 4px;
+  background: #131313;
+  border-radius: 100px;
+  transition: 0.3s ease;
+}
+
+input[type]:checked ~ span.top {
+  transform: translateY(245%)rotate(45deg);
+  width: 30px;
+}
+
+input[type]:checked ~ span.bot {
+  transform: translateY(-270%) rotate(-45deg);
+  width: 30px;
+  box-shadow: 0 0 10px #495057;
+}
+
+input[type]:checked ~ span.mid {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
 /* Dark mode */
 
 
@@ -216,8 +284,10 @@ h1 span {
 }
 
 .tiny-nav {
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(255,255,255,0.25);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
 }
 
 /* CSS for toggle button starts here */
@@ -329,6 +399,9 @@ h1 span {
 .input:checked + .slider:before {
   transform: translateX(30px);
 }
+
+/* Hide and display profile photo */
+
 
 /* CSS for toggle button ends here */
 
