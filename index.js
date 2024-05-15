@@ -11,6 +11,12 @@ window.addEventListener('scroll', function() {
   }
 });
 
+// Close side bar when  scroll to sectio is Activated
+
+function closeSideBar(){
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.style.display = 'none';
+}
 // smooth scroll to each section
 
 document.addEventListener('DOMContentLoaded', function () {
