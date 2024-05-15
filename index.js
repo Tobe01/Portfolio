@@ -3,7 +3,7 @@
 window.addEventListener('scroll', function() {
   var navbar = document.getElementById('navbar');
   const profilePhoto = document.querySelector('.profile-photo-div');
-  if (window.scrollY > 0) {
+  if (window.scrollY > 50) {
     navbar.style.display = 'flex';
   } else {
     navbar.style.display = 'none';
