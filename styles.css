@@ -87,6 +87,11 @@ Menu icon transofmation insperation by @Ali-Tahmazi99
 
 .sidebar {
   display: none;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
 }
 
 .menuButton {

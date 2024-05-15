@@ -3,17 +3,13 @@
 window.addEventListener('scroll', function() {
   var navbar = document.getElementById('navbar');
   const profilePhoto = document.querySelector('.profile-photo-div');
-  
-  if (window.innerWidth <= 768 && window.scrollY > 0) {
+  if (window.scrollY > 0) {
     navbar.style.display = 'flex';
-    profilePhoto.style.display = 'none';
   } else {
     navbar.style.display = 'none';
     profilePhoto.style.display = 'flex';
   }
 });
-
-
 
 // smooth scroll to each section
 
