@@ -1,6 +1,6 @@
 // JavaScript code for portfolio site
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function(){
   var navbar = document.getElementById('navbar');
   const profilePhoto = document.querySelector('.profile-photo-div');
   if (window.scrollY > 200) {
