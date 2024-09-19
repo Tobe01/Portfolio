@@ -1,9 +1,10 @@
 {
-  "name": "tailwind-breakpoint-project",
+  "name": "tailwind-foodapp-project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts":{
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./css/main.css",
     "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
   },
   "keywords": [],
@@ -11,8 +12,5 @@
   "license": "ISC",
   "devDependencies": {
     "tailwindcss": "^3.3.3"
-  },
-  "dependencies": {
-    "@flaticon/flaticon-uicons": "^2.4.0"
   }
 }
