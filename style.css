@@ -835,6 +835,26 @@ main{
     font-weight: bold;
   }
 
+.icon-span{
+    color: rgb(103, 110, 118);
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+.icon-span1{
+  color: rgb(103, 110, 118);
+  margin-right: 15px;
+  font-size: 20px;
+  margin-left: 9px;
+}
+
+.icon-span2{
+  color: rgb(103, 110, 118);
+  margin-right: 12px;
+  font-size: 20px;
+  margin-left: 7px;
+}
+
 @media screen and (max-width: 600px) {
   .blog-slide-card h2 {
     font-size: 1.4rem;
