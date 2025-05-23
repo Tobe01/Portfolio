@@ -25,9 +25,8 @@
   }
   }
 
-
-  body {
-  overflow-x: hidden;
+  .certifications-banner{
+    height: 80vh;
   }
 
 
@@ -50,11 +49,10 @@
   .cta-section p {
   font-size: 0.8rem;
   }
-
   }
 
-  body {
-  overflow-x: hidden;
+  .certifications-banner{
+    height: 80vh;
   }
 
   /* Small Devices (768px and up) */
@@ -272,10 +270,9 @@
   }      
   }
 
-  body {
-  overflow-x: hidden;
+  .certifications-banner{
+    height: 70vh;
   }
-
 
   /* Medium Devices (576px and up) */
   @media (min-width: 576px) {
@@ -406,10 +403,6 @@
   }
   }
 
-  body {
-  overflow-x: hidden;
-  }
-
   /* Large Devices (992px and up) */
   @media (min-width: 992px) {
   .middle-side{
@@ -473,10 +466,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;  
   } 
-  }
-
-  body {
-  overflow-x: hidden;
   }
 
   /* Extra Large Devices (1200px and up) */
@@ -548,10 +537,6 @@
   }
   }
 
-  body {
-  overflow-x: hidden;
-  }
-
   /* Ultra-Wide Screens (1400px and up) */
   @media (min-width: 1400px) {
   .middle-side{
@@ -619,8 +604,4 @@
   .custom-menu-wrapper {
   display: none;
   }
-  }
-
-  body {
-  overflow-x: hidden;
   }

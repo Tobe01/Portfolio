@@ -878,7 +878,7 @@ More comprehensive version at shenanigans.shoghisimon.ca/collection/css-rain-bg/
   vertical-align: middle;
   display: flex;
   z-index: 0;
-  margin: 0;
+  margin: auto;
   width: 100%;
   height: 500px;
   --c: #09f;
