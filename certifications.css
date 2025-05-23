@@ -2,6 +2,11 @@ html {
     scroll-behavior: smooth;
   }
 
+.certifications-banner p{
+  color: rgb(103, 110, 118);
+  font-size: 18px;
+}
+
 .cert-section {
     max-width: 1200px;
     margin: 0 auto;
