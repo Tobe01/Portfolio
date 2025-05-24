@@ -32,10 +32,16 @@ body.dark-mode {
     --contact-btn: black;
   }
 
+  html, body {
+    overflow-x: hidden;
+  }
+  
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    outline: 1px solid red;
   }
 
 html {
@@ -624,13 +630,8 @@ main{
 
 .carousel-container {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
     padding: 20px 0 20px 10px;
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-y;
   }
 
 .carousel {
