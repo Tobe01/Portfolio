@@ -80,6 +80,8 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 126px; 
+    margin-bottom: 100px;
   }
 
 .certifications-banner h1 {

@@ -14,6 +14,7 @@ html {
     background-color: var(--card-bg);
     padding: 50px 20px;
     border-radius: 20px;
+    margin-bottom: 100px;
   }
 
 .cert-section h2 {
