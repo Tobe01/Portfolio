@@ -229,3 +229,5 @@ const blogSlides = document.getElementById('blogSlides');
       }
     });
   })(); // Immediately invoke function to create local scope
+
+  

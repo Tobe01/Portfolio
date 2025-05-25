@@ -451,7 +451,7 @@
             </ul>
 
             <div class="copyright">
-                <p>Designed & Developed by Tobechi Duru &copy; 2025</p>
+                <p>Designed & Developed by Tobechi Duru &copy; <span id="year"></span></p>
             </div>
 
         </div>
@@ -474,6 +474,11 @@
         </div>
         </a>
     </div>
+
+   
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
     
    <script src="script.js"></script>
 

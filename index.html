@@ -566,7 +566,7 @@
                                 <span class="icon-span"><i class="fa-solid fa-graduation-cap"></i></span>
                                 <p class="sub-paragraphs">Software Engineering</p>
                             </div>
-                            <p style="font-size: 15px; margin-top: 5px;color: grey; margin-bottom: 20px;">ALX - Holberton School</p>
+                            <p style="font-size: 15px; margin-top: 5px;color: grey; margin-bottom: 20px;">Holberton School</p>
                            </div>
                            <div>
                             <div class="education-sub">
@@ -729,7 +729,7 @@
                 </ul>
 
                 <div class="copyright">
-                    <p>Designed & Developed by Tobechi Duru &copy; 2025</p>
+                    <p>Designed & Developed by Tobechi Duru &copy; <span id="year"></span></p>
                 </div>
     
             </div>
@@ -753,8 +753,12 @@
         </a>
     </div>
 
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 
   <script src="script.js"></script>
+  
 
 </body>
 </html>
