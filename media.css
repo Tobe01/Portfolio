@@ -29,6 +29,20 @@
     height: 80vh;
   }
 
+  #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
 
 
   /* Mobile */
@@ -54,6 +68,23 @@
   .certifications-banner{
     height: 80vh;
   }
+
+   #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
+
+
 
   /* Small Devices (768px and up) */
   @media (max-width: 768px) {
@@ -274,6 +305,23 @@
     height: 70vh;
   }
 
+   #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
+
+
+
   /* Medium Devices (576px and up) */
   @media (min-width: 576px) {
   .middle-side{
@@ -403,6 +451,23 @@
   }
   }
 
+   #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
+
+
+
   /* Large Devices (992px and up) */
   @media (min-width: 992px) {
   .middle-side{
@@ -467,6 +532,23 @@
   grid-template-columns: 1fr 1fr 1fr;  
   } 
   }
+
+   #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
+
+
 
   /* Extra Large Devices (1200px and up) */
   @media (min-width: 1200px) {
@@ -537,6 +619,23 @@
   }
   }
 
+   #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
+
+
+
   /* Ultra-Wide Screens (1400px and up) */
   @media (min-width: 1400px) {
   .middle-side{
@@ -605,3 +704,20 @@
   display: none;
   }
   }
+
+   #theme-toggle{
+    height: 25px;
+    width: 50px;
+    margin-left: -10px;
+  }
+
+  .Documents-btn {
+    margin-left: 0;
+  }
+
+  .left-side{
+    width: 220px;
+    padding: 0 10px 0 10;
+  }
+
+
