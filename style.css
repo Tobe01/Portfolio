@@ -1357,6 +1357,7 @@ ul {
     cursor: pointer;
     position: relative;
     transition: all 0.3s ease;
+    z-index: 10;
   }
 
     /* Icon hover effect */
@@ -1372,43 +1373,36 @@ ul {
     fill: white;
   }
 
-  /* WhatsApp tooltip bubble */
-  .whatsapp-message-bubble {
-    position: absolute;
-    top: -60px;
-    right: 0;
-    background-color: white;
-    color: #333;
-    padding: 8px 16px;
-    border-radius: 18px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    transform: translateY(10px);
-  }
+/* WhatsApp tooltip bubble */
+.whatsapp-message-bubble {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  background-color: white;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 18px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 1; /* changed from 0 */
+  visibility: visible; /* changed from hidden */
+  transform: translateY(0); /* changed from translateY(10px) */
+  transition: all 0.3s ease;
+}
 
-  /* Tooltip arrow/tail */
-  .whatsapp-message-bubble:after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 20px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid white;
-  }
-
-  /* Show tooltip on hover */
-  .whatsapp-btn:hover .whatsapp-message-bubble {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+/* Tooltip arrow/tail */
+.whatsapp-message-bubble:after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 20px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid white;
+}
 
   /* Pulse animation for extra attention */
   @keyframes pulse {
