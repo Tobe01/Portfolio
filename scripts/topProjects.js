@@ -129,19 +129,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let topProjectsHTML = '';
 
-    topProjects.forEach((project) => {
+    topProjects.forEach((topProjects) => {
 
       topProjectsHTML += `<div class="card">
-                            <a href="${project.url}" style="text-decoration: none;">
-                                <div class="card-image" style="background-image: url(Thumbnails/${project.thumbnails}.PNG)"></div>
+                            <a href="${topProjects.url}" style="text-decoration: none;">
+                                <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails}.PNG)"></div>
                                 <div class="card-content">
                                     <div class="card-tags">
-                                        <span class="tag">${project.tags.tag1}</span>
-                                        <span class="tag">${project.tags.tag2}</span>
-                                        <span class="tag">${project.tags.tag3}</span>
+                                        <span class="tag">${topProjects.tags.tag1}</span>
+                                        <span class="tag">${topProjects.tags.tag2}</span>
+                                        <span class="tag">${topProjects.tags.tag3}</span>
                                     </div>
-                                    <h3 class="card-title">${project.description}</h3>
-                                    <p class="card-date">${project.title}</p>
+                                    <h3 class="card-title">${topProjects.description}</h3>
+                                    <p class="card-date">${topProjects.title}</p>
                                 </div>
                             </a>
                         </div>`
@@ -149,8 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelector('.js-topProjects-carousel').innerHTML = topProjectsHTML;
    
-
-    console.log(topProjectsHTML);
 })
 
 
