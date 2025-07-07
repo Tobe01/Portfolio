@@ -19,7 +19,7 @@ const certificates = [{
   url: "file/d/1Ywm4M1c9ZUf605IKUc8-rPfLnVrc24CG/view"
 }, 
 {
-  image: "IMG_8722.png",
+  image: "IMG_8722.PNG",
   title: "ALX-AI Starter Kit",
   description: "Completed hands-on introduction to AI tools and concepts via ALX.",
   url: "file/d/1C88K3k96550emg6MafrqI8f3kUZ7-T8M/view"

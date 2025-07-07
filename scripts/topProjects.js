@@ -3,7 +3,7 @@
 
 const topProjects = [{
   url: "https://jumia-clone-sl3f.vercel.app/",
-  thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D",
+  thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D.PNG",
   tags: {
     tag1: "REACT UI",
     tag2: "STRIPE PAYMENTS",
@@ -14,7 +14,7 @@ const topProjects = [{
 }, 
 {
   url: "",
-  thumbnails: "recipe-vault",
+  thumbnails: "recipe-vault.png",
   tags: {
     tag1: "REACT",
     tag2: "MONGODB",
@@ -25,7 +25,7 @@ const topProjects = [{
 },
 {
   url: "",
-  thumbnails: "Devlink",
+  thumbnails: "Devlink.png",
   tags: {
     tag1: "REACT FORMS",
     tag2: "EXPRESS API",
@@ -36,7 +36,7 @@ const topProjects = [{
 }, 
 {
   url: "",
-  thumbnails: "eventitfy",
+  thumbnails: "eventitfy.png",
   tags: {
     tag1: "NODE/EXPRESS",
     tag2: "REACT",
@@ -47,7 +47,7 @@ const topProjects = [{
 },
 {
   url: "",
-  thumbnails: "Notebox",
+  thumbnails: "Notebox.png",
   tags: {
     tag1: "JWT-AUTH",
     tag2: "EXPRESS API",
@@ -58,7 +58,7 @@ const topProjects = [{
 }, 
 {
   url: "",
-  thumbnails: "skillHive",
+  thumbnails: "skillHive.png",
   tags: {
     tag1: "REACT UI",
     tag2: "NODE/EXPRESS",
@@ -69,7 +69,7 @@ const topProjects = [{
 },
 {
   url: "",
-  thumbnails: "Movie",
+  thumbnails: "Movie.PNG",
   tags: {
     tag1: "CLOUDINARY",
     tag2: "MONGODB",
@@ -80,7 +80,7 @@ const topProjects = [{
 }, 
 {
   url: "",
-  thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D",
+  thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D.PNG",
   tags: {
     tag1: "REACT UI",
     tag2: "STRIPE PAYMENTS",
@@ -91,7 +91,7 @@ const topProjects = [{
 },
 {
   url: "",
-  thumbnails: "recipe-vault",
+  thumbnails: "recipe-vault.png",
   tags: {
     tag1: "REACT",
     tag2: "MONGODB",
@@ -102,7 +102,7 @@ const topProjects = [{
 }, 
 {
   url: "",
-  thumbnails: "Devlink",
+  thumbnails: "Devlink.png",
   tags: {
     tag1: "REACT FORMS",
     tag2: "EXPRESS API",
@@ -113,7 +113,7 @@ const topProjects = [{
 },
 {
   url: "",
-  thumbnails: "eventitfy",
+  thumbnails: "eventitfy.png",
   tags: {
     tag1: "NODE/EXPRESS",
     tag2: "REACT",
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       topProjectsHTML += `<div class="card">
                             <a href="${topProjects.url}" style="text-decoration: none;">
-                                <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails}.PNG)"></div>
+                                <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails})"></div>
                                 <div class="card-content">
                                     <div class="card-tags">
                                         <span class="tag">${topProjects.tags.tag1}</span>
