@@ -42,7 +42,7 @@ const Projects = [{
     tag3: "MONGODB"
   },
   description: "Create, rsvp to, or view events in your area.",
-  title: "EVENTIFY (EVENT MANAGEMENT APP)",
+  title: "EVENTIFY (EVENT MANAGEMENT APP)"
 }, 
 {
   url: "",
@@ -137,18 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
   
   let ProjectsHTML = '';
 
-  Projects.forEach((Projects) =>{
+  Projects.forEach((project) =>{
     ProjectsHTML += `<div class="card1 fade-in-up">
-                      <a href="${Projects.url}" style="text-decoration: none;">
-                          <div class="card-image1" style="background-image: url(Thumbnails/${Projects.thumbnails}.PNG)"></div>
+                      <a href="${project.url}" style="text-decoration: none;">
+                          <div class="card-image1" style="background-image: url(Thumbnails/${project.thumbnails}.PNG)"></div>
                           <div class="card-content1">
                               <div class="card-tags1">
-                                  <span class="tag1">${Projects.tags.tag1}</span>
-                                  <span class="tag1">${Projects.tags.tag2}</span>
-                                  <span class="tag1">${Projects.tags.tag3}</span>
+                                  <span class="tag1">${project.tags.tag1}</span>
+                                  <span class="tag1">${project.tags.tag2}</span>
+                                  <span class="tag1">${project.tags.tag3}</span>
                               </div>
-                              <h3 class="card-title1">${Projects.description}</h3>
-                              <p class="card-date1">${Projects.title}</p>
+                              <h3 class="card-title1">${project.description}</h3>
+                              <p class="card-date1">${project.title}</p>
                           </div>
                       </a>
                   </div>`
