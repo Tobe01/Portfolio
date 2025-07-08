@@ -133,10 +133,10 @@ const Projects = [{
 }];
 
 
-  let ProjectsHTML = '';
+  let projectsHTML = '';
 
   Projects.forEach((project) =>{
-      ProjectsHTML += `<div class="card1 fade-in-up">
+      projectsHTML += `<div class="card1 fade-in-up">
                         <a href="${project.url}" style="text-decoration: none;">
                             <div class="card-image1" style="background-image: url(Thumbnails/${project.thumbnails})"></div>
                             <div class="card-content1">
@@ -152,8 +152,10 @@ const Projects = [{
                     </div>`
     });
 
-  document.querySelector('.js-carousel').innerHTML = ProjectsHTML;
+  document.querySelector('.js-carousel').innerHTML = projectsHTML;
   
+
+  console.log(projectsHTML);
   
   
 
