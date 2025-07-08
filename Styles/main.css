@@ -1289,9 +1289,6 @@ ul {
     transition-duration: .2s;
   }
   
-  .form-button:hover .arrow {
-    
-  }
   /* arrow animation */
   @keyframes slide-right {
     0% {
