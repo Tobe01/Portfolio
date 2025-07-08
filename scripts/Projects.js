@@ -137,27 +137,26 @@ const projects = topProjects;
 
   let projectsHTML = '';
 
-  projects.forEach((project) =>{
-      projectsHTML += `<div class="card1 fade-in-up">
-                        <a href="${project.url}" style="text-decoration: none;">
-                            <div class="card-image1" style="background-image: url(Thumbnails/${project.thumbnails})"></div>
-                            <div class="card-content1">
-                                <div class="card-tags1">
-                                    <span class="tag1">${project.tags.tag1}</span>
-                                    <span class="tag1">${project.tags.tag2}</span>
-                                    <span class="tag1">${project.tags.tag3}</span>
+  projects.forEach((topProjects) =>{
+      projectsHTML +=  `<div class="card">
+                            <a href="${topProjects.url}" style="text-decoration: none;">
+                                <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails})"></div>
+                                <div class="card-content">
+                                    <div class="card-tags">
+                                        <span class="tag">${topProjects.tags.tag1}</span>
+                                        <span class="tag">${topProjects.tags.tag2}</span>
+                                        <span class="tag">${topProjects.tags.tag3}</span>
+                                    </div>
+                                    <h3 class="card-title">${topProjects.description}</h3>
+                                    <p class="card-date">${topProjects.title}</p>
                                 </div>
-                                <h3 class="card-title1">${project.description}</h3>
-                                <p class="card-date1">${project.title}</p>
-                            </div>
-                        </a>
-                    </div>`
+                            </a>
+                        </div>`
     });
 
   document.querySelector('.js-carousel').innerHTML = projectsHTML;
   
 
-  console.log(projectsHTML);
   
   
 
