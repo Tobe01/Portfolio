@@ -133,9 +133,6 @@ const Projects = [{
 }];
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  
   let ProjectsHTML = '';
 
   Projects.forEach((project) =>{
@@ -157,7 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector('.js-carousel').innerHTML = ProjectsHTML;
   
-})
   
   
 
