@@ -132,6 +132,9 @@ const Projects = [{
   title: "NEXARIC"
 }];
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
   
   let ProjectsHTML = '';
 
@@ -153,5 +156,8 @@ const Projects = [{
   });
 
   document.querySelector('.js-carousel').innerHTML = ProjectsHTML;
+  
+})
+  
   
 
