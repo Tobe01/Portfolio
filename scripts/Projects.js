@@ -2,7 +2,7 @@
 
 const projects = [{
   url: "https://jumia-clone-sl3f.vercel.app/",
-  thumbnails: "img1.png",
+  thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D.PNG",
   tags: {
     tag1: "REACT UI",
     tag2: "STRIPE PAYMENTS",
@@ -13,7 +13,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img2.png",
+  thumbnails: "Tasknet.png",
   tags: {
     tag1: "REACT",
     tag2: "NODE/EXPRESS API",
@@ -24,7 +24,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img3.png",
+  thumbnails: "skillHive.png",
   tags: {
     tag1: "REACT UI",
     tag2: "NODE/EXPRESS",
@@ -35,7 +35,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img4.png", 
+  thumbnails: "eventitfy.png", 
   tags: {
     tag1: "NODE/EXPRESS",
     tag2: "REACT",
@@ -46,7 +46,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img5.png",
+  thumbnails: "Notebox.png",
   tags: {
     tag1: "JWT-AUTH",
     tag2: "EXPRESS API",
@@ -57,7 +57,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img6.png",
+  thumbnails: "Devlink.png",
   tags: {
     tag1: "REACT FORMS",
     tag2: "EXPRESS API",
@@ -68,7 +68,7 @@ const projects = [{
 },
 {
   url: "",
-  thumbnails: "img7.png",
+  thumbnails: "recipe-vault.png",
   tags: {
     tag1: "REACT",
     tag2: "MONGODB",
@@ -78,7 +78,7 @@ const projects = [{
   title: "RECIPEVAULT (RECIPE FINDER & MANAGER)"
 }, {
   url: "",
-  thumbnails: "img8.png",
+  thumbnails: "Movie.PNG",
   tags: {
     tag1: "CLOUDINARY",
     tag2: "MONGODB",
@@ -89,7 +89,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img9.png",
+  thumbnails: "chatify.png",
   tags: {
     tag1: "REACT CHAT UI",
     tag2: "EXPRESS",
@@ -100,7 +100,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img10.png",
+  thumbnails: "pollster.png",
   tags: {
     tag1: "REACT",
     tag2: "EXPRESS API",
@@ -111,7 +111,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img11.png",
+  thumbnails: "blogify.png",
   tags: {
     tag1: "REACT",
     tag2: "EXPRESS API",
@@ -122,7 +122,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "img12.png",
+  thumbnails: "Admin.png",
   tags: {
     tag1: "REACT FRONTEND",
     tag2:"EXPRESS API",
