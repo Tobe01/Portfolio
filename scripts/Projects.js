@@ -2,7 +2,7 @@
 
 const projects = [{
   url: "https://jumia-clone-sl3f.vercel.app/",
-  thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D.PNG",
+  thumbnails: "img1.png",
   tags: {
     tag1: "REACT UI",
     tag2: "STRIPE PAYMENTS",
@@ -13,7 +13,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "Tasknet.png",
+  thumbnails: "img2.png",
   tags: {
     tag1: "REACT",
     tag2: "NODE/EXPRESS API",
@@ -24,7 +24,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "skillHive.png",
+  thumbnails: "img3.png",
   tags: {
     tag1: "REACT UI",
     tag2: "NODE/EXPRESS",
@@ -35,7 +35,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "eventitfy.png", 
+  thumbnails: "img4.png", 
   tags: {
     tag1: "NODE/EXPRESS",
     tag2: "REACT",
@@ -46,7 +46,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "Notebox.png",
+  thumbnails: "img5.png",
   tags: {
     tag1: "JWT-AUTH",
     tag2: "EXPRESS API",
@@ -57,7 +57,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "Devlink.png",
+  thumbnails: "img6.png",
   tags: {
     tag1: "REACT FORMS",
     tag2: "EXPRESS API",
@@ -68,7 +68,7 @@ const projects = [{
 },
 {
   url: "",
-  thumbnails: "recipe-vault.png",
+  thumbnails: "img7.png",
   tags: {
     tag1: "REACT",
     tag2: "MONGODB",
@@ -78,7 +78,7 @@ const projects = [{
   title: "RECIPEVAULT (RECIPE FINDER & MANAGER)"
 }, {
   url: "",
-  thumbnails: "Movie.PNG",
+  thumbnails: "img8.png",
   tags: {
     tag1: "CLOUDINARY",
     tag2: "MONGODB",
@@ -89,7 +89,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "chatify.png",
+  thumbnails: "img9.png",
   tags: {
     tag1: "REACT CHAT UI",
     tag2: "EXPRESS",
@@ -100,7 +100,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "pollster.png",
+  thumbnails: "img10.png",
   tags: {
     tag1: "REACT",
     tag2: "EXPRESS API",
@@ -111,7 +111,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "blogify.png",
+  thumbnails: "img11.png",
   tags: {
     tag1: "REACT",
     tag2: "EXPRESS API",
@@ -122,7 +122,7 @@ const projects = [{
 }, 
 {
   url: "",
-  thumbnails: "Admin.png",
+  thumbnails: "img12.png",
   tags: {
     tag1: "REACT FRONTEND",
     tag2:"EXPRESS API",
@@ -138,7 +138,7 @@ const projects = [{
   projects.forEach((projects) =>{
       projectsHTML += `<div class="card1 fade-in-up">
                         <a href="${projects.url}" style="text-decoration: none;">
-                            <div class="card-image1" style="background-image: url(Thumbnails/${projects.thumbnails})"></div>
+                            <div class="card-image1" style="background-image: url(images/${projects.thumbnails})"></div>
                             <div class="card-content1">
                                 <div class="card-tags1">
                                     <span class="tag1">${projects.tags.tag1}</span>
