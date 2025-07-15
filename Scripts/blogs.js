@@ -1,5 +1,4 @@
 // Structure for blogs layout
-
 let blogSlider = [{
     thumbnails: "mern.jpg",
     header: "Building from the Ground Up — My Dev Philosophy",
@@ -30,15 +29,15 @@ let blogSlider = [{
 
   let blogSliderHTML = '';
 
-      blogSlider.forEach((cards) => {
-        blogSliderHTML += 
-        `<div class="blog-slide-card" style="background-image: url('Thumbnails/${cards.thumbnails}');">
-              <h2 style="color: gray">${cards.header}</h2>
-              <p>${cards.description}</p>
-              <button onclick="alert('Blog contents is being updated! Check back later.')">Read Article</button>
-            </div>`
-      })
+    blogSlider.forEach((cards) => {
+      blogSliderHTML += 
+      `<div class="blog-slide-card" style="background-image: url('Thumbnails/${cards.thumbnails}');">
+            <h2 style="color: gray">${cards.header}</h2>
+            <p>${cards.description}</p>
+            <button onclick="alert('Blog contents is being updated! Check back later.')">Read Article</button>
+          </div>`
+    })
 
-      document.querySelector('.js-blogsWrapper').innerHTML = blogSliderHTML;
+    document.querySelector('.js-blogsWrapper').innerHTML = blogSliderHTML;
 
 

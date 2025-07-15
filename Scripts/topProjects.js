@@ -1,6 +1,4 @@
 // Carousel for Projects section on landing page
-
-
 const topProjects = [{
   url: "https://jumia-clone-sl3f.vercel.app/",
   thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D.PNG",
@@ -132,20 +130,20 @@ document.addEventListener("DOMContentLoaded", () => {
     topProjects.forEach((topProjects) => {
 
       topProjectsHTML += `<div class="card">
-                            <a href="${topProjects.url}" style="text-decoration: none;">
-                                <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails})"></div>
-                                <div class="card-content">
-                                    <div class="card-tags">
-                                        <span class="tag">${topProjects.tags.tag1}</span>
-                                        <span class="tag">${topProjects.tags.tag2}</span>
-                                        <span class="tag">${topProjects.tags.tag3}</span>
-                                    </div>
-                                    <h3 class="card-title">${topProjects.description}</h3>
-                                    <p class="card-date">${topProjects.title}</p>
-                                </div>
-                            </a>
-                        </div>`
-    });
+          <a href="${topProjects.url}" style="text-decoration: none;">
+              <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails})"></div>
+              <div class="card-content">
+                  <div class="card-tags">
+                      <span class="tag">${topProjects.tags.tag1}</span>
+                      <span class="tag">${topProjects.tags.tag2}</span>
+                      <span class="tag">${topProjects.tags.tag3}</span>
+                      </div>
+                      <h3 class="card-title">${topProjects.description}</h3>
+                      <p class="card-date">${topProjects.title}</p>
+                  </div>
+              </a>
+          </div>`
+  });
 
     document.querySelector('.js-topProjects-carousel').innerHTML = topProjectsHTML;
    

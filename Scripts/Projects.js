@@ -1,5 +1,3 @@
-// Carousel for projects page
-
 const projects = [{
   url: "https://jumia-clone-sl3f.vercel.app/",
   thumbnails: "58EC0FDB-8F9F-486E-A555-FFAD982FA41D.PNG",
@@ -137,20 +135,20 @@ const projects = [{
 
   projects.forEach((projects) =>{
       projectsHTML += `<div class="card1 fade-in-up">
-                        <a href="${projects.url}" style="text-decoration: none;">
-                            <div class="card-image1" style="background-image: url(Thumbnails/${projects.thumbnails})"></div>
-                            <div class="card-content1">
-                                <div class="card-tags1">
-                                    <span class="tag1">${projects.tags.tag1}</span>
-                                    <span class="tag1">${projects.tags.tag2}</span>
-                                    <span class="tag1">${projects.tags.tag3}</span>
-                                </div>
-                                <h3 class="card-title1">${projects.description}</h3>
-                                <p class="card-date1">${projects.title}</p>
-                            </div>
-                        </a>
-                    </div>`
-    });
+        <a href="${projects.url}" style="text-decoration: none;">
+            <div class="card-image1" style="background-image: url(Thumbnails/${projects.thumbnails})"></div>
+            <div class="card-content1">
+                <div class="card-tags1">
+                    <span class="tag1">${projects.tags.tag1}</span>
+                    <span class="tag1">${projects.tags.tag2}</span>
+                    <span class="tag1">${projects.tags.tag3}</span>
+                </div>
+                <h3 class="card-title1">${projects.description}</h3>
+                <p class="card-date1">${projects.title}</p>
+            </div>
+        </a>
+    </div>`
+});
 
   document.querySelector('.js-carousel').innerHTML = projectsHTML;
 
