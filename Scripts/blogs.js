@@ -56,20 +56,6 @@ let blogSlider = [{
       }
     })
 
-
-    //view all blogs on mobile 
-
-    document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener('click', (e) => {
-      const blogLink = e.target.closest('.js-dropdownBlogs');
-          if (blogLink) {
-          window.location.href = "https://tobechiduru.hashnode.dev/";
-          }
-        });
-      });
-
-
-
     // View Each Blog
 
     document.addEventListener('DOMContentLoaded', () => {
