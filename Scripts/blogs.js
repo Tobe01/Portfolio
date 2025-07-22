@@ -59,12 +59,12 @@ let blogSlider = [{
 
     //view all blogs on mobile 
 
-      const hamburgerBlogs = document.querySelector('.js-dropdownBlogs');
-      if(hamburgerBlogs){
-         hamburgerBlogs.addEventListener('click', ()=> {
-          window.location.href="https://tobechiduru.hashnode.dev/";
-         });
-      };
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('js-dropdownBlogs')) {
+        window.location.href = "https://tobechiduru.hashnode.dev/";
+      }
+    });
+
 
     // View Each Blog
 
