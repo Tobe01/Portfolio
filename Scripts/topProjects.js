@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       topProjectsHTML += `<div class="card">
           <a href="${topProjects.url}" style="text-decoration: none;">
-              <div class="card-image" style="background-image: url(thumbnails/${topProjects.thumbnails})"></div>
+              <div class="card-image" style="background-image: url(Thumbnails/${topProjects.thumbnails})"></div>
               <div class="card-content">
                   <div class="card-tags">
                       <span class="tag">${topProjects.tags.tag1}</span>
