@@ -136,7 +136,7 @@ const projects = [{
   projects.forEach((projects) =>{
       projectsHTML += `<div class="card1 fade-in-up">
         <a href="${projects.url}" style="text-decoration: none;">
-            <div class="card-image1" style="background-image: url(Thumbnails/${projects.thumbnails})"></div>
+            <div class="card-image1" style="background-image: url(thumbnails/${projects.thumbnails})"></div>
             <div class="card-content1">
                 <div class="card-tags1">
                     <span class="tag1">${projects.tags.tag1}</span>

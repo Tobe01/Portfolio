@@ -36,7 +36,7 @@ let blogSlider = [{
 
     blogSlider.forEach((cards) => {
       blogSliderHTML += 
-      `<div class="blog-slide-card" style="background-image: url('Thumbnails/${cards.thumbnails}');">
+      `<div class="blog-slide-card" style="background-image: url('thumbnails/${cards.thumbnails}');">
             <h2 style="color: gray">${cards.header}</h2>
             <p>${cards.description}</p>
             <a><button class="js-readArticle" data-blogs-id = "${cards.id}">Read Article</button></a>
