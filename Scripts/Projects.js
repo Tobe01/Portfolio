@@ -91,4 +91,4 @@ const projectsContainer = {
     }  
 }
 
-projectsContainer.renderProjects();
+projectsContainer.renderProjects();  
