@@ -67,61 +67,32 @@ const projectsContainer = {
     }],
 
 
-renderProjects() {
-    let projectsHTML = '';
-    this.projects.forEach((project) => {
-      projectsHTML += `<div class="card1 fade-in-up">
-        <a href="${project.url}" style="text-decoration: none;">
-          <div class="card-image1" style="background-image: url(/Thumbnails/${project.thumbnails})"></div>
-          <div class="card-content1">
-            <div class="card-tags1">
-              <span class="tag1">${project.tags.tag1}</span>
-              <span class="tag1">${project.tags.tag2}</span>
-              <span class="tag1">${project.tags.tag3}</span>
-            </div>
-            <h3 class="card-title1">${project.description}</h3>
-            <p class="card-date1">${project.title}</p>
-          </div>
-        </a>
-      </div>`;
-    });
+    renderProjects(){
+        let projectsHTML = '';
 
-    const carousel = document.querySelector('.js-carousel');
-    if (carousel) {
-      carousel.innerHTML = projectsHTML;
-    } else {
-      console.error('Error: .js-carousel element not found');
-    }
-  },
-};
+        this.projects.forEach((projects) =>{
+            projectsHTML += `<div class="card1 fade-in-up">
+              <a href="${projects.url}" style="text-decoration: none;">
+                  <div class="card-image1" style="background-image: url(Thumbnails/${projects.thumbnails})"></div>
+                  <div class="card-content1">
+                      <div class="card-tags1">
+                          <span class="tag1">${projects.tags.tag1}</span>
+                          <span class="tag1">${projects.tags.tag2}</span>
+                          <span class="tag1">${projects.tags.tag3}</span>
+                      </div>
+                      <h3 class="card-title1">${projects.description}</h3>
+                      <p class="card-date1">${projects.title}</p>
+                  </div>
+              </a>
+          </div>`
+        });
 
-// Ensure DOM is ready
+        document.querySelector('.js-carousel').innerHTML = projectsHTML;
+    }  
+}
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   projectsContainer.renderProjects();
 });
-
-//     renderProjects(){
-//         let projectsHTML = '';
-
-//         this.projects.forEach((projects) =>{
-//             projectsHTML += `<div class="card1 fade-in-up">
-//               <a href="${projects.url}" style="text-decoration: none;">
-//                   <div class="card-image1" style="background-image: url(Thumbnails/${projects.thumbnails})"></div>
-//                   <div class="card-content1">
-//                       <div class="card-tags1">
-//                           <span class="tag1">${projects.tags.tag1}</span>
-//                           <span class="tag1">${projects.tags.tag2}</span>
-//                           <span class="tag1">${projects.tags.tag3}</span>
-//                       </div>
-//                       <h3 class="card-title1">${projects.description}</h3>
-//                       <p class="card-date1">${projects.title}</p>
-//                   </div>
-//               </a>
-//           </div>`
-//         });
-
-//         document.querySelector('.js-carousel').innerHTML = projectsHTML;
-//     }  
-// }
-
-// projectsContainer.renderProjects();  
