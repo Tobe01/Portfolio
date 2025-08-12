@@ -1,5 +1,4 @@
 const certificatesContainer = {
-
   certificates: [{
       image: "17-short-specializations-certificate-tobechi-duru.png",
       title: "Software Engineering (Frontend)",
