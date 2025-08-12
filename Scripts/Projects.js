@@ -91,8 +91,4 @@ const projectsContainer = {
     }  
 }
 
-projectsContainer.renderProjects();  
-
-document.addEventListener('DOMContentLoaded', () => {
-  projectsContainer.renderProjects();
-});
+projectsContainer.renderProjects();
