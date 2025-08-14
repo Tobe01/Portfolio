@@ -1,32 +1,32 @@
 // Structure for blogs layout
 let blogSlider = [{
-    thumbnails: "mern.jpg",
-    header: "Building from the Ground Up — My Dev Philosophy",
-    description: "Why I Choose the MERN Stack, and What It Taught Me",
+    thumbnails: "Green.png",
+    header: "Building a Simple REST API with Node.js and Express",
+    description: "A beginner-friendly guide to creating and testing a RESTful API for everyday use",
     id: 1,
   },
   {
-    thumbnails: "prompt2.jpg",
-    header: "Talking to Machines: My Prompt Engineering Deep Dive",
-    description: "What I’ve Learned About Getting the Best Out of AI Tools",
+    thumbnails: "Neon.png",
+    header: "Building a Lightweight API Rate Limiter in Node.js Without External Libraries",
+    description: "Preventing abuse in your APIs with just built-in JavaScript features",
     id: 2,
   },
   {
-    thumbnails: "web333.jpg",
-    header: "My Web3 Wake-Up Call",
-    description: "What I Got Wrong, What I Got Right, and Why It Matters Now",
+    thumbnails: "Black.png",
+    header: "What is Penetration Testing? Simple Explanation for Developers",
+    description: "Understand Pen Testing by Thinking Like a Hacker",
     id: 3,
   },
   {
-    thumbnails: "deploy.png",
-    header: "The Day My Code Went Live",
-    description: "Deploying My First App: The Mistakes, the Fixes, the Lessons",
+    thumbnails: "Yellow.png",
+    header: "Building a Reusable Notification System with JavaScript and the DOM",
+    description: "A practical walkthrough on creating a modular, scalable, and beautiful toast notification system using vanilla JavaScript. No frameworks, just clean l",
     id: 4,
   },
   {
-    thumbnails: "github.jpg",
-    header: "GitHub Saved My Career (Literally)",
-    description: "How Version Control Helped Me Land Clients, Collaborate Better, and Never Lose a File Again",
+    thumbnails: "mern.jpg",
+    header: "Building from the Ground Up — My Dev Philosophy",
+    description: "Why I Choose the MERN Stack, and What It Taught Me",
     id: 5,
   }];
 
@@ -37,8 +37,6 @@ let blogSlider = [{
     blogSlider.forEach((cards) => {
       blogSliderHTML += 
       `<div class="blog-slide-card" style="background-image: url('Thumbnails/${cards.thumbnails}');">
-            <h2 style="color: gray">${cards.header}</h2>
-            <p>${cards.description}</p>
             <a><button class="js-readArticle" data-blogs-id = "${cards.id}">Read Article</button></a>
           </div>`
     })
@@ -64,15 +62,15 @@ let blogSlider = [{
           button.addEventListener('click', ()=> {
             let blogsId = parseInt(button.dataset.blogsId);
             if(blogsId === 1){
-            window.location.href="https://tobechiduru.hashnode.dev/building-from-the-ground-up-my-dev-philosophy";
+            window.location.href="https://tobechiduru.hashnode.dev/building-a-simple-rest-api-with-nodejs-and-express";
             } else if (blogsId === 2){
-                window.location.href="https://tobechiduru.hashnode.dev/talking-to-machines-my-prompt-engineering-deep-dive";
+                window.location.href="https://tobechiduru.hashnode.dev/building-a-lightweight-api-rate-limiter-in-nodejs-without-external-libraries";
             } else if(blogsId === 3){
-                window.location.href="https://tobechiduru.hashnode.dev/my-web3-wake-up-call";
+                window.location.href="https://tobechiduru.hashnode.dev/what-is-penetration-testing-simple-explanation-for-developers";
             } else if(blogsId === 4){
-                window.location.href="https://tobechiduru.hashnode.dev/the-day-my-code-went-live";
+                window.location.href="https://tobechiduru.hashnode.dev/building-a-reusable-notification-system-with-javascript-and-the-dom";
             } else if(blogsId === 5){
-                window.location.href="https://tobechiduru.hashnode.dev/github-saved-my-career-literally";
+                window.location.href="https://tobechiduru.hashnode.dev/building-from-the-ground-up-my-dev-philosophy";
             };
           });
         });
