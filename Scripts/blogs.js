@@ -24,9 +24,9 @@ let blogSlider = [{
     id: 4,
   },
   {
-    thumbnails: "mern.jpg",
-    header: "Building from the Ground Up — My Dev Philosophy",
-    description: "Why I Choose the MERN Stack, and What It Taught Me",
+    thumbnails: "web333.jpg",
+    header: "My Web3 Wake-Up Call",
+    description: "What I Got Wrong, What I Got Right, and Why It Matters Now",
     id: 5,
   }];
 
@@ -70,7 +70,7 @@ let blogSlider = [{
             } else if(blogsId === 4){
                 window.location.href="https://tobechiduru.hashnode.dev/building-a-reusable-notification-system-with-javascript-and-the-dom";
             } else if(blogsId === 5){
-                window.location.href="https://tobechiduru.hashnode.dev/building-from-the-ground-up-my-dev-philosophy";
+                window.location.href="https://tobechiduru.hashnode.dev/my-web3-wake-up-call";
             };
           });
         });
