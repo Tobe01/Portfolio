@@ -302,7 +302,8 @@
   }
 
   .certifications-banner{
-    height: 70vh;
+    height: 40vh;
+    padding-top: 90px;
   }
 
    #theme-toggle{
