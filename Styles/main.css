@@ -536,6 +536,21 @@ main{
     font-size: 18px;
   }
 
+.technical-articles{
+  display: flex;
+  color: var(--title-color);
+  margin-right: 30px;
+  margin-left: 22px;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+  .tech {
+    margin-right: 10px;
+  }
+
 /* From Uiverse.io by vinodjangid07 */ 
 .button {
     margin-top: 20px;

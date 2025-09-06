@@ -74,7 +74,7 @@ html {
     position: relative;
     width: 100%;
     height: 50vh;
-    background-image: url('Icons/pexels-myburgh-1102797.jpg');
+    /* background-image: url('Icons/pexels-myburgh-1102797.jpg'); */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -96,7 +96,7 @@ html {
     position: relative;
     width: 100%;
     height: 50vh;
-    background-image: url('Icons/pexels-pixabay-256502.jpg');
+    /* background-image: url('Icons/pexels-pixabay-256502.jpg'); */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -107,6 +107,7 @@ html {
 .projects-banner h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    white-space: nowrap;
   }
 
 .projects-banner p {

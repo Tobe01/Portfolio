@@ -1,14 +1,48 @@
   /* Contact page Responsive Design */
   @media (max-width: 768px) {
-  .contact-header h1 {
-  font-size: 2rem;
-  }
+    .contact-header h1 {
+    font-size: 2rem;
+    }
 
-  .contact-form input,
-  .contact-form textarea,
-  .contact-form select {
-  font-size: 0.95rem;
-  }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+    font-size: 0.95rem;
+    }
+
+    .technical-articles{
+    display: flex;
+    flex-direction: column;
+    }
+
+    .tech2 {
+      margin-left: -26.5px;
+    }
+
+    .blog{
+      padding-top: 20px;
+    }
+
+    .blog-section{
+      margin: 0 12px;
+    }
+
+    .description1{
+        margin-left: 0;
+      }
+
+    .description-sub1{
+    min-width: 100%;
+    }
+
+    .location{
+      min-width: 100%;
+    }
+
+    .certifications-banner h1 {
+      margin-top: 20px;
+    }
+
   }
 
   @media (max-width: 480px) {
@@ -84,8 +118,6 @@
     padding: 0 10px 0 10;
   }
 
-
-
   /* Small Devices (768px and up) */
   @media (max-width: 768px) {
   .middle-side{
@@ -128,7 +160,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-right: 58px;
+  /* padding-right: 58px; */
   padding-bottom: 20px;
   }
 
@@ -242,11 +274,17 @@
   padding-bottom: 20px;
   align-items: center;
   justify-content: center;
+  margin: 40px 15px 40px 15px;
+  background-color: green;
   }
+
+.cert-section{
+  margin: 0 5px 40px 5px;
+}
 
   .card1 {
   height: 430px;
-  width: 360px;
+  width: 107%;
   }
 
   .card-image1 {
@@ -300,6 +338,11 @@
   grid-template-columns: 1fr;  
   }      
   }
+
+  tech{
+    margin-right: 10px;
+  }
+
 
   .certifications-banner{
     height: 40vh;
@@ -448,7 +491,7 @@
   }   
 
   .cert-card {
-  max-width: 100%;
+  max-width: 107%;
   }
   }
 
