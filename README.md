@@ -1,6 +1,6 @@
 ## *Portfolio*
 
-A personal developer portfolio showcasing selected projects, technical skills, and professional experience. This repository contains the source code for the live version deployed at the link included above.
+A personal portfolio showcasing selected projects, technical skills, and professional experience. This repository contains the source code for the live version deployed at the link included above.
 
 ## *Overview*
 
