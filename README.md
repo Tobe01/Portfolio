@@ -11,26 +11,26 @@ This portfolio is designed to highlight practical engineering work, with an emph
 `Project Showcase
 Curated list of notable projects with descriptions, tech stacks, and links to live demos or repositories.`
 
-About Section
-Brief background, skills overview, and relevant experience.
+`About Section
+Brief background, skills overview, and relevant experience.`
 
-Responsive Layout
-Built to work smoothly across desktop, tablet, and mobile devices.
+`Responsive Layout
+Built to work smoothly across desktop, tablet, and mobile devices.`
 
-Contact & Social Links
-Direct access to email, GitHub, LinkedIn, and portfolio accounts.
+`Contact & Social Links
+Direct access to email, GitHub, LinkedIn, and portfolio accounts.`
 
-Modern UI Components
-Uses clean, minimal design principles with reusable components for clarity and consistency.
+`Modern UI Components
+Uses clean, minimal design principles with reusable components for clarity and consistency.`
 
-##Tech Stack
+## *Tech Stack*
 
-Frontend: React, JavaScript
+`Frontend: React, JavaScript`
 
-UI Components: shadcn/ui
+`UI Components: shadcn/ui`
 
-Styling: Tailwind CSS
+`Styling: Tailwind CSS`
 
-Deployment: Vercel
+`Deployment: Vercel`
 
-Additional tools or integrations can be added here as the portfolio evolves.
+*Additional tools or integrations can be added here as the portfolio evolves.*
