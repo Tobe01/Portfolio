@@ -33,4 +33,4 @@ Uses clean, minimal design principles with reusable components for clarity and c
 
 `Deployment: Vercel`
 
-*Additional tools or integrations can be added here as the portfolio evolves.*
+*Additional tools or integrations will be added here as the portfolio evolves.*
