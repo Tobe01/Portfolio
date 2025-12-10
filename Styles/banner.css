@@ -1,194 +1,182 @@
-html {
-    scroll-behavior: smooth;
+  html {
+  scroll-behavior: smooth;
   }
 
-.banner {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    background-image: url('Icons/pexels-harold-vasquez-853421-2653362.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-
-/* About Banner Header */
-
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    margin-top: 120px;
-    background-color: var(--nav-bg);
-    color: var(--title-color);
-    min-height: 320px;
-  }
-
-.image-section {
-    flex: 1;
-    text-align: center;
-  }
-
-.profile-pic {
-    width: 80%;
-    max-width: 250px;
-    border-radius: 5px;
-  }
-
-.content-section {
-    flex: 2;
-    text-align: center;
-  }
-
-.content-section h1 {
-    letter-spacing: 10px;
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-
-.content-section p {
-    font-size: 1rem;
-    line-height: 1.8;
-    letter-spacing: 2px;
-    color: rgb(103, 110, 118);
-  }
-
-.cta-section {
-    flex: 1;
-    text-align: center;
-  }
-
-.cta-section p {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    line-height: 1.6;
-    color: rgb(103, 110, 118);
+  .banner {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-image: url('Icons/pexels-harold-vasquez-853421-2653362.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
 
-.certifications-banner{
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    /* background-image: url('Icons/pexels-myburgh-1102797.jpg'); */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 126px; 
-    margin-bottom: 100px;
+  /* About Banner Header */
+
+  .about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 120px;
+  background-color: var(--nav-bg);
+  color: var(--title-color);
+  min-height: 320px;
   }
 
-.certifications-banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  .image-section {
+  flex: 1;
+  text-align: center;
+  }
+
+  .profile-pic {
+  width: 80%;
+  max-width: 250px;
+  border-radius: 5px;
+  }
+
+  .content-section {
+  flex: 2;
+  text-align: center;
+  }
+
+  .content-section h1 {
+  letter-spacing: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  }
+
+  .content-section p {
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 2px;
+  color: rgb(103, 110, 118);
+  }
+
+  .cta-section {
+  flex: 1;
+  text-align: center;
+  }
+
+  .cta-section p {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  line-height: 1.6;
+  color: rgb(103, 110, 118);
   }
 
 
-/* Projects Banner */
-
-.projects-banner {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    /* background-image: url('Icons/pexels-pixabay-256502.jpg'); */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .certifications-banner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-height: 100px;
+  margin-top: 150px;
   }
 
-.projects-banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    white-space: nowrap;
+  .certifications-banner h1 {
+  font-size: 2.5rem;
   }
 
-.projects-banner p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    color: var(--pages-color);
+
+  /* Projects Banner */
+
+  .projects-banner {
+  position: relative;
+  width: 100%;
+  max-height: fit-content;
   }
 
-.banner-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 30px;
-    width: 100%;
+  .projects-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  white-space: nowrap;
   }
 
-.banner h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  .projects-banner p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  color: var(--pages-color);
   }
 
-.banner p {
-    font-size: 1.1rem;
-    max-width: 700px;
-    color: var(--pages-color);
+  .banner-overlay {
+  margin: 0;
+  color: #fff;
+  width: 100%;
   }
 
-/* About Banner */
-
-.banner {
-    background-image: url('about-banner.jpg'); /* Replace with your image */
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
   }
 
-.banner::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+  .banner p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  color: var(--pages-color);
   }
 
-.banner-text {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    text-align: center;
-    padding: 0 20px;
+  /* About Banner */
+
+  .banner {
+  background-image: url('about-banner.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
 
-.banner-text h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+  .banner::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   }
 
-.banner-text p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
+  .banner-text {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
   }
 
-.about-content {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 0 20px;
+  .banner-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
   }
 
-.about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--title-color);
+  .banner-text p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
   }
 
-.about-content p {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #555;
+  .about-content {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  }
+
+  .about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--title-color);
+  }
+
+  .about-content p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #555;
   }

@@ -1,47 +1,47 @@
   /* Contact page Responsive Design */
   @media (max-width: 768px) {
-    .contact-header h1 {
-    font-size: 2rem;
-    }
+  .contact-header h1 {
+  font-size: 2rem;
+  }
 
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-    font-size: 0.95rem;
-    }
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+  font-size: 0.95rem;
+  }
 
-    .technical-articles{
-    display: flex;
-    flex-direction: column;
-    }
+  .technical-articles{
+  display: flex;
+  flex-direction: column;
+  }
 
-    .tech2 {
-      margin-left: -26.5px;
-    }
+  .tech2 {
+  margin-left: -26.5px;
+  }
 
-    .blog{
-      padding-top: 20px;
-    }
+  .blog{
+  padding-top: 20px;
+  }
 
-    .blog-section{
-      margin: 0 12px;
-    }
+  .blog-section{
+  margin: 0 12px;
+  }
 
-    .description1{
-        margin-left: 0;
-      }
+  .description1{
+  margin-left: 0;
+  }
 
-    .description-sub1{
-    min-width: 100%;
-    }
+  .description-sub1{
+  min-width: 100%;
+  }
 
-    .location{
-      min-width: 100%;
-    }
+  .location{
+  min-width: 100%;
+  }
 
-    .certifications-banner h1 {
-      margin-top: 20px;
-    }
+  .certifications-banner h1 {
+  margin-top: 20px;
+  }
 
   }
 
@@ -60,22 +60,22 @@
   }
 
   .certifications-banner{
-    height: 80vh;
+  height: 80vh;
   }
 
   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
 
 
@@ -83,6 +83,12 @@
   @media (max-width: 480px) {
   .profile-pic {
   width: 60%;
+  }
+
+  .carousel-container1 {
+  position: relative;
+  overflow: hidden;
+  margin-top: 150px;
   }
 
   .content-section h1 {
@@ -100,22 +106,22 @@
   }
 
   .certifications-banner{
-    height: 80vh;
+  height: 80vh;
   }
 
-   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  #theme-toggle{
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
 
   /* Small Devices (768px and up) */
@@ -160,7 +166,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* padding-right: 58px; */
   padding-bottom: 20px;
   }
 
@@ -256,14 +261,15 @@
   margin-top: 25px;
   }
 
-  .projects-banner {
-  z-index: -200;
-  padding-bottom: 300px;
-  padding-top: 150px;
+  .banner-overlay {
+    margin: 0;
+    color: #fff;
+    width: 100%;
   }
 
-  .projects-banner h1 {
-  margin-top: 220px;
+  .projects-banner {
+  margin: 0;
+  padding: 0;
   }
 
   .carousel1 {
@@ -274,12 +280,13 @@
   padding-bottom: 20px;
   align-items: center;
   justify-content: center;
-  margin: 40px 15px 40px 15px;
+  margin: 30px 5px 40px 5px;
   }
 
-.cert-section{
-  margin: 0 5px 40px 5px;
-}
+  .cert-section{
+  margin-top: 30px;
+  padding: 10px; 
+  }
 
   .card1 {
   height: 430px;
@@ -298,10 +305,6 @@
   .card-title1 {
   font-size: 18px;
   font-weight: 400;
-  }
-
-  .projects-banner {
-  height: 500px;
   }
 
   .about-container {
@@ -335,32 +338,33 @@
   .card-grid {
   display: grid;
   grid-template-columns: 1fr;  
-  }      
+  }   
+
   }
 
-  tech{
-    margin-right: 10px;
+  .tech{
+  margin-right: 10px;
   }
 
 
   .certifications-banner{
-    height: 40vh;
-    padding-top: 90px;
+  height: 40vh;
+  padding-top: 90px;
   }
 
-   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  #theme-toggle{
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
 
 
@@ -455,15 +459,29 @@
   .carousel1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   align-items: center;
   justify-content: center;
+  margin: 30px 15px 40px 15px;
+  }
+
+  .cert-section{
+  margin-top: 30px;
+  }
+
+   .projects-banner {
+  margin: 0;
+  padding: 0;
+  padding-left: 23px;
   }
 
   .card1 {
   height: 400px;
   width: 370px;
+  align-items: center;
+  display: flex;
+  margin: auto;
   }
 
   .card-image1 {
@@ -480,13 +498,9 @@
   font-weight: 400;
   }
 
-  .projects-banner {
-  height: 400px;
-  }
-
   .card-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;  
+  grid-template-columns: 1fr 1fr; 
   }   
 
   .cert-card {
@@ -494,19 +508,19 @@
   }
   }
 
-   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  #theme-toggle{
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
 
 
@@ -564,6 +578,10 @@
   grid-template-columns: 1fr 1fr;
   }
 
+  .cert-section{
+  margin-top: 30px;
+  }
+
 
   .card1 {
   height: 400px;
@@ -576,22 +594,20 @@
   } 
   }
 
-   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  #theme-toggle{
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
-
-
 
   /* Extra Large Devices (1200px and up) */
   @media (min-width: 1200px) {
@@ -662,22 +678,20 @@
   }
   }
 
-   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  #theme-toggle{
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
-
-
 
   /* Ultra-Wide Screens (1400px and up) */
   @media (min-width: 1400px) {
@@ -748,19 +762,19 @@
   }
   }
 
-   #theme-toggle{
-    height: 22px;
-    width: 50px;
-    margin-left: -10px;
+  #theme-toggle{
+  height: 22px;
+  width: 50px;
+  margin-left: -10px;
   }
 
   .Documents-btn {
-    margin-left: 0;
+  margin-left: 0;
   }
 
   .left-side{
-    width: 220px;
-    padding: 0 10px 0 10;
+  width: 220px;
+  padding: 0 10px 0 10;
   }
 
 
