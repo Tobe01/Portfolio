@@ -1,6 +1,6 @@
 // Carousel for Projects section on landing page
 const topProjects = [{
-  url: "https://tobe-expense-tracker.vercel.app/",
+  url: "https://tobe-quiknapp.vercel.app/",
   thumbnails: "expense.webp",
   tags: {
     tag1: "REACT.js",
@@ -71,7 +71,7 @@ const topProjects = [{
   description: "List and browse beginner-friendly online courses",
   title: "SKILLHIVE (COURSE LISTING APP)"
 }, {
-  url: "https://tobe-expense-tracker.vercel.app/",
+  url: "https://tobe-quiknapp.vercel.app/",
   thumbnails: "expense.webp",
   tags: {
     tag1: "REACT.js",
