@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-4);
+  top: -4rem;
+  z-index: 300;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus-visible {
+  top: var(--space-3);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,36 +1,104 @@
-## *Portfolio*
+# Senior Frontend Portfolio (React + CSS)
 
-A personal portfolio showcasing selected projects, technical skills, and professional experience. This repository contains the source code for the live version deployed at the link included above.
+Production-ready, data-driven portfolio for a Senior Frontend Engineer built with React, React Router, Swiper, and plain CSS.
 
-## *Overview*
+## Tech
 
-This portfolio is designed to highlight practical engineering work, with an emphasis on JavaScript-based projects, backend services, and full-stack applications. It includes dedicated sections for projects, articles, and personal information, all structured to give visitors a clear and organized view of your capabilities as a software engineer.
+- React + Vite
+- `react-router-dom` for routing
+- Swiper.js for projects and articles sliders
+- Plain CSS with theme tokens (`light` / `dark`)
+- IntersectionObserver-based scroll reveal animations
 
-## *Features*
+## Run Locally
 
-`Project Showcase
-Curated list of notable projects with descriptions, tech stacks, and links to live demos or repositories.`
+1. Install dependencies:
 
-`About Section
-Brief background, skills overview, and relevant experience.`
+```bash
+npm install
+```
 
-`Responsive Layout
-Built to work smoothly across desktop, tablet, and mobile devices.`
+2. Start development server:
 
-`Contact & Social Links
-Direct access to email, GitHub, LinkedIn, and portfolio accounts.`
+```bash
+npm run dev
+```
 
-`Modern UI Components
-Uses clean, minimal design principles with reusable components for clarity and consistency.`
+3. Build for production:
 
-## *Tech Stack*
+```bash
+npm run build
+```
 
-`Frontend: React, JavaScript`
+4. Preview production build:
 
-`UI Components: shadcn/ui`
+```bash
+npm run preview
+```
 
-`Styling: Tailwind CSS`
+## Routes
 
-`Deployment: Vercel`
+- `/` Home (all sections)
+- `/projects`
+- `/articles`
+- `/speaking`
+- `/resume`
 
-*Additional tools or integrations will be added here as the portfolio evolves.*
+## Where to Update Content
+
+All content is data-driven:
+
+- `src/data/profile.js`
+- `src/data/skills.js`
+- `src/data/projects.js`
+- `src/data/articles.js`
+- `src/data/speaking.js`
+- `src/data/certificates.js`
+
+## Fonts
+
+Font faces are wired in:
+
+- `src/styles/fonts.css`
+
+Add your font files in:
+
+- `public/fonts/Acorn-Regular.woff2`
+- `public/fonts/Acorn-Bold.woff2`
+- `public/fonts/Chillax-Regular.woff2`
+- `public/fonts/Chillax-Medium.woff2`
+- `public/fonts/Chillax-Semibold.woff2`
+
+Fallbacks are already configured:
+
+- Acorn -> serif fallback
+- Chillax -> `system-ui` fallback
+
+## Resume
+
+Replace the placeholder PDF at:
+
+- `public/resume.pdf`
+
+Resume view and download are available via `/resume` and header actions.
+
+## Project Structure
+
+```text
+src/
+  components/
+    layout/
+    sections/
+    ui/
+  data/
+  hooks/
+  pages/
+  routes/
+  styles/
+```
+
+## Notes
+
+- External links are placeholder/demo links (`example.com`) and open in a new tab.
+- Theme preference is persisted in `localStorage`.
+- Scroll reveal respects `prefers-reduced-motion`.

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" role="img" aria-label="Project cover 1">
+  <rect width="1400" height="900" fill="#0f0f0f" />
+  <rect x="120" y="120" width="1160" height="660" fill="#1a1a1a" rx="20" />
+  <rect x="170" y="190" width="460" height="22" fill="#cfcfcf" />
+  <rect x="170" y="240" width="620" height="14" fill="#5b5b5b" />
+  <rect x="170" y="275" width="520" height="14" fill="#4d4d4d" />
+  <rect x="170" y="320" width="1060" height="390" fill="#202020" rx="16" />
+  <rect x="220" y="370" width="270" height="270" fill="#303030" rx="14" />
+  <rect x="530" y="370" width="640" height="34" fill="#7a7a7a" rx="6" />
+  <rect x="530" y="430" width="560" height="20" fill="#5f5f5f" rx="6" />
+  <rect x="530" y="465" width="620" height="20" fill="#565656" rx="6" />
+  <rect x="530" y="535" width="220" height="48" fill="#d6d6d6" rx="24" />
+  <text x="170" y="760" fill="#d7d7d7" font-family="system-ui, sans-serif" font-size="40">PROJECT 01</text>
+</svg>
