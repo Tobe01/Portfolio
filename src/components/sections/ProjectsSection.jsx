@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from "react";
 import {
   A11y,
   Autoplay,
@@ -6,32 +6,40 @@ import {
   Keyboard,
   Navigation,
   Pagination,
-} from 'swiper/modules'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import projects from '../../data/projects'
-import Container from '../layout/Container'
-import Chip from '../ui/Chip'
-import Icon from '../ui/Icon'
-import Modal from '../ui/Modal'
-import Reveal from '../ui/Reveal'
-import 'swiper/css'
-import 'swiper/css/a11y'
-import 'swiper/css/autoplay'
-import 'swiper/css/effect-cards'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
+} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import projects from "../../data/projects";
+import Container from "../layout/Container";
+import Chip from "../ui/Chip";
+import Icon from "../ui/Icon";
+import Modal from "../ui/Modal";
+import Reveal from "../ui/Reveal";
+import "swiper/css";
+import "swiper/css/a11y";
+import "swiper/css/autoplay";
+import "swiper/css/effect-cards";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
-const IMAGE_FALLBACK = '/images/image-fallback.svg'
-const PROJECT_SWIPER_MODULES = [EffectCards, Pagination, Keyboard, A11y, Autoplay]
+const IMAGE_FALLBACK = "/images/image-fallback.svg";
+const PROJECT_SWIPER_MODULES = [
+  EffectCards,
+  Pagination,
+  Keyboard,
+  A11y,
+  Autoplay,
+];
 
 function ProjectsSection({
-  description = 'Selected projects with ownership details, constraints, and delivery outcomes.',
-  id = 'projects',
-  title = 'Projects',
+  description = "Selected projects with ownership details, constraints, and delivery outcomes.",
+  id = "projects",
+  title = "Projects",
 }) {
-  const [activeProjectId, setActiveProjectId] = useState(projects[0]?.id ?? null)
-  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false)
-  const projectSwiperRef = useRef(null)
+  const [activeProjectId, setActiveProjectId] = useState(
+    projects[0]?.id ?? null,
+  );
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const projectSwiperRef = useRef(null);
 
   const activeProject = useMemo(
     () =>
@@ -39,44 +47,56 @@ function ProjectsSection({
       projects[0] ??
       null,
     [activeProjectId],
-  )
+  );
 
   const closeProjectModal = () => {
-    setIsProjectModalOpen(false)
-  }
+    setIsProjectModalOpen(false);
+  };
 
-  const modalTitleId = activeProject ? `${activeProject.id}-modal-title` : undefined
-  const projectLinks = activeProject?.links ?? {}
-  const projectScreenshots = activeProject?.images ?? []
-  const projectStack = activeProject?.stack ?? []
-  const projectChallenges = activeProject?.challenges ?? []
-  const projectPanelDescription = activeProject?.longDescription || activeProject?.description
+  const activeProjectIndex = useMemo(
+    () => projects.findIndex((project) => project.id === activeProjectId),
+    [activeProjectId],
+  );
+
+  const modalTitleId = activeProject
+    ? `${activeProject.id}-modal-title`
+    : undefined;
+  const projectLinks = activeProject?.links ?? {};
+  const projectScreenshots = activeProject?.images ?? [];
+  const projectStack = activeProject?.stack ?? [];
+  const projectChallenges = activeProject?.challenges ?? [];
+  const projectPanelDescription =
+    activeProject?.longDescription || activeProject?.description;
 
   const handleProjectSlideChange = (swiperInstance) => {
-    const nextProjectId = projects[swiperInstance.realIndex]?.id
+    const nextProjectId = projects[swiperInstance.realIndex]?.id;
     if (nextProjectId) {
-      setActiveProjectId(nextProjectId)
+      setActiveProjectId(nextProjectId);
     }
-  }
+  };
 
   const handleProjectCardClick = (projectId, index) => {
-    setActiveProjectId(projectId)
+    setActiveProjectId(projectId);
     if (
       projectSwiperRef.current &&
       projectSwiperRef.current.realIndex !== index
     ) {
-      projectSwiperRef.current.slideToLoop(index)
+      projectSwiperRef.current.slideToLoop(index);
     }
-    setIsProjectModalOpen(true)
-  }
+    setIsProjectModalOpen(true);
+  };
 
   const goToPreviousProject = () => {
-    projectSwiperRef.current?.slidePrev()
-  }
+    projectSwiperRef.current?.slidePrev();
+  };
 
   const goToNextProject = () => {
-    projectSwiperRef.current?.slideNext()
-  }
+    projectSwiperRef.current?.slideNext();
+  };
+
+  const goToProject = (projectIndex) => {
+    projectSwiperRef.current?.slideToLoop(projectIndex);
+  };
 
   return (
     <section className="section section--projects" id={id}>
@@ -107,33 +127,47 @@ function ProjectsSection({
                   modules={PROJECT_SWIPER_MODULES}
                   onRealIndexChange={handleProjectSlideChange}
                   onSwiper={(swiperInstance) => {
-                    projectSwiperRef.current = swiperInstance
-                    handleProjectSlideChange(swiperInstance)
+                    projectSwiperRef.current = swiperInstance;
+                    handleProjectSlideChange(swiperInstance);
                   }}
-                  pagination={{ clickable: true }}
+                  pagination={false}
                   speed={620}
                 >
                   {projects.map((project, index) => (
                     <SwiperSlide key={project.id}>
-                      <Reveal as="div" className="project-slide-frame" delay={index * 35}>
+                      <Reveal
+                        as="div"
+                        className="project-slide-frame"
+                        delay={index * 35}
+                      >
                         <button
                           aria-label={`Open project details for ${project.name}`}
                           className="project-slide"
-                          onClick={() => handleProjectCardClick(project.id, index)}
+                          onClick={() =>
+                            handleProjectCardClick(project.id, index)
+                          }
                           type="button"
                         >
                           <img
                             alt={`${project.name} project cover`}
                             loading="lazy"
                             onError={(event) => {
-                              event.currentTarget.src = IMAGE_FALLBACK
+                              event.currentTarget.src = IMAGE_FALLBACK;
                             }}
-                            src={project.coverImage || project.images?.[0] || IMAGE_FALLBACK}
+                            src={
+                              project.coverImage ||
+                              project.images?.[0] ||
+                              IMAGE_FALLBACK
+                            }
                           />
                           <span className="project-slide__overlay" />
                           <span className="project-slide__content">
-                            <span className="project-slide__title">{project.name}</span>
-                            <span className="project-slide__tagline">{project.tagline}</span>
+                            <span className="project-slide__title">
+                              {project.name}
+                            </span>
+                            <span className="project-slide__tagline">
+                              {project.tagline}
+                            </span>
                           </span>
                         </button>
                       </Reveal>
@@ -141,40 +175,97 @@ function ProjectsSection({
                   ))}
                 </Swiper>
               </Reveal>
+            </div>
 
-              <Reveal as="div" className="slider-controls slider-controls--projects" delay={90}>
-                <button
+            <div className="projects-layout__details">
+              <Reveal
+                as="aside"
+                className="project-description-panel"
+                delay={120}
+              >
+                {activeProject ? (
+                  <div
+                    className="project-description-panel__content"
+                    key={activeProject.id}
+                  >
+                    <h3>{activeProject.name}</h3>
+                    <p>{projectPanelDescription}</p>
+                  </div>
+                ) : (
+                  <p className="section-muted">
+                    Project details will be available soon.
+                  </p>
+                )}
+              </Reveal>
+
+              <Reveal
+                as="div"
+                className="slider-controls slider-controls--projects projects-controls-row"
+                delay={140}
+              >
+                {/* <button
                   aria-label="Previous project"
                   className="slider-arrow"
                   onClick={goToPreviousProject}
                   type="button"
                 >
                   <Icon name="arrow-left" size={16} />
-                </button>
-                <button
+                </button> */}
+
+                <div
+                  aria-label="Project pagination"
+                  className="projects-controls__dots"
+                  role="radiogroup"
+                >
+                  <div>
+                    {projects.map((project, index) => {
+                      const isActive = index === activeProjectIndex;
+
+                      return (
+                        <button
+                          aria-label={`Go to project ${index + 1}: ${project.name}`}
+                          aria-checked={isActive}
+                          className={`projects-controls__dot${isActive ? " is-active" : ""}`}
+                          key={`project-dot-${project.id}`}
+                          onClick={() => goToProject(index)}
+                          role="radio"
+                          type="button"
+                        />
+                      );
+                    })}
+                  </div>
+
+                  <div className="radio-arrow-button">
+                    <button
+                      aria-label="Previous project"
+                      className="slider-arrow"
+                      onClick={goToPreviousProject}
+                      type="button"
+                    >
+                      <Icon name="arrow-left" size={16} />
+                    </button>
+
+                    <button
+                      aria-label="Next project"
+                      className="slider-arrow"
+                      onClick={goToNextProject}
+                      type="button"
+                    >
+                      <Icon name="arrow-right" size={16} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* <button
                   aria-label="Next project"
                   className="slider-arrow"
                   onClick={goToNextProject}
                   type="button"
                 >
                   <Icon name="arrow-right" size={16} />
-                </button>
+                </button> */}
               </Reveal>
             </div>
-
-            <Reveal as="aside" className="project-description-panel" delay={120}>
-              {activeProject ? (
-                <div
-                  className="project-description-panel__content"
-                  key={activeProject.id}
-                >
-                  <h3>{activeProject.name}</h3>
-                  <p>{projectPanelDescription}</p>
-                </div>
-              ) : (
-                <p className="section-muted">Project details will be available soon.</p>
-              )}
-            </Reveal>
           </div>
         ) : (
           <Reveal as="p" className="section-placeholder">
@@ -267,7 +358,7 @@ function ProjectsSection({
                         className="project-shot"
                         loading="lazy"
                         onError={(event) => {
-                          event.currentTarget.src = IMAGE_FALLBACK
+                          event.currentTarget.src = IMAGE_FALLBACK;
                         }}
                         src={imagePath}
                       />
@@ -282,7 +373,7 @@ function ProjectsSection({
         ) : null}
       </Modal>
     </section>
-  )
+  );
 }
 
-export default ProjectsSection
+export default ProjectsSection;

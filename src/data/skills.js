@@ -1,60 +1,174 @@
+import javeScript from '../assets/icons/skill-icons--javascript.svg';
+import css from '../assets/icons/skill-icons--css.svg';
+import docker from '../assets/icons/skill-icons--docker.svg';
+import fastApi from '../assets/icons/skill-icons--fastapi.svg';
+import githubActions from '../assets/icons/skill-icons--githubactions-dark.svg';
+import graphql from '../assets/icons/skill-icons--graphql-light.svg';
+import html from '../assets/icons/skill-icons--html.svg';
+import nextjs from '../assets/icons/skill-icons--nextjs-light.svg';
+import postgresql from '../assets/icons/skill-icons--postgresql-dark.svg';
+import react from '../assets/icons/skill-icons--react-dark.svg';
+import redis from '../assets/icons/skill-icons--redis-dark.svg';
+import redux from '../assets/icons/skill-icons--redux.svg';
+import supabase from '../assets/icons/skill-icons--supabase-dark.svg';
+import tailwind from '../assets/icons/skill-icons--tailwindcss-dark.svg';
+import typescript from '../assets/icons/skill-icons--typescript.svg';
+import vercel from '../assets/icons/skill-icons--vercel-light.svg';
+import aws from '../assets/icons/skill-icons--aws-light.svg';
+import mongoDB from '../assets/icons/skill-icons--mongodb.svg';
+import infrastructure from '../assets/icons/proicons--weather-cloudy.svg';
+import languages from '../assets/icons/proicons--code-square.svg';
+import apiDesign from '../assets/icons/proicons--terminal.svg';
+import frameworks from '../assets/icons/proicons--layers.svg';
+import database from '../assets/icons/proicons--database.svg';
+import security from '../assets/icons/proicons--lock.svg';
+import kafka from '../assets/icons/skill-icons--kafka.svg';
+
 const skillCategories = [
   {
     id: 'languages',
+    tag: `${languages}`,
     title: 'Programming Languages',
-    items: [
-      { id: 'javascript', label: 'JavaScript', iconText: 'JS' },
-      { id: 'typescript', label: 'TypeScript', iconText: 'TS' },
-      { id: 'html', label: 'HTML5', iconText: 'H5' },
-      { id: 'css', label: 'CSS3', iconText: 'C3' },
-    ],
+    item1: {
+      icon: `${javeScript}`,
+      label: 'JavaScript'
+    },
+
+    item2: {
+      icon: `${typescript}`,
+      label: 'TypeScript'
+    },
+
+    item3: {
+      icon: `${html}`,
+      label: 'HTML5'
+    },
+
+    item4: {
+      icon: `${css}`,
+      label: 'CSS3'
+    },
+
   },
   {
     id: 'frameworks',
+    tag: `${frameworks}`,
     title: 'Frameworks',
-    items: [
-      { id: 'react', label: 'React', iconText: 'R' },
-      { id: 'nextjs', label: 'Next.js', iconText: 'N' },
-      { id: 'redux', label: 'Redux Toolkit', iconText: 'RTK' },
-      { id: 'router', label: 'React Router', iconText: 'RR' },
-    ],
+    item1: {
+      icon: `${react}`,
+      label: 'React'
+    },
+
+    item2: {
+      icon: `${nextjs}`,
+      label: 'Next.js'
+    },
+
+    item4: {
+      icon: `${tailwind}`,
+      label: 'Tailwind'
+    },
+
+    item3: {
+      icon: `${redux}`,
+      label: 'Redux Toolkit'
+    },
+
   },
   {
     id: 'databases',
+    tag: `${database}`,
     title: 'Databases',
-    items: [
-      { id: 'postgres', label: 'PostgreSQL', iconText: 'PG' },
-      { id: 'firebase', label: 'Firebase', iconText: 'FB' },
-      { id: 'redis', label: 'Redis', iconText: 'RD' },
-    ],
+    item1: {
+      icon: `${postgresql}`,
+      label: 'PostgreSQL'
+    },
+
+    item2: {
+      icon: `${supabase}`,
+      label: 'supabase'
+    },
+
+    item3: {
+      icon: `${redis}`,
+      label: 'Redis'
+    },
+
+    item4: {
+      icon: `${mongoDB}`,
+      label: 'MongoDB'
+    },
+
   },
   {
     id: 'infrastructure',
+    tag: `${infrastructure}`,
     title: 'Infrastructure & DevOps',
-    items: [
-      { id: 'docker', label: 'Docker', iconText: 'DK' },
-      { id: 'github-actions', label: 'GitHub Actions', iconText: 'GA' },
-      { id: 'vercel', label: 'Vercel', iconText: 'VC' },
-      { id: 'cloudfront', label: 'CloudFront', iconText: 'CF' },
-    ],
+    item1: {
+      icon: `${docker}`,
+      label: 'Docker'
+    },
+
+    item2: {
+      icon: `${githubActions}`,
+      label: 'GitHub Actions'
+    },
+
+    item3: {
+      icon: `${vercel}`,
+      label: 'Vercel'
+    },
+
+    item4: {
+      icon: `${aws}`,
+      label: 'AWS'
+    },
+
   },
   {
     id: 'api-design',
+    tag: `${apiDesign}`,
     title: 'API Design',
-    items: [
-      { id: 'rest', label: 'REST', iconText: 'RE' },
-      { id: 'graphql', label: 'GraphQL', iconText: 'GQ' },
-      { id: 'openapi', label: 'OpenAPI', iconText: 'OA' },
-    ],
+    item1: {
+      icon: `${kafka}`,
+      label: 'Kafka',
+    },
+
+    item2: {
+      icon: `${graphql}`,
+      label: 'GraphQL',
+    },
+
+    item3: {
+      icon: `${fastApi}`,
+      label: 'FastAPI',
+    },
+
+    item4: {
+      icon: `${redis}`,
+      label: 'RabbitMQ',
+    },
+
   },
   {
     id: 'security',
+    tag: `${security}`,
     title: 'Security Tools',
-    items: [
-      { id: 'snyk', label: 'Snyk', iconText: 'SY' },
-      { id: 'owasp', label: 'OWASP ZAP', iconText: 'OZ' },
-      { id: 'dependabot', label: 'Dependabot', iconText: 'DB' },
-    ],
+    item1: {
+      icon: `${react}`,
+      label: 'Snyk',
+    },
+
+    item2: {
+      icon: `${fastApi}`,
+      label: 'OWASP ZAP',
+    },
+
+    item3: {
+      icon: `${kafka}`,
+      label: 'Dependabot'
+    },
+
   },
 ]
 

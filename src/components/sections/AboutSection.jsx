@@ -20,12 +20,12 @@ function AboutSection() {
             ))}
           </div>
           <Reveal as="div" className="about-focus" delay={140}>
-            <h3>Focus Areas</h3>
+            {/* <h3>Focus Areas</h3>
             <ul>
               {about.focusAreas.map((focusArea) => (
                 <li key={focusArea}>{focusArea}</li>
               ))}
-            </ul>
+            </ul> */}
           </Reveal>
         </div>
       </Container>

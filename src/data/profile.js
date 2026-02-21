@@ -1,9 +1,9 @@
 const profile = {
-  name: 'Avery Morgan',
-  role: 'Senior Frontend Engineer',
+  name: 'Tobechi Duru',
+  role: 'Frontend Engineer',
   hero: {
-    eyebrow: 'Senior Frontend Portfolio',
-    headline: 'Avery Morgan',
+    eyebrow: 'Frontend Engineer',
+    headline: 'Tobechi Duru',
     title: 'Building resilient interfaces for real products',
     valueStatement:
       'I lead frontend architecture, accessibility, and performance for high-traffic products. My focus is clean systems, measurable outcomes, and delivery velocity.',
@@ -19,8 +19,7 @@ const profile = {
   about: {
     title: 'About Me',
     paragraphs: [
-      'I am a frontend engineer with 9+ years of experience shipping React applications from MVP to enterprise scale.',
-      'My recent work has centered on design system governance, performance budgets, and platform-level frontend standards.',
+      'I am a frontend engineer with 3+ years of experience shipping React applications from MVP to enterprise scale. My recent work has centered on design system governance, performance budgets, and platform-level frontend standards.',
     ],
     focusAreas: [
       'Frontend architecture and maintainable component design',
@@ -32,7 +31,7 @@ const profile = {
     title: 'Contact',
     intro:
       'I am open to senior frontend and staff-level opportunities focused on product quality and engineering leadership.',
-    email: 'avery.morgan@example.com',
+    email: 'tobechi.duru001@gmail.com',
   },
   resume: {
     title: 'Resume',
@@ -72,19 +71,19 @@ const profile = {
     {
       id: 'github',
       label: 'GitHub',
-      url: 'https://github.com/example',
+      url: 'https://github.com/tobe01',
       icon: 'github',
     },
     {
       id: 'linkedin',
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/example',
+      url: 'https://linkedin.com/in/tobechiduru',
       icon: 'linkedin',
     },
     {
       id: 'email',
       label: 'Email',
-      url: 'mailto:avery.morgan@example.com',
+      url: 'mailto:tobechi.duru001@gmail.com',
       icon: 'mail',
     },
   ],
