@@ -2,7 +2,7 @@ const profile = {
   name: 'Tobechi Duru',
   role: 'Frontend Engineer',
   hero: {
-    eyebrow: 'Frontend Engineer',
+    eyebrow: 'Top-rated Frontend Engineer',
     headline: 'Tobechi Duru',
     title: 'Building resilient interfaces for real products',
     valueStatement:

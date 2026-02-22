@@ -39,7 +39,7 @@ function SkillsSection() {
                         <div className='skills-button'>
                           {skillItems.map((item, itemIndex) => (
                             <button key={`${skill.id}-item-${itemIndex}`}>
-                              <span><img src={item.icon} alt="labelIcon" width={20} /></span>
+                              <span><img src={item.icon} alt="labelIcon" width={20} loading='lazy' /></span>
                               {item.label}
                             </button>
                           ))}

@@ -1,6 +1,7 @@
 import profile from '../../data/profile'
 import Container from '../layout/Container'
 import Reveal from '../ui/Reveal'
+import stats from '../../../public/images/stats.webp'
 
 function AboutSection() {
   const { about } = profile
@@ -26,6 +27,7 @@ function AboutSection() {
                 <li key={focusArea}>{focusArea}</li>
               ))}
             </ul> */}
+            <img src={stats} alt='stats' loading='lazy' />
           </Reveal>
         </div>
       </Container>
