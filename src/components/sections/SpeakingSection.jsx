@@ -7,13 +7,30 @@ import Reveal from '../ui/Reveal'
 
 const MOBILE_VIEWPORT_QUERY = '(max-width: 54rem)'
 const CARD_DRAG_THRESHOLD = 8
+const EVENT_LINK_TYPES = {
+  attendee: 'Attendee',
+  host: 'Host',
+  me: 'My Post',
+  speaker: 'Speaker',
+  ticket: 'Ticket',
+}
 
-const formatEventDate = (dateValue) =>
-  new Intl.DateTimeFormat('en-US', {
+const formatEventDate = (dateValue) => {
+  if (!dateValue) {
+    return null
+  }
+
+  const parsedDate = new Date(dateValue)
+  if (Number.isNaN(parsedDate.getTime())) {
+    return dateValue
+  }
+
+  return new Intl.DateTimeFormat('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
-  }).format(new Date(dateValue))
+  }).format(parsedDate)
+}
 
 const getEventImages = (item) => {
   if (!item?.images) {
@@ -37,6 +54,30 @@ const getEventImages = (item) => {
   }
 
   return []
+}
+
+const getEventLinks = (item) => {
+  if (!Array.isArray(item?.links)) {
+    return []
+  }
+
+  return item.links
+    .filter((link) => link && typeof link.url === 'string' && link.url.trim())
+    .map((link) => {
+      const resolvedLabel =
+        typeof link.label === 'string' && link.label.trim()
+          ? link.label.trim()
+          : 'Open link'
+
+      const normalizedType =
+        typeof link.type === 'string' ? link.type.trim().toLowerCase() : ''
+
+      return {
+        label: resolvedLabel,
+        type: EVENT_LINK_TYPES[normalizedType] || null,
+        url: link.url.trim(),
+      }
+    })
 }
 
 function SpeakingSection({
@@ -64,6 +105,32 @@ function SpeakingSection({
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const selectedEventImages = useMemo(
     () => getEventImages(selectedEvent),
+    [selectedEvent],
+  )
+  const selectedEventLinks = useMemo(
+    () => getEventLinks(selectedEvent),
+    [selectedEvent],
+  )
+  const selectedEventDetails = useMemo(
+    () =>
+      [
+        {
+          label: 'Role',
+          value: selectedEvent?.role,
+        },
+        {
+          label: 'Context',
+          value: selectedEvent?.context,
+        },
+        {
+          label: 'Date',
+          value: formatEventDate(selectedEvent?.date),
+        },
+        {
+          label: 'Location',
+          value: selectedEvent?.location,
+        },
+      ].filter((detailItem) => Boolean(detailItem.value)),
     [selectedEvent],
   )
   const modalTitleId = selectedEvent
@@ -346,7 +413,7 @@ function SpeakingSection({
                   >
                     <h3>{item.title}</h3>
                     <p className="section-muted">{item.context}</p>
-                    <p>{formatEventDate(item.date)}</p>
+                    {item.date ? <p>{formatEventDate(item.date)}</p> : null}
                     <button
                       className="speaking-card__action"
                       onClick={(event) => handleOpenActionClick(event, item)}
@@ -392,20 +459,6 @@ function SpeakingSection({
                 gap: 'var(--space-4)',
               }}
             >
-              <header style={{ display: 'grid', gap: 'var(--space-2)', paddingRight: '2.2rem' }}>
-                <h3
-                  id={modalTitleId}
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: 'clamp(1.4rem, 2.4vw, 2rem)',
-                  }}
-                >
-                  {selectedEvent.title}
-                </h3>
-                <p className="section-muted">{selectedEvent.context}</p>
-                <p className="section-muted">{formatEventDate(selectedEvent.date)}</p>
-              </header>
-
               {selectedEventImages.length ? (
                 <>
                   <div
@@ -501,8 +554,8 @@ function SpeakingSection({
                       alignItems: 'center',
                       display: 'flex',
                       flexWrap: 'wrap',
-                      gap: 'var(--space-3)',
-                      justifyContent: 'space-between',
+                      gap: 'var(--space-2)',
+                      justifyContent: 'flex-end',
                     }}
                   >
                     <p
@@ -514,20 +567,6 @@ function SpeakingSection({
                     >
                       {activeImageIndex + 1} / {selectedEventImages.length}
                     </p>
-
-                    {selectedEvent.notionUrl ? (
-                      <a
-                        className="button button--secondary"
-                        href={selectedEvent.notionUrl}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        <span>More Details</span>
-                        <Icon name="external" size={14} />
-                      </a>
-                    ) : (
-                      <p className="section-muted">More details will be added soon.</p>
-                    )}
                   </div>
                 </>
               ) : (
@@ -543,19 +582,112 @@ function SpeakingSection({
                   <p className="section-muted">
                     Event gallery images are not available yet for this item.
                   </p>
-                  {selectedEvent.notionUrl ? (
-                    <a
-                      className="button button--secondary"
-                      href={selectedEvent.notionUrl}
-                      rel="noreferrer"
-                      style={{ width: 'fit-content' }}
-                      target="_blank"
-                    >
-                      <span>More Details</span>
-                      <Icon name="external" size={14} />
-                    </a>
-                  ) : null}
                 </div>
+              )}
+
+              <section
+                style={{
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 'var(--radius-md)',
+                  display: 'grid',
+                  gap: 'var(--space-3)',
+                  padding: 'var(--space-4)',
+                }}
+              >
+                <h3
+                  id={modalTitleId}
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: 'clamp(1.2rem, 2.2vw, 1.5rem)',
+                    margin: 0,
+                  }}
+                >
+                  Event Details
+                </h3>
+
+                <div style={{ display: 'grid', gap: 'var(--space-2)' }}>
+                  <p style={{ lineHeight: 1.55, margin: 0 }}>
+                    <span style={{ color: 'var(--color-text-muted)', fontWeight: 500 }}>
+                      Event:
+                    </span>{' '}
+                    <span>{selectedEvent.title}</span>
+                  </p>
+
+                  {selectedEventDetails.map((detailItem) => (
+                    <p
+                      key={`${selectedEvent.id}-${detailItem.label}`}
+                      style={{ lineHeight: 1.55, margin: 0 }}
+                    >
+                      <span style={{ color: 'var(--color-text-muted)', fontWeight: 500 }}>
+                        {detailItem.label}:
+                      </span>{' '}
+                      <span>{detailItem.value}</span>
+                    </p>
+                  ))}
+                </div>
+
+                {selectedEvent.description ? (
+                  <p style={{ lineHeight: 1.65, margin: 0 }}>{selectedEvent.description}</p>
+                ) : null}
+              </section>
+
+              {selectedEventLinks.length ? (
+                <section
+                  style={{
+                    border: '1px solid var(--color-border)',
+                    borderRadius: 'var(--radius-md)',
+                    display: 'grid',
+                    gap: 'var(--space-3)',
+                    padding: 'var(--space-4)',
+                  }}
+                >
+                  <h4
+                    style={{
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: '1.08rem',
+                      margin: 0,
+                    }}
+                  >
+                    Links
+                  </h4>
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: 'var(--space-2)',
+                    }}
+                  >
+                    {selectedEventLinks.map((eventLink, index) => (
+                      <a
+                        className="button button--secondary"
+                        href={eventLink.url}
+                        key={`${selectedEvent.id}-link-${index + 1}`}
+                        rel="noreferrer"
+                        style={{ minHeight: '2.4rem' }}
+                        target="_blank"
+                      >
+                        {eventLink.type
+                          ? `${eventLink.type}: ${eventLink.label}`
+                          : eventLink.label}
+                      </a>
+                    ))}
+                  </div>
+                </section>
+              ) : null}
+
+              {selectedEvent.notionUrl ? (
+                <a
+                  className="button button--secondary"
+                  href={selectedEvent.notionUrl}
+                  rel="noreferrer"
+                  style={{ width: 'fit-content' }}
+                  target="_blank"
+                >
+                  <span>More Details</span>
+                  <Icon name="external" size={14} />
+                </a>
+              ) : (
+                <p className="section-muted">More details will be added soon.</p>
               )}
             </div>
           ) : null}

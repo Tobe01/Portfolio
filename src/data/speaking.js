@@ -20,8 +20,24 @@ const speakingItems = [
   {
     id: 'speaking-01',
     title: 'Software Engineering Roadmap: A software engineers guide to building a great career',
+    role: 'Speaker',
     context: 'Speaker Session',
     date: '2026-03-02',
+    location: 'Lagos, Nigeria',
+    description:
+      'I shared a practical roadmap for early and mid-career software engineers, focusing on skill progression, portfolio building, and career decision checkpoints. The session translated long-term goals into concrete monthly execution habits participants could apply immediately.',
+    links: [
+      {
+        label: 'Host Event Announcement',
+        url: 'https://example.com/software-engineering-roadmap-event',
+        type: 'host',
+      },
+      {
+        label: 'My Session Recap',
+        url: 'https://example.com/software-engineering-roadmap-recap',
+        type: 'me',
+      },
+    ],
     images:{
       image1: softwareroadmap,
     },
@@ -30,8 +46,29 @@ const speakingItems = [
   {
     id: 'speaking-02',
     title: 'AI Ready APIs: Rethinking Your API Strategy in the AI Era',
+    role: 'Speaker',
     context: 'API Strategy Breakout Session',
     date: '2026-02-08',
+    location: 'Lagos, Nigeria',
+    description:
+      'I facilitated a breakout on preparing API platforms for AI workloads, covering contract design, observability, and governance expectations as usage patterns become less predictable. The discussion emphasized practical design tradeoffs teams can adopt without rewriting their entire stack.',
+    links: [
+      {
+        label: 'Organizer Post',
+        url: 'https://example.com/ai-ready-apis-organizer-post',
+        type: 'host',
+      },
+      {
+        label: 'Speaker Mention',
+        url: 'https://example.com/ai-ready-apis-speaker-mention',
+        type: 'speaker',
+      },
+      {
+        label: 'My Recap Thread',
+        url: 'https://example.com/ai-ready-apis-recap',
+        type: 'me',
+      },
+    ],
     images:{
       image1: aiapi1,
       image2: aiapi2,
@@ -49,8 +86,24 @@ const speakingItems = [
   {
     id: 'speaking-03',
     title: 'AI in Tech: Teammate or Threat',
+    role: 'Panelist',
     context: 'Community Discussion Session',
     date: '2026-01-31',
+    location: 'Lagos, Nigeria',
+    description:
+      'I joined a community panel unpacking how AI tools are changing engineering roles, team collaboration, and hiring expectations. My contribution centered on using AI as a teammate for speed while preserving human judgment for architecture and quality decisions.',
+    links: [
+      {
+        label: 'Community Invite',
+        url: 'https://example.com/ai-in-tech-community-invite',
+        type: 'ticket',
+      },
+      {
+        label: 'Attendee Reflection',
+        url: 'https://example.com/ai-in-tech-attendee-post',
+        type: 'attendee',
+      },
+    ],
     images:{
       image1: devbyte,
       image2: devbyte2,
@@ -60,8 +113,24 @@ const speakingItems = [
   {
     id: 'speaking-04',
     title: 'API Conference Lagos 2025',
+    role: 'Participant',
     context: 'Developer Conference',
     date: '2025-07-20',
+    location: 'Lagos, Nigeria',
+    description:
+      'I participated in conference sessions focused on API design standards, developer experience, and scaling integration ecosystems. The event helped me capture implementation patterns and ecosystem lessons that now inform how I shape platform conversations.',
+    links: [
+      {
+        label: 'Conference Event Page',
+        url: 'https://example.com/api-conference-lagos-2025',
+        type: 'host',
+      },
+      {
+        label: 'Ticket / Invite',
+        url: 'https://example.com/api-conference-lagos-2025-ticket',
+        type: 'ticket',
+      },
+    ],
     images:{
       image1: apidays1,
       image2: apidays2,
