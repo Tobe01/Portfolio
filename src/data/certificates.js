@@ -1,155 +1,156 @@
+import aifordevs from '../../public/certificates/164-ai-for-developers-ii-certificate-tobechi-duru.pdf';
+import githubfundamentals from '../../public/certificates/Achievements - tobechiduru-6866 _ Microsoft Learn (Github-Fundamentals).pdf';
+import maintainrepo from '../../public/certificates/Achievements - tobechiduru-6866 _ Microsoft Learn (Maintain-Repo).pdf';
+import githubadmin from '../../public/certificates/Achievements - tobechiduru-6866 _ Microsoft Learn(Github-Admin).pdf';
+import microsoftlearn from '../../public/certificates/Achievements - tobechiduru-6866 _ Microsoft Learn.pdf';
+import apisecfundamentals from '../../public/certificates/APIsecCourseCertificateFinal20260209-32-nl18gk.pdf';
+import owaspapi from '../../public/certificates/APIsecCourseCertificateFinal20260209-32-tlbtla.pdf';
+import buildingrag from '../../public/certificates/BuildingrRag.pdf';
+import connectmongodb from '../../public/certificates/ConnectingMongo.pdf';
+import softwareengineering from '../../public/certificates/Copy of 17-short-specializations-certificate-tobechi-duru.pdf';
+import professionaldevskills from '../../public/certificates/Copy of 52-professional-foundations-certificate-tobechi-duru.pdf';
+import careeressentials from '../../public/certificates/Copy of 66-alx-aice-ai-career-essentials-certificate-tobechi-duru.pdf';
+import aistarter from '../../public/certificates/Copy of IMG_8722.pdf';
+import javascriptessentials from '../../public/certificates/Copy of javascript.pdf';
+import nse from '../../public/certificates/Copy of NSE.pdf';
+import typescriptoperators from '../../public/certificates/Coursera 94WS65K91CBQ.pdf';
+import typescriptvariables from '../../public/certificates/Coursera JTYF0WGNK1Z0.pdf';
+import mongodbcrud from '../../public/certificates/MongoDB CRUD Operations in Node.js.pdf';
+import mongodbshell from '../../public/certificates/Shell.pdf';
+
 const certificates = [
   {
     id: 'cert-01',
     title: 'AI For Developers',
     issuer: 'ALX',
     year: 2024,
-    credentialUrl: 'https://drive.google.com/file/d/1juVz2npHL6IVfv4L1BUjFxNQNLZGALv4/view?usp=drive_link',
-    Image: '',
+    credentialUrl: aifordevs,
   },
   {
     id: 'cert-02',
     title: 'GitHub fundamentals',
     issuer: 'Microsoft',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1sm7HnOWrZBBI7EpDyhryHxeXWeuNPDco/view?usp=drive_link',
-    Image: '',
+    credentialUrl: githubfundamentals,
   },
   {
     id: 'cert-03',
     title: 'Maintain a secure Github repository',
     issuer: 'Microsoft',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1MURfv0jVT9GCFTiKMV3Ea_BruhZdE5g0/view?usp=drive_link',
-    Image: '',
+    credentialUrl: maintainrepo,
   },
   {
     id: 'cert-04',
     title: 'Implement continuous (CI/CD) in Microsoft Fabric',
     issuer: 'Microsoft',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1N8zZFQ3Ne4TzV_XeVjCBQfPwoutKnx20/view?usp=drive_link',
-    Image: '',
+    credentialUrl: microsoftlearn,
   },
   {
     id: 'cert-05',
     title: 'Introduction to GitHub administration',
     issuer: 'Microsoft',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1t_3B0hx41SlSM76zmskxV8zG3Pxct10q/view?usp=drive_link',
-    Image: '',
+    credentialUrl: githubadmin,
   },
   {
     id: 'cert-06',
     title: 'API Security Fundamentals',
     issuer: 'APISEC University',
     year: 2026,
-    credentialUrl: 'https://drive.google.com/file/d/1NB-qX_Gh2O-vE0jAPw-NdpLub7tmjROr/view?usp=drive_link',
-    Image: '',
+    credentialUrl: apisecfundamentals,
   },
   {
     id: 'cert-07',
     title: 'OWASP API Security',
     issuer: 'APISEC University',
     year: 2026,
-    credentialUrl: 'https://drive.google.com/file/d/1bCjNyUR1uadw7ZE78HR1DU0U2DeXMiyr/view?usp=drive_link',
-    Image: '',
+    credentialUrl: owaspapi,
   },
   {
     id: 'cert-08',
     title: 'Building RAG Apps using MongoDB',
     issuer: 'MongoDB',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/19nHkD8jmwsrpiWU-BA8P2_NTSS-S-J3j/view?usp=drive_link',
-    Image: '',
+    credentialUrl: buildingrag,
   },
   {
     id: 'cert-09',
     title: 'Connecting to MongoDB in Node.js',
     issuer: 'MongoDB',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1YDjfoL0wjxGJwT5ygc8gjltc5JU5KTdq/view?usp=drive_link',
-    Image: '',
+    credentialUrl: connectmongodb,
   },
   {
     id: 'cert-10',
     title: 'Software Engineering Diploma',
     issuer: 'ALX',
     year: 2024,
-    credentialUrl: 'https://drive.google.com/file/d/1D20ybEVcAoEz58qbpV3sBWbHBSYbrFHm/view?usp=drive_link',
-    Image: '',
+    credentialUrl: softwareengineering,
   },
   {
     id: 'cert-11',
     title: 'Professional Development Skills For Digital ',
     issuer: 'ALX',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/166-6NT-afHIDChtUmXS6t580CciJdOnW/view?usp=drive_link',
-    Image: '',
+    credentialUrl: professionaldevskills,
   },
   {
     id: 'cert-12',
     title: 'AI Career Essentials',
     issuer: 'ALX',
     year: 2024,
-    credentialUrl: 'https://drive.google.com/file/d/1bM0KVVXO9IF6wOlzzr2gjZ_n5t7gzsNx/view?usp=drive_link',
-    Image: '',
+    credentialUrl: careeressentials,
   },
   {
     id: 'cert-13',
     title: 'AI Starter Kit',
     issuer: 'ALX',
     year: 2024,
-    credentialUrl: 'https://drive.google.com/file/d/1C7GmlfH9YoRfHZhU5um4b3LxyLg6wiOZ/view?usp=drive_link',
-    Image: '',
+    credentialUrl: aistarter,
   },
   {
     id: 'cert-14',
     title: 'JavaScript Essentials 1',
     issuer: 'Cisco',
     year: 2023,
-    credentialUrl: 'https://drive.google.com/file/d/1ZHZoOtgsu-V_aB-bal35RjiXviwDWCJu/view?usp=drive_link',
-    Image: '',
+    credentialUrl: javascriptessentials,
   },
   {
     id: 'cert-15',
     title: 'Graduate Membership Nigeria Society of Engineers',
     issuer: 'Nigeria Society of Engineers (NSE)',
     year: 2023,
-    credentialUrl: 'https://drive.google.com/file/d/1KTL5_0NytKT51WgM45lSUjChyTLEkfSw/view?usp=drive_link',
-    Image: '',
+    credentialUrl: nse,
   },
   {
     id: 'cert-16',
     title: 'TypeScript Operators',
     issuer: 'Coursera',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1uDVk_TFzSV5_6xphuCgOVG0p5i4tOP4G/view?usp=drive_link',
-    Image: '',
+    credentialUrl: typescriptoperators,
   },
   {
     id: 'cert-17',
     title: 'TypeScript Variables and Data Types',
     issuer: 'Coursera',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/146UMb7zNyIN5gDVxVSk42Z1eaBwEqLaG/view?usp=drive_link',
-    Image: '',
+    credentialUrl: typescriptvariables,
   },
   {
     id: 'cert-18',
     title: 'MongoDB CRUD Operations in Node.js',
     issuer: 'MongoDB',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1iMHxn8XRaIJ28YvETg9_TIcrO3q0dBB2/view?usp=drive_link',
-    Image: '',
+    credentialUrl: mongodbcrud,
   },
   {
     id: 'cert-19',
     title: 'Connectiong to a MongoDB Database via MongoDB Shell',
     issuer: 'MongoDB',
     year: 2025,
-    credentialUrl: 'https://drive.google.com/file/d/1q1WzDXLMhOa2jq-0lNS7tA9jwfGRdYNH/view?usp=drive_link',
-    Image: '',
+    credentialUrl: mongodbshell,
   },
 ]
 

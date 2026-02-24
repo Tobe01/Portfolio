@@ -12,8 +12,8 @@ const profile = {
       to: '/projects',
     },
     secondaryCta: {
-      label: 'Download Resume',
-      href: '/resume.pdf',
+      label: 'Open Resume',
+      href: '/Tobechi_Duru_Resume.pdf',
     },
   },
   about: {
@@ -37,7 +37,7 @@ const profile = {
     title: 'Resume',
     description:
       'View or download a printable resume. Replace the placeholder file in public/resume.pdf.',
-    fileUrl: '/resume.pdf',
+    fileUrl: '/Tobechi_Duru_Resume.pdf',
   },
   pageHeaders: {
     projects: {
