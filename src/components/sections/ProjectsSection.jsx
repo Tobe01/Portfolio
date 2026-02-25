@@ -66,7 +66,7 @@ function ProjectsSection({
   const projectStack = activeProject?.stack ?? [];
   const projectChallenges = activeProject?.challenges ?? [];
   const projectPanelDescription =
-    activeProject?.longDescription || activeProject?.description;
+    activeProject?.briefDescription || activeProject?.description;
 
   useEffect(() => {
     const swiperInstance = projectSwiperRef.current;
@@ -325,7 +325,7 @@ function ProjectsSection({
               <p className="project-modal__tagline">{activeProject.tagline}</p>
             </header>
 
-            <p>{activeProject.description}</p>
+            <p>{activeProject.longDescription}</p>
 
             <section className="project-modal__section">
               <h4>My involvement</h4>

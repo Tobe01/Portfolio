@@ -646,8 +646,8 @@ main {
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: 0 10px 24px -20px var(--color-shadow);
-  padding: 10px;
-   min-height: min(72vw, 20rem);
+  padding: 20px;
+  min-height: min(72vw, 15rem);
   display: flex;
 }
 
@@ -732,6 +732,7 @@ main {
 }
 
 .modal {
+  --modal-padding: var(--space-6);
   width: min(54rem, 100%);
   max-height: min(92vh, 52rem);
   overflow: auto;
@@ -740,9 +741,14 @@ main {
   border: 1px solid var(--color-border);
   background: var(--color-bg);
   box-shadow: 0 26px 46px -30px var(--color-shadow);
-  padding: var(--space-6);
+  padding: var(--modal-padding);
   position: relative;
   animation: modal-content-enter 240ms ease;
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
 }
 
 .modal__close {
@@ -759,6 +765,33 @@ main {
   place-items: center;
   cursor: pointer;
   z-index: 999;
+}
+
+.modal-fade-top,
+.modal-fade-bottom {
+  position: absolute;
+  left: var(--modal-padding);
+  right: var(--modal-padding);
+  height: 1.375rem;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.modal-fade-top {
+  top: var(--modal-padding);
+  background: linear-gradient(to bottom, var(--color-bg), transparent);
+}
+
+.modal-fade-bottom {
+  bottom: var(--modal-padding);
+  background: linear-gradient(to top, var(--color-bg), transparent);
+}
+
+.modal-fade-top.is-visible,
+.modal-fade-bottom.is-visible {
+  opacity: 1;
 }
 
 .project-modal {
@@ -1220,6 +1253,11 @@ main {
   .modal {
     animation: none;
   }
+
+  .modal-fade-top,
+  .modal-fade-bottom {
+    transition: none;
+  }
 }
 
 @media (max-width: 80rem) {
@@ -1294,7 +1332,7 @@ main {
   }
 
   .modal {
-    padding: var(--space-5);
+    --modal-padding: var(--space-5);
   }
 
   .certificate-grid {
