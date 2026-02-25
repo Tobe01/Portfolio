@@ -330,12 +330,12 @@ main {
   box-shadow: 0 10px 24px -20px var(--color-shadow);
 }
 
-.about-focus img{
+.about-focus img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.about-focus img:nth-child(2){
+.about-focus img:nth-child(2) {
   margin-top: 2px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -437,7 +437,7 @@ main {
   padding: 20px 0.72rem;
 }
 
-.skills-title-icon{
+.skills-title-icon {
   display: flex;
   font-weight: bold;
   font-size: 20px;
@@ -447,13 +447,13 @@ main {
   gap: 7px;
 }
 
-.skills-button{
- display: flex;
- gap: 10px;
- margin-top: 10px;
+.skills-button {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.skills-button button{
+.skills-button button {
   display: flex;
   background-color: var(--color-bg-soft);
   border: 1px solid grey;
@@ -582,7 +582,7 @@ main {
   gap: var(--space-3);
 }
 
-.radio-arrow-button{
+.radio-arrow-button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -663,14 +663,14 @@ main {
   height: fit-content;
 }
 
-.paragraph-div{
+.paragraph-div {
   color: var(--color-text-muted);
   line-height: 1.7;
   height: 100%;
   padding-top: 10px;
 }
 
-.details-div{
+.details-div {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -991,13 +991,13 @@ main {
   /* gap: var(--space-3); */
 }
 
-.row-slider button:first-child{
+.row-slider button:first-child {
   position: absolute;
   top: 40%;
-  left:-20px;
+  left: -20px;
 }
 
-.row-slider button:nth-child(3){
+.row-slider button:nth-child(3) {
   position: absolute;
   top: 40%;
   right: -20px;

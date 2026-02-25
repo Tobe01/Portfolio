@@ -20,7 +20,7 @@ const projects = [
       "TanStack Query",
       "Axios",
       "LocalStorage (persistence)",
-],
+    ],
     challenges: [
       "Designing a scalable component system that stays consistent across product listing, product details, cart, and checkout surfaces.",
       "Maintaining predictable cart state and UI state across route transitions and refreshes without state corruption.",
@@ -62,7 +62,7 @@ const projects = [
       "Jest",
       "Supertest",
       "REST APIs",
-],
+    ],
     challenges: [
       "Maintaining contract alignment between frontend and backend as endpoints evolved during MVP development.",
       "Designing an admin/content workflow that stays simple for editors while remaining structurally scalable in code.",
@@ -97,7 +97,7 @@ const projects = [
       "Recharts",
       "React Toastify",
       "LocalStorage (persistence)",
-],
+    ],
     challenges: [
       "Designing a type-safe transaction model and ensuring transformations (totals, categories, time ranges) stay correct.",
       "Building chart-friendly aggregations without performance issues as the dataset grows.",
@@ -131,7 +131,7 @@ const projects = [
       "TanStack Query",
       "React Toastify",
       "LocalStorage (conversation persistence)",
-],
+    ],
     challenges: [
       "Designing chat state management that stays stable under rapid user input and asynchronous responses.",
       "Building a resilient request layer with timeouts, retries, and graceful error UI without breaking the conversation flow.",

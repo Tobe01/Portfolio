@@ -205,9 +205,7 @@ function ProjectsSection({
                         <button
                           aria-label={`Open project details for ${project.name}`}
                           className="project-slide"
-                          onClick={() =>
-                            handleProjectCardClick(index)
-                          }
+                          onClick={() => handleProjectCardClick(index)}
                           type="button"
                         >
                           <img
@@ -252,7 +250,7 @@ function ProjectsSection({
                       {activeProject.tagline}
                     </span>
                     <div className="paragraph-div">
-                     <p>{projectPanelDescription}</p>
+                      <p>{projectPanelDescription}</p>
                     </div>
                     <div className="details-div">
                       <button
@@ -277,7 +275,6 @@ function ProjectsSection({
                 className="slider-controls slider-controls--projects projects-controls-row"
                 delay={140}
               >
-
                 <div
                   aria-label="Project pagination"
                   className="projects-controls__dots"
