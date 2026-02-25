@@ -222,9 +222,9 @@ function ProjectsSection({
                           />
                           <span className="project-slide__overlay" />
                           <span className="project-slide__content">
-                            <span className="project-slide__title">
+                            {/* <span className="project-slide__title">
                               {project.name}
-                            </span>
+                            </span> */}
                           </span>
                         </button>
                       </Reveal>
@@ -371,7 +371,7 @@ function ProjectsSection({
               ) : null}
 
               {!projectLinks.liveUrl && !projectLinks.repoUrl ? (
-                <p className="section-muted">Links will be added soon.</p>
+                <p className="section-muted">Development in progress (75%). Not yet production-ready.</p>
               ) : null}
             </div>
           </div>

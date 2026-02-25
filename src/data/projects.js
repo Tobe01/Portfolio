@@ -1,8 +1,7 @@
 import bot from '../../public/images/projects/bot.webp';
-import devbyte from '../../public/images/projects/devbyte.webp';
 import qnap from '../../public/images/projects/qnap.webp';
-import zay from '../../public/images/projects/zay.webp';
-import zayra from '../../public/images/projects/zayra.webp';
+import zee from '../../public/images/projects/zee.webp';
+import dee from '../../public/images/projects/dee.webp';
 
 const projects = [
   {
@@ -34,10 +33,10 @@ const projects = [
       "Managing loading, empty, and error states cleanly across data-driven UI while keeping UX snappy.",
     ],
     links: {
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com/example',
+      liveUrl: 'https://tobe-zayra-stores.vercel.app/',
+      repoUrl: 'https://github.com/Tobe01/zayraStores',
     },
-    coverImage: zayra,
+    coverImage: zee,
     featured: true,
     cta: 'Project Details',
   },
@@ -77,10 +76,10 @@ const projects = [
       "Handling authentication states and protected routes without creating brittle navigation edge cases.",
     ],
     links: {
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com/example',
+      liveUrl: '',
+      repoUrl: '',
     },
-    coverImage: devbyte,
+    coverImage: dee,
     featured: true,
     cta: 'Project Details',
   },
@@ -111,8 +110,8 @@ const projects = [
       "Keeping UI feedback reliable across actions while avoiding duplicated toasts and inconsistent states.",
     ],
     links: {
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com/example',
+      liveUrl: 'https://tobe-quiknapp.vercel.app/',
+      repoUrl: 'https://github.com/Tobe01/QuikNapp',
     },
     coverImage: qnap,
     featured: false,
@@ -144,8 +143,8 @@ const projects = [
       "Handling response formatting and message rendering (links, code blocks, long text) while keeping UI clean.",
     ],
     links: {
-      liveUrl: 'https://example.com',
-      repoUrl: 'https://github.com/example',
+      liveUrl: '',
+      repoUrl: '',
     },
     coverImage: bot,
     featured: false,
