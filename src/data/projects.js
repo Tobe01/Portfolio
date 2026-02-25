@@ -1,3 +1,9 @@
+import bot from '../../public/images/projects/bot.webp';
+import devbyte from '../../public/images/projects/devbyte.webp';
+import qnap from '../../public/images/projects/qnap.webp';
+import zay from '../../public/images/projects/zay.webp';
+import zayra from '../../public/images/projects/zayra.webp';
+
 const projects = [
   {
     id: 'Zayra Stores',
@@ -31,7 +37,7 @@ const projects = [
       liveUrl: 'https://example.com',
       repoUrl: 'https://github.com/example',
     },
-    coverImage: '/images/project-1.svg',
+    coverImage: zayra,
     featured: true,
     cta: 'Project Details',
   },
@@ -74,7 +80,7 @@ const projects = [
       liveUrl: 'https://example.com',
       repoUrl: 'https://github.com/example',
     },
-    coverImage: '/images/project-2.svg',
+    coverImage: devbyte,
     featured: true,
     cta: 'Project Details',
   },
@@ -108,7 +114,7 @@ const projects = [
       liveUrl: 'https://example.com',
       repoUrl: 'https://github.com/example',
     },
-    coverImage: '/images/project-3.svg',
+    coverImage: qnap,
     featured: false,
     cta: 'Project Details',
   },
@@ -141,7 +147,7 @@ const projects = [
       liveUrl: 'https://example.com',
       repoUrl: 'https://github.com/example',
     },
-    coverImage: '/images/project-4.svg',
+    coverImage: bot,
     featured: false,
     cta: 'Project Details',
   },
