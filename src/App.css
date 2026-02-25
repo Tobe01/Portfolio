@@ -326,13 +326,21 @@ main {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   padding: 9px;
-  /* padding: var(--space-5); */
   background: var(--color-surface);
   box-shadow: 0 10px 24px -20px var(--color-shadow);
 }
 
 .about-focus img{
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.about-focus img:nth-child(2){
+  margin-top: 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .about-focus h3 {
@@ -574,24 +582,11 @@ main {
   gap: var(--space-3);
 }
 
-.projects-controls__dots {
-  /* min-width: 0; */
-  display: flex;
-  flex-direction: column;
-  width: 520px;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
 .radio-arrow-button{
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
 }
 
@@ -651,9 +646,8 @@ main {
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: 0 10px 24px -20px var(--color-shadow);
-  padding: var(--space-5);
-  /* min-height: min(72vw, 28rem); */
-   min-height: min(72vw, 23rem);
+  padding: 10px;
+   min-height: min(72vw, 20rem);
   display: flex;
 }
 
@@ -669,11 +663,17 @@ main {
   height: fit-content;
 }
 
-.project-description-panel__content p {
+.paragraph-div{
   color: var(--color-text-muted);
   line-height: 1.7;
   height: 100%;
   padding-top: 10px;
+}
+
+.details-div{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 @keyframes project-description-enter {
@@ -735,6 +735,7 @@ main {
   width: min(54rem, 100%);
   max-height: min(92vh, 52rem);
   overflow: auto;
+  scrollbar-width: none;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   background: var(--color-bg);
@@ -757,6 +758,7 @@ main {
   display: grid;
   place-items: center;
   cursor: pointer;
+  z-index: 999;
 }
 
 .project-modal {

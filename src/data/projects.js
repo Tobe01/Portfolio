@@ -20,8 +20,9 @@ const projects = [
       repoUrl: 'https://github.com/example',
     },
     coverImage: '/images/project-1.svg',
-    images: ['/images/shot-1.svg', '/images/shot-2.svg', '/images/shot-3.svg'],
+    // images: ['/images/shot-1.svg', '/images/shot-2.svg', '/images/shot-3.svg'],
     featured: true,
+    cta: 'Project Details',
   },
   {
     id: 'design-system-platform',
@@ -44,8 +45,9 @@ const projects = [
       repoUrl: 'https://github.com/example',
     },
     coverImage: '/images/project-2.svg',
-    images: ['/images/shot-2.svg', '/images/shot-4.svg', '/images/shot-5.svg'],
+    // images: ['/images/shot-2.svg', '/images/shot-4.svg', '/images/shot-5.svg'],
     featured: true,
+    cta: 'Project Details',
   },
   {
     id: 'analytics-workbench',
@@ -68,8 +70,9 @@ const projects = [
       repoUrl: 'https://github.com/example',
     },
     coverImage: '/images/project-3.svg',
-    images: ['/images/shot-3.svg', '/images/shot-4.svg', '/images/shot-6.svg'],
+    // images: ['/images/shot-3.svg', '/images/shot-4.svg', '/images/shot-6.svg'],
     featured: false,
+    cta: 'Project Details',
   },
   {
     id: 'identity-onboarding',
@@ -92,8 +95,9 @@ const projects = [
       repoUrl: 'https://github.com/example',
     },
     coverImage: '/images/project-4.svg',
-    images: ['/images/shot-1.svg', '/images/shot-5.svg', '/images/shot-6.svg'],
+    // images: ['/images/shot-1.svg', '/images/shot-5.svg', '/images/shot-6.svg'],
     featured: false,
+    cta: 'Project Details',
   },
 ]
 

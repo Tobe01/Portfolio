@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   A11y,
   Autoplay,
@@ -40,6 +40,12 @@ function ProjectsSection({
   );
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const projectSwiperRef = useRef(null);
+  const activeProjectIndex = useMemo(
+    () => projects.findIndex((project) => project.id === activeProjectId),
+    [activeProjectId],
+  );
+  const resolvedActiveProjectIndex =
+    activeProjectIndex >= 0 ? activeProjectIndex : 0;
 
   const activeProject = useMemo(
     () =>
@@ -53,49 +59,105 @@ function ProjectsSection({
     setIsProjectModalOpen(false);
   };
 
-  const activeProjectIndex = useMemo(
-    () => projects.findIndex((project) => project.id === activeProjectId),
-    [activeProjectId],
-  );
-
   const modalTitleId = activeProject
     ? `${activeProject.id}-modal-title`
     : undefined;
   const projectLinks = activeProject?.links ?? {};
-  const projectScreenshots = activeProject?.images ?? [];
   const projectStack = activeProject?.stack ?? [];
   const projectChallenges = activeProject?.challenges ?? [];
   const projectPanelDescription =
     activeProject?.longDescription || activeProject?.description;
 
+  useEffect(() => {
+    const swiperInstance = projectSwiperRef.current;
+
+    if (!swiperInstance?.autoplay) {
+      return;
+    }
+
+    if (isProjectModalOpen) {
+      swiperInstance.autoplay.stop();
+      return;
+    }
+
+    if (swiperInstance.params?.autoplay) {
+      swiperInstance.autoplay.start();
+    }
+  }, [isProjectModalOpen]);
+
   const handleProjectSlideChange = (swiperInstance) => {
+    if (isProjectModalOpen) {
+      return;
+    }
+
     const nextProjectId = projects[swiperInstance.realIndex]?.id;
-    if (nextProjectId) {
+    if (nextProjectId && nextProjectId !== activeProjectId) {
       setActiveProjectId(nextProjectId);
     }
   };
 
-  const handleProjectCardClick = (projectId, index) => {
-    setActiveProjectId(projectId);
+  const openProjectModalForIndex = (projectIndex) => {
+    const selectedProject = projects[projectIndex];
+
+    if (!selectedProject) {
+      return;
+    }
+
+    setActiveProjectId(selectedProject.id);
+
     if (
       projectSwiperRef.current &&
-      projectSwiperRef.current.realIndex !== index
+      projectSwiperRef.current.realIndex !== projectIndex
     ) {
-      projectSwiperRef.current.slideToLoop(index);
+      projectSwiperRef.current.slideToLoop(projectIndex);
     }
+
+    projectSwiperRef.current?.autoplay?.stop();
     setIsProjectModalOpen(true);
   };
 
+  const handleProjectCardClick = (projectIndex) => {
+    openProjectModalForIndex(projectIndex);
+  };
+
+  const handleProjectDetailsClick = () => {
+    openProjectModalForIndex(resolvedActiveProjectIndex);
+  };
+
   const goToPreviousProject = () => {
-    projectSwiperRef.current?.slidePrev();
+    if (!projects.length) {
+      return;
+    }
+
+    const previousProjectIndex =
+      resolvedActiveProjectIndex <= 0
+        ? projects.length - 1
+        : resolvedActiveProjectIndex - 1;
+    const previousProjectId = projects[previousProjectIndex]?.id;
+
+    if (previousProjectId) {
+      setActiveProjectId(previousProjectId);
+    }
+
+    projectSwiperRef.current?.slideToLoop(previousProjectIndex);
   };
 
   const goToNextProject = () => {
-    projectSwiperRef.current?.slideNext();
-  };
+    if (!projects.length) {
+      return;
+    }
 
-  const goToProject = (projectIndex) => {
-    projectSwiperRef.current?.slideToLoop(projectIndex);
+    const nextProjectIndex =
+      resolvedActiveProjectIndex >= projects.length - 1
+        ? 0
+        : resolvedActiveProjectIndex + 1;
+    const nextProjectId = projects[nextProjectIndex]?.id;
+
+    if (nextProjectId) {
+      setActiveProjectId(nextProjectId);
+    }
+
+    projectSwiperRef.current?.slideToLoop(nextProjectIndex);
   };
 
   return (
@@ -122,7 +184,7 @@ function ProjectsSection({
                   grabCursor
                   keyboard={{ enabled: true }}
                   loopAdditionalSlides={projects.length}
-                  loopPreventsSliding={false}
+                  loopPreventsSliding
                   loop
                   modules={PROJECT_SWIPER_MODULES}
                   onRealIndexChange={handleProjectSlideChange}
@@ -144,7 +206,7 @@ function ProjectsSection({
                           aria-label={`Open project details for ${project.name}`}
                           className="project-slide"
                           onClick={() =>
-                            handleProjectCardClick(project.id, index)
+                            handleProjectCardClick(index)
                           }
                           type="button"
                         >
@@ -164,9 +226,6 @@ function ProjectsSection({
                           <span className="project-slide__content">
                             <span className="project-slide__title">
                               {project.name}
-                            </span>
-                            <span className="project-slide__tagline">
-                              {project.tagline}
                             </span>
                           </span>
                         </button>
@@ -189,7 +248,22 @@ function ProjectsSection({
                     key={activeProject.id}
                   >
                     <h3>{activeProject.name}</h3>
-                    <p>{projectPanelDescription}</p>
+                    <span className="project-slide__tagline">
+                      {activeProject.tagline}
+                    </span>
+                    <div className="paragraph-div">
+                     <p>{projectPanelDescription}</p>
+                    </div>
+                    <div className="details-div">
+                      <button
+                        aria-label={`Open project details for ${activeProject.name}`}
+                        className="button button--secondary"
+                        onClick={handleProjectDetailsClick}
+                        type="button"
+                      >
+                        {activeProject.cta}
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <p className="section-muted">
@@ -203,38 +277,12 @@ function ProjectsSection({
                 className="slider-controls slider-controls--projects projects-controls-row"
                 delay={140}
               >
-                {/* <button
-                  aria-label="Previous project"
-                  className="slider-arrow"
-                  onClick={goToPreviousProject}
-                  type="button"
-                >
-                  <Icon name="arrow-left" size={16} />
-                </button> */}
 
                 <div
                   aria-label="Project pagination"
                   className="projects-controls__dots"
                   role="radiogroup"
                 >
-                  <div>
-                    {projects.map((project, index) => {
-                      const isActive = index === activeProjectIndex;
-
-                      return (
-                        <button
-                          aria-label={`Go to project ${index + 1}: ${project.name}`}
-                          aria-checked={isActive}
-                          className={`projects-controls__dot${isActive ? " is-active" : ""}`}
-                          key={`project-dot-${project.id}`}
-                          onClick={() => goToProject(index)}
-                          role="radio"
-                          type="button"
-                        />
-                      );
-                    })}
-                  </div>
-
                   <div className="radio-arrow-button">
                     <button
                       aria-label="Previous project"
@@ -255,15 +303,6 @@ function ProjectsSection({
                     </button>
                   </div>
                 </div>
-
-                {/* <button
-                  aria-label="Next project"
-                  className="slider-arrow"
-                  onClick={goToNextProject}
-                  type="button"
-                >
-                  <Icon name="arrow-right" size={16} />
-                </button> */}
               </Reveal>
             </div>
           </div>
@@ -338,37 +377,6 @@ function ProjectsSection({
                 <p className="section-muted">Links will be added soon.</p>
               ) : null}
             </div>
-
-            <section className="project-modal__section">
-              <h4>Screenshots</h4>
-              {projectScreenshots.length ? (
-                <Swiper
-                  className="project-shots-swiper"
-                  keyboard={{ enabled: true }}
-                  modules={[Navigation, Pagination, Keyboard, A11y]}
-                  navigation
-                  pagination={{ clickable: true }}
-                  slidesPerView={1}
-                  spaceBetween={12}
-                >
-                  {projectScreenshots.map((imagePath, index) => (
-                    <SwiperSlide key={`${activeProject.id}-shot-${index + 1}`}>
-                      <img
-                        alt={`${activeProject.name} screenshot ${index + 1}`}
-                        className="project-shot"
-                        loading="lazy"
-                        onError={(event) => {
-                          event.currentTarget.src = IMAGE_FALLBACK;
-                        }}
-                        src={imagePath}
-                      />
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              ) : (
-                <p className="section-muted">Screenshots will be added soon.</p>
-              )}
-            </section>
           </div>
         ) : null}
       </Modal>

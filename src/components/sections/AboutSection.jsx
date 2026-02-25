@@ -2,6 +2,7 @@ import profile from '../../data/profile'
 import Container from '../layout/Container'
 import Reveal from '../ui/Reveal'
 import stats from '../../../public/images/stats.webp'
+import github from '../../../public/images/github.webp'
 
 function AboutSection() {
   const { about } = profile
@@ -21,13 +22,8 @@ function AboutSection() {
             ))}
           </div>
           <Reveal as="div" className="about-focus" delay={140}>
-            {/* <h3>Focus Areas</h3>
-            <ul>
-              {about.focusAreas.map((focusArea) => (
-                <li key={focusArea}>{focusArea}</li>
-              ))}
-            </ul> */}
-            <img src={stats} alt='stats' loading='lazy' />
+             <img src={stats} alt='stats' loading='lazy' />
+             <img src={github} alt='stats' loading='lazy' />
           </Reveal>
         </div>
       </Container>
