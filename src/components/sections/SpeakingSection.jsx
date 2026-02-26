@@ -14,6 +14,8 @@ const EVENT_LINK_TYPES = {
   speaker: "Speaker",
   ticket: "Ticket",
 };
+const VIDEO_FILE_SOURCE_PATTERN = /\.(mp4|webm|ogg|mov|m4v)(\?.*)?$/i;
+const EMBED_VIDEO_HOST_PATTERN = /(youtube\.com|youtu\.be|vimeo\.com)/i;
 
 const formatEventDate = (dateValue) => {
   if (!dateValue) {
@@ -80,6 +82,104 @@ const getEventLinks = (item) => {
     });
 };
 
+const getEventVideos = (item) => {
+  if (!Array.isArray(item?.videos)) {
+    return [];
+  }
+
+  return item.videos
+    .map((videoItem) => {
+      if (typeof videoItem === "string") {
+        const source = videoItem.trim();
+        return source ? { src: source } : null;
+      }
+
+      if (!videoItem || typeof videoItem !== "object") {
+        return null;
+      }
+
+      const source =
+        typeof videoItem.src === "string" ? videoItem.src.trim() : "";
+
+      if (!source) {
+        return null;
+      }
+
+      return {
+        src: source,
+        thumbnail:
+          typeof videoItem.thumbnail === "string" && videoItem.thumbnail.trim()
+            ? videoItem.thumbnail.trim()
+            : null,
+        title:
+          typeof videoItem.title === "string" && videoItem.title.trim()
+            ? videoItem.title.trim()
+            : null,
+      };
+    })
+    .filter(Boolean);
+};
+
+const isEmbedVideoSource = (source) => {
+  if (typeof source !== "string") {
+    return false;
+  }
+
+  const normalizedSource = source.trim();
+  if (!normalizedSource || VIDEO_FILE_SOURCE_PATTERN.test(normalizedSource)) {
+    return false;
+  }
+
+  return (
+    normalizedSource.includes("/embed/") ||
+    EMBED_VIDEO_HOST_PATTERN.test(normalizedSource)
+  );
+};
+
+const getEmbedVideoUrl = (source) => {
+  if (!isEmbedVideoSource(source)) {
+    return null;
+  }
+
+  try {
+    const sourceUrl = new URL(source);
+    const normalizedHost = sourceUrl.hostname.replace(/^www\./i, "");
+
+    if (
+      normalizedHost === "youtube.com" ||
+      normalizedHost === "m.youtube.com"
+    ) {
+      if (sourceUrl.pathname.includes("/embed/")) {
+        return source;
+      }
+
+      const videoId = sourceUrl.searchParams.get("v");
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : source;
+    }
+
+    if (normalizedHost === "youtu.be") {
+      const videoId = sourceUrl.pathname.split("/").filter(Boolean)[0];
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : source;
+    }
+
+    if (
+      normalizedHost === "vimeo.com" ||
+      normalizedHost === "player.vimeo.com"
+    ) {
+      if (sourceUrl.pathname.includes("/video/")) {
+        return source;
+      }
+
+      const videoId = sourceUrl.pathname.split("/").filter(Boolean)[0];
+      return videoId ? `https://player.vimeo.com/video/${videoId}` : source;
+    }
+
+    return source;
+  } catch {
+    return source;
+  }
+};
+
 function SpeakingSection({
   description = "Talks and community sessions focused on frontend architecture and delivery quality.",
   id = "speaking",
@@ -103,6 +203,9 @@ function SpeakingSection({
   });
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isVideoOverlayOpen, setIsVideoOverlayOpen] = useState(false);
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
+  const activeVideoRef = useRef(null);
   const selectedEventImages = useMemo(
     () => getEventImages(selectedEvent),
     [selectedEvent],
@@ -111,6 +214,19 @@ function SpeakingSection({
     () => getEventLinks(selectedEvent),
     [selectedEvent],
   );
+  const selectedEventVideos = useMemo(
+    () => getEventVideos(selectedEvent),
+    [selectedEvent],
+  );
+  const selectedEventHasVideos = selectedEventVideos.length > 0;
+  const normalizedActiveVideoIndex =
+    selectedEventVideos.length > 0
+      ? Math.min(activeVideoIndex, selectedEventVideos.length - 1)
+      : 0;
+  const activeEventVideo = selectedEventVideos[normalizedActiveVideoIndex] || null;
+  const activeEventVideoSource = activeEventVideo?.src || "";
+  const activeEventVideoEmbedUrl = getEmbedVideoUrl(activeEventVideoSource);
+  const activeEventVideoIsEmbed = Boolean(activeEventVideoEmbedUrl);
   const selectedEventDetails = useMemo(
     () =>
       [
@@ -171,6 +287,15 @@ function SpeakingSection({
     [],
   );
 
+  const pauseActiveVideo = useCallback(() => {
+    if (
+      activeVideoRef.current &&
+      typeof activeVideoRef.current.pause === "function"
+    ) {
+      activeVideoRef.current.pause();
+    }
+  }, []);
+
   const openEventGallery = useCallback((item) => {
     if (!item) {
       return;
@@ -178,12 +303,32 @@ function SpeakingSection({
 
     setSelectedEvent(item);
     setActiveImageIndex(0);
+    setIsVideoOverlayOpen(false);
+    setActiveVideoIndex(0);
   }, []);
 
   const closeEventGallery = useCallback(() => {
+    pauseActiveVideo();
+    setIsVideoOverlayOpen(false);
+    setActiveVideoIndex(0);
     setSelectedEvent(null);
     setActiveImageIndex(0);
-  }, []);
+  }, [pauseActiveVideo]);
+
+  const openVideoOverlay = useCallback(() => {
+    if (!selectedEventVideos.length) {
+      return;
+    }
+
+    setActiveVideoIndex(0);
+    setIsVideoOverlayOpen(true);
+  }, [selectedEventVideos.length]);
+
+  const closeVideoOverlay = useCallback(() => {
+    pauseActiveVideo();
+    setIsVideoOverlayOpen(false);
+    setActiveVideoIndex(0);
+  }, [pauseActiveVideo]);
 
   const showPreviousImage = useCallback(() => {
     if (selectedEventImages.length <= 1) {
@@ -205,8 +350,30 @@ function SpeakingSection({
     );
   }, [selectedEventImages.length]);
 
+  const showPreviousVideo = useCallback(() => {
+    if (selectedEventVideos.length <= 1) {
+      return;
+    }
+
+    pauseActiveVideo();
+    setActiveVideoIndex((currentIndex) =>
+      currentIndex === 0 ? selectedEventVideos.length - 1 : currentIndex - 1,
+    );
+  }, [pauseActiveVideo, selectedEventVideos.length]);
+
+  const showNextVideo = useCallback(() => {
+    if (selectedEventVideos.length <= 1) {
+      return;
+    }
+
+    pauseActiveVideo();
+    setActiveVideoIndex((currentIndex) =>
+      currentIndex === selectedEventVideos.length - 1 ? 0 : currentIndex + 1,
+    );
+  }, [pauseActiveVideo, selectedEventVideos.length]);
+
   useEffect(() => {
-    if (!selectedEvent || selectedEventImages.length <= 1) {
+    if (!selectedEvent || selectedEventImages.length <= 1 || isVideoOverlayOpen) {
       return undefined;
     }
 
@@ -228,10 +395,54 @@ function SpeakingSection({
       document.removeEventListener("keydown", handleArrowNavigation);
     };
   }, [
+    isVideoOverlayOpen,
     selectedEvent,
     selectedEventImages.length,
     showNextImage,
     showPreviousImage,
+  ]);
+
+  useEffect(() => {
+    if (!isVideoOverlayOpen) {
+      return undefined;
+    }
+
+    const handleVideoOverlayNavigation = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
+        closeVideoOverlay();
+        return;
+      }
+
+      if (selectedEventVideos.length > 1 && event.key === "ArrowLeft") {
+        event.preventDefault();
+        event.stopPropagation();
+        showPreviousVideo();
+      }
+
+      if (selectedEventVideos.length > 1 && event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        showNextVideo();
+      }
+    };
+
+    document.addEventListener("keydown", handleVideoOverlayNavigation, true);
+
+    return () => {
+      document.removeEventListener(
+        "keydown",
+        handleVideoOverlayNavigation,
+        true,
+      );
+    };
+  }, [
+    closeVideoOverlay,
+    isVideoOverlayOpen,
+    selectedEventVideos.length,
+    showNextVideo,
+    showPreviousVideo,
   ]);
 
   const suppressCardOpenTemporarily = () => {
@@ -471,9 +682,22 @@ function SpeakingSection({
               style={{
                 display: "grid",
                 gap: "var(--space-4)",
+                position: "relative",
               }}
             >
-              {selectedEventImages.length ? (
+              <div
+                aria-hidden={isVideoOverlayOpen}
+                style={{
+                  display: "grid",
+                  filter: isVideoOverlayOpen ? "blur(4px)" : "none",
+                  gap: "var(--space-4)",
+                  opacity: isVideoOverlayOpen ? 0.36 : 1,
+                  pointerEvents: isVideoOverlayOpen ? "none" : "auto",
+                  transition:
+                    "filter var(--transition-base), opacity var(--transition-base)",
+                }}
+              >
+                {selectedEventImages.length ? (
                 <>
                   <div
                     style={{
@@ -585,7 +809,7 @@ function SpeakingSection({
                     </p>
                   </div>
                 </>
-              ) : (
+                ) : (
                 <div
                   style={{
                     border: "1px solid var(--color-border)",
@@ -599,7 +823,7 @@ function SpeakingSection({
                     Event gallery images are not available yet for this item.
                   </p>
                 </div>
-              )}
+                )}
 
               <section
                 style={{
@@ -703,22 +927,199 @@ function SpeakingSection({
                 </section>
               ) : null}
 
-              {selectedEvent.notionUrl ? (
-                <a
+                <button
                   className="button button--secondary"
-                  href={selectedEvent.notionUrl}
-                  rel="noreferrer"
-                  style={{ width: "fit-content" }}
-                  target="_blank"
+                  disabled={!selectedEventHasVideos}
+                  onClick={openVideoOverlay}
+                  style={{
+                    cursor: selectedEventHasVideos ? "pointer" : "not-allowed",
+                    opacity: selectedEventHasVideos ? 1 : 0.62,
+                    width: "fit-content",
+                    background: "white",
+                    color: "black"
+                  }}
+                  type="button"
                 >
-                  <span>More Details</span>
-                  <Icon name="external" size={14} />
-                </a>
-              ) : (
-                <p className="section-muted">
-                  More details will be added soon.
-                </p>
-              )}
+                  <span>
+                    {selectedEventHasVideos
+                      ? "Video Highlights"
+                      : "No video for this event"}
+                  </span>
+                  <Icon name="arrow-right" size={14} />
+                </button>
+              </div>
+
+              {isVideoOverlayOpen ? (
+                <section
+                  aria-label="Event video highlights"
+                  role="dialog"
+                  style={{
+                    alignItems: "center",
+                    background: "rgba(0, 0, 0, 0.58)",
+                    borderRadius: "var(--radius-md)",
+                    display: "grid",
+                    inset: 0,
+                    padding: "var(--space-3)",
+                    position: "absolute",
+                    zIndex: 5,
+                  }}
+                >
+                  <div
+                    style={{
+                      background: "var(--color-bg)",
+                      margin: "auto",
+                      border: "1px solid var(--color-border)",
+                      borderRadius: "var(--radius-md)",
+                      boxShadow: "0 18px 40px -32px var(--color-shadow)",
+                      display: "grid",
+                      gap: "var(--space-3)",
+                      maxWidth: "min(100%, 46rem)",
+                      padding: "var(--space-3)",
+                      width: "100%",
+                    }}
+                  >
+                    <div
+                      style={{
+                        alignItems: "center",
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontFamily: "var(--font-heading)",
+                          margin: 0,
+                        }}
+                      >
+                        Video Highlights
+                      </p>
+                      <button
+                        aria-label="Close video highlights"
+                        className="slider-arrow"
+                        onClick={closeVideoOverlay}
+                        type="button"
+                      >
+                        <Icon name="close" size={16} />
+                      </button>
+                    </div>
+
+                    <div
+                      style={{
+                        alignItems: "center",
+                        background: "var(--color-bg-soft)",
+                        border: "1px solid var(--color-border)",
+                        borderRadius: "var(--radius-md)",
+                        display: "grid",
+                        minHeight: "min(58vh, 26rem)",
+                        overflow: "hidden",
+                        padding: "var(--space-2)",
+                        position: "relative",
+                      }}
+                    >
+                      {activeEventVideo ? (
+                        activeEventVideoIsEmbed ? (
+                          <iframe
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            src={activeEventVideoEmbedUrl}
+                            style={{
+                              border: 0,
+                              borderRadius: "calc(var(--radius-md) - 0.2rem)",
+                              height: "100%",
+                              minHeight: "min(54vh, 23rem)",
+                              width: "100%",
+                            }}
+                            title={
+                              activeEventVideo.title ||
+                              `${selectedEvent.title} video ${normalizedActiveVideoIndex + 1}`
+                            }
+                          />
+                        ) : (
+                          <video
+                            controls
+                            ref={activeVideoRef}
+                            src={activeEventVideoSource}
+                            style={{
+                              borderRadius: "calc(var(--radius-md) - 0.2rem)",
+                              height: "100%",
+                              maxHeight: "min(54vh, 23rem)",
+                              width: "100%",
+                            }}
+                          >
+                            Your browser does not support the video tag.
+                          </video>
+                        )
+                      ) : null}
+
+                      {selectedEventVideos.length > 1 ? (
+                        <>
+                          <button
+                            aria-label="Show previous event video"
+                            className="slider-arrow"
+                            onClick={showPreviousVideo}
+                            style={{
+                              backdropFilter: "blur(6px)",
+                              left: "var(--space-3)",
+                              position: "absolute",
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                            }}
+                            type="button"
+                          >
+                            <Icon name="arrow-left" size={16} />
+                          </button>
+                          <button
+                            aria-label="Show next event video"
+                            className="slider-arrow"
+                            onClick={showNextVideo}
+                            style={{
+                              backdropFilter: "blur(6px)",
+                              position: "absolute",
+                              right: "var(--space-3)",
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                            }}
+                            type="button"
+                          >
+                            <Icon name="arrow-right" size={16} />
+                          </button>
+                        </>
+                      ) : null}
+                    </div>
+
+                    <div
+                      style={{
+                        alignItems: "center",
+                        display: "flex",
+                        gap: "var(--space-2)",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <p
+                        style={{
+                          margin: 0,
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap",
+                        }}
+                      >
+                        {activeEventVideo?.title || "Session highlight"}
+                      </p>
+                      <p
+                        aria-live="polite"
+                        style={{
+                          fontVariantNumeric: "tabular-nums",
+                          margin: 0,
+                        }}
+                      >
+                        {normalizedActiveVideoIndex + 1} /{" "}
+                        {selectedEventVideos.length}
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              ) : null}
             </div>
           ) : null}
         </Modal>

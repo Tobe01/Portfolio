@@ -41,6 +41,7 @@ const speakingItems = [
     images:{
       image1: softwareroadmap,
     },
+    videos: [],
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
   {
@@ -81,6 +82,16 @@ const speakingItems = [
       image9: aiapi9,
       image10: aiapi10,
     },
+    videos: [
+      {
+        src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+        title: 'AI Ready APIs session highlight 1',
+      },
+      {
+        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        title: 'AI Ready APIs session highlight 2',
+      },
+    ],
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
   {
@@ -108,6 +119,7 @@ const speakingItems = [
       image1: devbyte,
       image2: devbyte2,
     },
+    videos: [],
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
   {
@@ -137,6 +149,7 @@ const speakingItems = [
       image3: apidays3,
       image4: apidays4,
     },
+    videos: [],
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
 ]
