@@ -29,12 +29,12 @@ const speakingItems = [
     links: [
       {
         label: 'Host Event Announcement',
-        url: 'https://example.com/software-engineering-roadmap-event',
+        url: 'https://www.linkedin.com/posts/chinaza-chukwunweike-72395b185_upcoming-event-alert-topic-software-activity-7432363813162725377-WLMA?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
         type: 'host',
       },
       {
         label: 'My Session Recap',
-        url: 'https://example.com/software-engineering-roadmap-recap',
+        url: 'https://www.linkedin.com/posts/tobechiduru_softwareengineering-careergrowth-techcommunity-activity-7432378174967005184-4FdC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
         type: 'me',
       },
     ],
@@ -55,17 +55,17 @@ const speakingItems = [
     links: [
       {
         label: 'Organizer Post',
-        url: 'https://example.com/ai-ready-apis-organizer-post',
+        url: 'https://www.linkedin.com/posts/gbahdeyboh_apiconnect-apis-ai-activity-7426236413827985408-qOdh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
         type: 'host',
       },
       {
         label: 'Speaker Mention',
-        url: 'https://example.com/ai-ready-apis-speaker-mention',
+        url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7426610955884617728?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7426610955884617728%2C7426696939221544960%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287426696939221544960%2Curn%3Ali%3AugcPost%3A7426610955884617728%29',
         type: 'speaker',
       },
       {
         label: 'My Recap Thread',
-        url: 'https://example.com/ai-ready-apis-recap',
+        url: 'https://www.linkedin.com/posts/tobechiduru_apiconnect-apis-apistrategy-activity-7426610957356892160-0WjS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
         type: 'me',
       },
     ],
@@ -122,12 +122,12 @@ const speakingItems = [
     links: [
       {
         label: 'Conference Event Page',
-        url: 'https://example.com/api-conference-lagos-2025',
+        url: 'https://luma.com/ltp8u2bb?tk=LCKnSA',
         type: 'host',
       },
       {
         label: 'Ticket / Invite',
-        url: 'https://example.com/api-conference-lagos-2025-ticket',
+        url: 'https://drive.google.com/file/d/1c7FEu_FB6VHCp9vWCJH4OZDKX9Le0fdW/view?usp=sharing',
         type: 'ticket',
       },
     ],

@@ -20,6 +20,8 @@ const profile = {
     title: 'About Me',
     paragraphs: [
       'I am a top-rated frontend engineer with 3+ years of experience shipping React applications from MVP to enterprise scale. My recent work has centered on design system governance, performance budgets, and platform-level frontend standards.',
+      
+      'Frontend architecture and maintainable component design, Accessibility compliance and, inclusive interaction patterns, Performance optimization, Core Web Vitals, and bundle strategy',
     ],
     focusAreas: [
       'Frontend architecture and maintainable component design',

@@ -1350,6 +1350,16 @@ main {
   }
 }
 
+@media (max-width: 40rem) {
+  .row-slider--certificates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .row-slider--certificates > .slider-arrow {
+    display: none;
+  }
+}
+
 @media (min-width: 64rem) {
   .site-header__inner {
     grid-template-columns: auto 1fr auto;

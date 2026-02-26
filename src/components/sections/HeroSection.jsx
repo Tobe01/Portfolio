@@ -26,7 +26,7 @@ function HeroSection() {
   const handleDownloadResume = () => {
     const downloadLink = document.createElement('a')
     downloadLink.href = resume.fileUrl || hero.secondaryCta.href
-    downloadLink.setAttribute('download', 'resume.pdf')
+    downloadLink.setAttribute('download', 'Tobechi_Duru_Resume.pdf')
     document.body.appendChild(downloadLink)
     downloadLink.click()
     document.body.removeChild(downloadLink)
