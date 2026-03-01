@@ -84,7 +84,7 @@ const speakingItems = [
     },
     videos: [
       {
-        src: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4',
+        src: 'https://res.cloudinary.com/dtkqsteil/video/upload/v1772229300/dji_mimo_20260207_132902_0_1770479233346_video2_1_1_1_bzyu1j.mp4jjj',
         title: 'AI Ready APIs session highlight 1',
       },
       {
