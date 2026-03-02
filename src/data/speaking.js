@@ -15,6 +15,7 @@ import apidays2 from '../../public/speaking/IMG_2330.webp';
 import apidays3 from '../../public/speaking/polish_save.webp';
 import apidays4 from '../../public/speaking/IMG_0831.webp';
 import softwareroadmap from '../../public/speaking/IMG_2320.webp';
+import spacewrap from'../../public/speaking/IMG_2398 (1).webp';
 
 const speakingItems = [
   {
@@ -33,13 +34,14 @@ const speakingItems = [
         type: 'host',
       },
       {
-        label: 'My Session Recap',
-        url: 'https://www.linkedin.com/posts/tobechiduru_softwareengineering-careergrowth-techcommunity-activity-7432378174967005184-4FdC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        label: 'Event Recap',
+        url: 'https://x.com/i/spaces/1dGYljazNooKX?s=20',
         type: 'me',
       },
     ],
     images:{
       image1: softwareroadmap,
+      image2: spacewrap,
     },
     videos: [],
     notionUrl: 'https://example.com/speaking-platform-thinking',

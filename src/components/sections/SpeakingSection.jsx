@@ -10,7 +10,7 @@ const CARD_DRAG_THRESHOLD = 8;
 const EVENT_LINK_TYPES = {
   attendee: "Attendee",
   host: "Host",
-  me: "My Post",
+  me: "Highlights",
   speaker: "Speaker",
   ticket: "Ticket",
 };
