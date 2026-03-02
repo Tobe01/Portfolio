@@ -84,11 +84,11 @@ const speakingItems = [
     },
     videos: [
       {
-        src: 'https://res.cloudinary.com/dtkqsteil/video/upload/v1772229300/dji_mimo_20260207_132902_0_1770479233346_video2_1_1_1_bzyu1j.mp4jjj',
+        src: 'https://res.cloudinary.com/dtkqsteil/video/upload/v1772229300/dji_mimo_20260207_132902_0_1770479233346_video2_1_1_1_bzyu1j.mp4',
         title: 'AI Ready APIs session highlight 1',
       },
       {
-        src: 'https://www.w3schools.com/html/mov_bbb.mp4',
+        src: '',
         title: 'AI Ready APIs session highlight 2',
       },
     ],
