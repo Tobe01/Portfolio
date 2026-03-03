@@ -936,7 +936,7 @@ function SpeakingSection({
                     opacity: selectedEventHasVideos ? 1 : 0.62,
                     width: "fit-content",
                     background: "white",
-                    color: "black"
+                    color: "black",
                   }}
                   type="button"
                 >
@@ -966,7 +966,8 @@ function SpeakingSection({
                 >
                   <div
                     style={{
-                      background: "var(--color-bg)",
+                      // background: "var(--color-bg)",
+                      background: "red",
                       margin: "auto",
                       border: "1px solid var(--color-border)",
                       borderRadius: "var(--radius-md)",
@@ -1006,7 +1007,8 @@ function SpeakingSection({
                     <div
                       style={{
                         alignItems: "center",
-                        background: "var(--color-bg-soft)",
+                        // background: "var(--color-bg-soft)",
+                        background: "green",
                         border: "1px solid var(--color-border)",
                         borderRadius: "var(--radius-md)",
                         display: "grid",
@@ -1029,6 +1031,7 @@ function SpeakingSection({
                               height: "100%",
                               minHeight: "min(54vh, 23rem)",
                               width: "100%",
+                              whiteSpace: "nowrap",
                             }}
                             title={
                               activeEventVideo.title ||
