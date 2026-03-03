@@ -54,7 +54,7 @@ const speakingItems = [
     date: '2026-02-08',
     location: 'Lagos, Nigeria',
     description:
-      'I facilitated a breakout on preparing API platforms for AI workloads, covering contract design, observability, and governance expectations as usage patterns become less predictable. The discussion emphasized practical design tradeoffs teams can adopt without rewriting their entire stack.',
+      'I facilitated a breakout at API Connect (API Conf, Lagos) on preparing API platforms for AI workloads, focusing on LLM-friendly contracts, consistent response patterns, and the observability and governance needed for agent-driven integrations. We used the ALATPay API walkthrough as a reference point and worked through real AI-API design challenges, highlighting practical tradeoffs teams can adopt without rewriting their entire stack, hosted by ALAT by Wema (Bank) and organized by API Conf, Lagos (Gbadebo Bello).',
     links: [
       {
         label: 'Organizer Post',
@@ -107,14 +107,24 @@ const speakingItems = [
       'I joined a community panel unpacking how AI tools are changing engineering roles, team collaboration, and hiring expectations. My contribution centered on using AI as a teammate for speed while preserving human judgment for architecture and quality decisions.',
     links: [
       {
-        label: 'Community Invite',
-        url: 'https://example.com/ai-in-tech-community-invite',
-        type: 'ticket',
+        label: 'Host Event Announcement',
+        url: 'https://www.linkedin.com/posts/okikiola-oladipupo_this-weekend-ill-be-co-hosting-a-devbyte-activity-7421566739043209216-rfZK?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        type: 'host',
       },
       {
-        label: 'Attendee Reflection',
-        url: 'https://example.com/ai-in-tech-attendee-post',
-        type: 'attendee',
+        label: 'Speaker Announcement',
+        url: 'https://www.linkedin.com/posts/samuel-abolo-24431a176_back-in-december-i-shared-that-i-wanted-activity-7421873090881683456-7_tb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        type: 'speaker',
+      },
+      {
+        label: 'Speaker Announcement',
+        url: 'https://www.linkedin.com/posts/chinaza-chukwunweike-72395b185_super-excited-to-be-speaking-at-an-upcoming-activity-7422579353043173377-XVfG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        type: 'speaker',
+      },
+      {
+        label: 'Speaker Announcement',
+        url: 'https://www.linkedin.com/posts/manuchimoliver_a-few-years-ago-we-only-worried-about-writing-activity-7422666090159177729-aD4q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        type: 'speaker',
       },
     ],
     images:{
@@ -143,6 +153,16 @@ const speakingItems = [
         label: 'Ticket / Invite',
         url: 'https://drive.google.com/file/d/1c7FEu_FB6VHCp9vWCJH4OZDKX9Le0fdW/view?usp=sharing',
         type: 'ticket',
+      },
+      {
+        label: 'My Recap Thread',
+        url: 'https://www.linkedin.com/posts/tobechiduru_apiconferencelagos-apis-softwareengineering-activity-7353888095433322496-uAg3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        type: 'me',
+      },
+      {
+        label: 'Speaker Mention',
+        url: 'https://www.linkedin.com/feed/update/urn:li:ugcPost:7353888093558497282?commentUrn=urn%3Ali%3Acomment%3A%28ugcPost%3A7353888093558497282%2C7358565956672991232%29&dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287358565956672991232%2Curn%3Ali%3AugcPost%3A7353888093558497282%29',
+        type: 'speaker',
       },
     ],
     images:{
