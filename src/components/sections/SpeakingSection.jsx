@@ -966,8 +966,6 @@ function SpeakingSection({
                 >
                   <div
                     style={{
-                      // background: "var(--color-bg)",
-                      background: "red",
                       margin: "auto",
                       border: "1px solid var(--color-border)",
                       borderRadius: "var(--radius-md)",
@@ -977,6 +975,8 @@ function SpeakingSection({
                       maxWidth: "min(100%, 46rem)",
                       padding: "var(--space-3)",
                       width: "100%",
+                      whiteSpace: "nowrap",
+                      flexWrap: "none",
                     }}
                   >
                     <div
@@ -1007,8 +1007,7 @@ function SpeakingSection({
                     <div
                       style={{
                         alignItems: "center",
-                        // background: "var(--color-bg-soft)",
-                        background: "green",
+                        background: "var(--color-bg-soft)",
                         border: "1px solid var(--color-border)",
                         borderRadius: "var(--radius-md)",
                         display: "grid",
