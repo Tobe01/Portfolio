@@ -21,8 +21,11 @@ import languages from '../assets/icons/proicons--code-square.svg';
 import apiDesign from '../assets/icons/proicons--terminal.svg';
 import frameworks from '../assets/icons/proicons--layers.svg';
 import database from '../assets/icons/proicons--database.svg';
-import security from '../assets/icons/proicons--lock.svg';
 import kafka from '../assets/icons/skill-icons--kafka.svg';
+import nodejs from '../assets/icons/skill-icons--nodejs-dark.svg';
+import express from '../assets/icons/skill-icons--expressjs-dark.svg';
+import ServerSide from '../assets/icons/proicons--server.svg';
+import nestjs from '../assets/icons/skill-icons--nestjs-dark.svg';
 
 const skillCategories = [
   {
@@ -73,7 +76,6 @@ const skillCategories = [
       icon: `${redux}`,
       label: 'Redux Toolkit'
     },
-
   },
   {
     id: 'databases',
@@ -98,7 +100,23 @@ const skillCategories = [
       icon: `${mongoDB}`,
       label: 'MongoDB'
     },
-
+  },
+  {
+    id: 'Server-side',
+    tag: `${ServerSide}`,
+    title: 'Server-side',
+    item1: {
+      icon: `${nodejs}`,
+      label: 'Node.js'
+    },
+    item2: {
+      icon: `${express}`,
+      label: 'Express.js'
+    },
+    item3: {
+      icon: `${nestjs}`,
+      label: 'Nest.js'
+    },
   },
   {
     id: 'infrastructure',
@@ -123,7 +141,6 @@ const skillCategories = [
       icon: `${aws}`,
       label: 'AWS'
     },
-
   },
   {
     id: 'api-design',
@@ -143,32 +160,6 @@ const skillCategories = [
       icon: `${fastApi}`,
       label: 'FastAPI',
     },
-
-    item4: {
-      icon: `${redis}`,
-      label: 'RabbitMQ',
-    },
-
-  },
-  {
-    id: 'security',
-    tag: `${security}`,
-    title: 'Security Tools',
-    item1: {
-      icon: `${react}`,
-      label: 'Snyk',
-    },
-
-    item2: {
-      icon: `${fastApi}`,
-      label: 'OWASP ZAP',
-    },
-
-    item3: {
-      icon: `${kafka}`,
-      label: 'Dependabot'
-    },
-
   },
 ]
 

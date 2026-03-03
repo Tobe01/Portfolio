@@ -4,6 +4,7 @@ import Container from '../layout/Container'
 import Icon from '../ui/Icon'
 import Modal from '../ui/Modal'
 import Reveal from '../ui/Reveal'
+import loaderspin from '../../assets/svg-spinners--eclipse-half.svg'
 
 function CertificatesSection() {
   const sliderViewportRef = useRef(null)
@@ -139,9 +140,7 @@ function CertificatesSection() {
               </p>
               <div className="resume-modal__viewer">
                 {isCredentialLoading ? (
-                  <p className="section-muted" style={{ padding: 'var(--space-4)' }}>
-                    Loading credential...
-                  </p>
+                  <img style={{ padding: 'var(--space-4)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 'auto' }} src={loaderspin} alt='loaderSpinner' loading='spinner' />
                 ) : null}
                 <iframe
                   key={selectedCertificate.id}

@@ -181,7 +181,7 @@ const getEmbedVideoUrl = (source) => {
 };
 
 function SpeakingSection({
-  description = "Talks and community sessions focused on frontend architecture and delivery quality.",
+  description = "Talks and community sessions focused on practical frontend architecture, product craft, and scalable UI systems.",
   id = "speaking",
   title = "Speaking & Community",
 }) {
