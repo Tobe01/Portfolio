@@ -3,8 +3,8 @@
 Personal portfolio website showcasing projects, writing, and community/speaking activity. Built to load fast, read well on mobile, and present work clearly with clean UI and consistent components.
 
 ## Live Site
-- Website: [](https://tobechiduru.vercel.app/)
-- Repo: [](https://github.com/Tobe01/Portfolio)
+- Website: (https://tobechiduru.vercel.app/)
+- Repo: (https://github.com/Tobe01/Portfolio)
 
 ## Sections
 - Hero + About
