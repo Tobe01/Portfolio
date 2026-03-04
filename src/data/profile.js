@@ -19,7 +19,7 @@ const profile = {
   about: {
     title: 'About Me',
     paragraphs: [
-      'I am a top-rated frontend engineer with 3+ years of experience shipping React applications from MVP to enterprise scale. My recent work has focused on building and maintaining reusable UI systems, setting frontend standards that keep teams aligned, and improving performance and accessibility in ways that show up in real user experience.',
+      'I am a top-rated frontend engineer with #3+ years of experience shipping React applications from MVP to enterprise scale. My recent work has focused on building and maintaining reusable UI systems, setting frontend standards that keep teams aligned, and improving performance and accessibility in ways that show up in real user experience.',
 
       'I’m comfortable operating across design and engineering, translating product goals into clear interfaces, and owning the details that make apps feel polished as features and contributors grow.',
     ],
