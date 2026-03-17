@@ -16,10 +16,57 @@ import apidays3 from '../../public/speaking/polish_save.webp';
 import apidays4 from '../../public/speaking/IMG_0831.webp';
 import softwareroadmap from '../../public/speaking/IMG_2320.webp';
 import spacewrap from'../../public/speaking/IMG_2398 (1).webp';
+import moment1 from '../../public/speaking/IMG_2665.JPG';
+import moment2 from '../../public/speaking/IMG_2666.JPG';
+import moment3 from '../../public/speaking/IMG_2674.JPG';
+import moment4 from '../../public/speaking/Tobechi-Duru-Moment-Conference-4x5-impact (1) (1).png';
 
 const speakingItems = [
   {
     id: 'speaking-01',
+    title: 'MoMENT 2026 (by Mainstack)',
+    role: 'Event Operations/check-in & Audience Experience Volunteer',
+    context: 'Large-scale creator economy conference connecting creators, brands, and digital platforms across Africa',
+    date: 'March 13–15, 2026',
+    location: 'Landmark Event Centre, Lagos, Nigeria',
+    description:
+      'Selected as part of the operations/check-in team for a 4,000+ attendee, multi-stage conference featuring 100+ speakers and 150+ brands. Supported audience experience and on-ground coordination across sessions, ensuring smooth flow of activities in a high-traffic environment. Collaborated with cross-functional teams including logistics, protocol, and stage management to maintain event efficiency and attendee satisfaction. Gained exposure to large-scale event execution, stakeholder coordination, and real-time problem-solving in a fast-paced, high-impact setting.',
+    links: [
+      {
+        label: 'Host Event Announcement',
+        url: 'https://moment.mainstack.com/',
+        type: 'host',
+      },
+      {
+        label: 'Event Recap',
+        url: 'https://www.linkedin.com/posts/tobechiduru_softwareengineering-productthinking-systemsdesign-activity-7439633799963123712-700y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAC5tZYEBzMxy7qSqDXhXPTLZSxFxcz24zdQ',
+        type: 'me',
+      },
+    ],
+    images:{
+      image1: moment1,
+      image2: moment2,
+      image3: moment4,
+      image4: moment3,
+    },
+    videos: [
+      {
+        src: 'https://res.cloudinary.com/dtkqsteil/video/upload/v1773740455/22BE341A-D5C0-446C-A69C-F6336EC3137E_rflmu2.mp4',
+        title: '',
+      },
+      {
+        src: 'https://res.cloudinary.com/dtkqsteil/video/upload/v1773740437/B09760C2-CA46-4C77-941A-EFBA41CACB4F_ok3uue.mp4',
+        title: '',
+      },
+      {
+        src: 'https://res.cloudinary.com/dtkqsteil/video/upload/v1773740413/D1D138B0-B944-4735-BC4E-742A8EB954AB_nuynmi.mp4',
+        title: '',
+      },
+    ],
+    notionUrl: 'https://example.com/speaking-platform-thinking',
+  },
+  {
+    id: 'speaking-02',
     title: 'Software Engineering Roadmap: A software engineers guide to building a great career',
     role: 'Speaker',
     context: 'Speaker Session',
