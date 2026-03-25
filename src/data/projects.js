@@ -2,8 +2,40 @@ import bot from '../../public/images/projects/bot.webp';
 import qnap from '../../public/images/projects/qnap.webp';
 import zee from '../../public/images/projects/zee.webp';
 import dee from '../../public/images/projects/dee.webp';
+import flow from '../../public/images/projects/flowapp.webp';
 
 const projects = [
+  {
+    id: 'StockFlow',
+    name: 'StockFlow',
+    tagline: 'Order-driven inventory system for a restaurant (with real-world constraints)',
+    longDescription:
+      'StockFlow is a frontend-focused simulation of a restaurant operating system designed to reflect real-world workflows in high-volume environments. The application models how orders, inventory, and kitchen operations interact, with a strong emphasis on state-driven UI, real-time updates, and offline-first behavior. At its core, the system implements an order-driven inventory model where menu items are mapped to ingredient-level recipes. When orders are placed via a POS interface, inventory is automatically adjusted based on ingredient consumption, ensuring consistency between sales and stock levels. The project also simulates a full order lifecycle (Pending → Preparing → Completed), demonstrating how UI state transitions mirror real operational processes within a restaurant setting. This approach highlights system thinking beyond traditional CRUD applications.',
+    briefDescription:
+      'An order-driven restaurant inventory system that models real-world POS workflows, where orders placed through a cashier interface automatically trigger ingredient-level stock deductions. The system emphasizes real-time updates, clear order lifecycle management, and offline-first behavior to simulate operations in environments with unreliable network conditions.',
+    involvement:
+      'Designed and built the entire frontend architecture, including POS workflows, order lifecycle management, and inventory logic. Defined the system behavior, data flow, and UI state transitions, with a focus on performance, usability, and real-world constraints.',
+    stack: [ "React.js",
+      "Tailwind CSS",
+      "Zustand (State Management)",
+      "IndexedDB (Offline Storage)",
+      "Vite",
+    ],
+    challenges: [
+      "Designing an order-driven inventory system that maps menu items to ingredient-level deductions",
+      "Handling state consistency between orders and inventory in a real-time UI",
+      "Simulating offline-first behavior with local storage and sync logic",
+      "Modeling a multi-state order lifecycle (Pending → Preparing → Completed)",
+      "Structuring the frontend to reflect real-world POS workflows instead of simple CRUD patterns"
+    ],
+    links: {
+      liveUrl: '',
+      repoUrl: '',
+    },
+    coverImage: flow,
+    featured: true,
+    cta: 'Project Details',
+  },
   {
     id: 'Zayra Stores',
     name: 'Zayra Stores',

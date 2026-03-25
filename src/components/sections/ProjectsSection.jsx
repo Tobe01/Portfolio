@@ -222,9 +222,6 @@ function ProjectsSection({
                           />
                           <span className="project-slide__overlay" />
                           <span className="project-slide__content">
-                            {/* <span className="project-slide__title">
-                              {project.name}
-                            </span> */}
                           </span>
                         </button>
                       </Reveal>

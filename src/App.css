@@ -682,6 +682,7 @@ main {
 }
 
 .details-div {
+  margin-top: 10px;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
