@@ -221,8 +221,7 @@ function ProjectsSection({
                             }
                           />
                           <span className="project-slide__overlay" />
-                          <span className="project-slide__content">
-                          </span>
+                          <span className="project-slide__content"></span>
                         </button>
                       </Reveal>
                     </SwiperSlide>
@@ -259,44 +258,44 @@ function ProjectsSection({
                         {activeProject.cta}
                       </button>
                     </div>
+
+                    <Reveal
+                      as="div"
+                      className="slider-controls slider-controls--projects projects-controls-row"
+                      delay={140}
+                    >
+                      <div
+                        aria-label="Project pagination"
+                        className="projects-controls__dots"
+                        role="radiogroup"
+                      >
+                        <div className="radio-arrow-button">
+                          <button
+                            aria-label="Previous project"
+                            className="slider-arrow"
+                            onClick={goToPreviousProject}
+                            type="button"
+                          >
+                            <Icon name="arrow-left" size={16} />
+                          </button>
+
+                          <button
+                            aria-label="Next project"
+                            className="slider-arrow"
+                            onClick={goToNextProject}
+                            type="button"
+                          >
+                            <Icon name="arrow-right" size={16} />
+                          </button>
+                        </div>
+                      </div>
+                    </Reveal>
                   </div>
                 ) : (
                   <p className="section-muted">
                     Project details will be available soon.
                   </p>
                 )}
-              </Reveal>
-
-              <Reveal
-                as="div"
-                className="slider-controls slider-controls--projects projects-controls-row"
-                delay={140}
-              >
-                <div
-                  aria-label="Project pagination"
-                  className="projects-controls__dots"
-                  role="radiogroup"
-                >
-                  <div className="radio-arrow-button">
-                    <button
-                      aria-label="Previous project"
-                      className="slider-arrow"
-                      onClick={goToPreviousProject}
-                      type="button"
-                    >
-                      <Icon name="arrow-left" size={16} />
-                    </button>
-
-                    <button
-                      aria-label="Next project"
-                      className="slider-arrow"
-                      onClick={goToNextProject}
-                      type="button"
-                    >
-                      <Icon name="arrow-right" size={16} />
-                    </button>
-                  </div>
-                </div>
               </Reveal>
             </div>
           </div>
@@ -368,7 +367,9 @@ function ProjectsSection({
               ) : null}
 
               {!projectLinks.liveUrl && !projectLinks.repoUrl ? (
-                <p className="section-muted">Development in progress (75%). Not yet production-ready.</p>
+                <p className="section-muted">
+                  Development in progress (75%). Not yet production-ready.
+                </p>
               ) : null}
             </div>
           </div>

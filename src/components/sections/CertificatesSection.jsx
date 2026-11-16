@@ -6,7 +6,10 @@ import Modal from '../ui/Modal'
 import Reveal from '../ui/Reveal'
 import loaderspin from '../../assets/svg-spinners--eclipse-half.svg'
 
-function CertificatesSection() {
+function CertificatesSection({
+  description = "Professional certifications and training highlighting technical expertise, continuous learning, and practical software engineering skills.",
+  title = "Certificates",
+}) {
   const sliderViewportRef = useRef(null)
   const [selectedCertificate, setSelectedCertificate] = useState(null)
   const [isCredentialLoading, setIsCredentialLoading] = useState(false)
@@ -73,7 +76,8 @@ function CertificatesSection() {
     <section className="section" id="certificates">
       <Container>
         <Reveal as="div" className="section-heading">
-          <h2>Certificates</h2>
+          <h2>{title}</h2>
+          <p className='section-description'>{description}</p>
         </Reveal>
 
         <Reveal as="div" className="row-slider row-slider--certificates" delay={40}>

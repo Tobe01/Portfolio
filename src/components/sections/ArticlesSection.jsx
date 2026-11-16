@@ -19,7 +19,7 @@ const formatPublishedDate = (dateValue) =>
   }).format(new Date(dateValue))
 
 function ArticlesSection({
-  description = 'Recent writing on frontend systems, accessibility, and engineering quality.',
+  description = 'Recent articles focused on scalable engineering architecture, frontend platform patterns, and practical accessibility.',
   id = 'articles',
   title = 'Articles',
 }) {

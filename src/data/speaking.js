@@ -20,6 +20,7 @@ import moment1 from '../../public/speaking/IMG_2665.JPG';
 import moment2 from '../../public/speaking/IMG_2666.JPG';
 import moment3 from '../../public/speaking/IMG_2674.JPG';
 import moment4 from '../../public/speaking/Tobechi-Duru-Moment-Conference-4x5-impact (1) (1).png';
+import eventGuest from '../../public/speaking/Event Flier.png';
 
 const speakingItems = [
   {
@@ -94,7 +95,7 @@ const speakingItems = [
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
   {
-    id: 'speaking-02',
+    id: 'speaking-03',
     title: 'AI Ready APIs: Rethinking Your API Strategy in the AI Era',
     role: 'Speaker',
     context: 'API Strategy Breakout Session',
@@ -144,7 +145,7 @@ const speakingItems = [
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
   {
-    id: 'speaking-03',
+    id: 'speaking-04',
     title: 'AI in Tech: Teammate or Threat',
     role: 'Panelist',
     context: 'Community Discussion Session',
@@ -182,7 +183,7 @@ const speakingItems = [
     notionUrl: 'https://example.com/speaking-platform-thinking',
   },
   {
-    id: 'speaking-04',
+    id: 'speaking-05',
     title: 'API Conference Lagos 2025',
     role: 'Participant',
     context: 'Developer Conference',
@@ -220,6 +221,33 @@ const speakingItems = [
     },
     videos: [],
     notionUrl: 'https://example.com/speaking-platform-thinking',
+  },
+  {
+    id: 'speaking-06',
+    title: 'How to go from Mid-Senior level in Tech',
+    role: 'Speaker',
+    context: 'Developer Session',
+    date: '2026-08-23',
+    location: 'Lagos, Nigeria',
+    description:
+      'Invited to share practical guidance on progressing from mid-level to senior roles in tech, including the skills, mindset, and career decisions that support growth. Spoke with the community during a live Twitter Space.',
+    links: [
+      {
+        label: 'Host Event Announcement',
+        url: 'https://lnkd.in/p/d_YQ57_E',
+        type: 'host',
+      },
+      {
+        label: 'Event Recap',
+        url: 'https://lnkd.in/p/d-z8Gamc',
+        type: 'me',
+      },
+    ],
+    images:{
+      image1: eventGuest,
+    },
+    videos: [],
+    notionUrl: 'https://twitter.com/i/spaces/1qGoNYMLPWNKv',
   },
 ]
 

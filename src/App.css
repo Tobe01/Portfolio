@@ -513,6 +513,7 @@ main {
 
 .projects-layout__details {
   min-width: 0;
+  min-height: 100%;
 }
 
 .project-slide-frame {
@@ -571,7 +572,8 @@ main {
 }
 
 .project-slide__tagline {
-  line-height: 1.4;
+  font-size: 16px;
+  line-height: 1.3;
   color: #e9e9e9;
 }
 
@@ -659,7 +661,7 @@ main {
   background: var(--color-surface);
   box-shadow: 0 10px 24px -20px var(--color-shadow);
   padding: 20px;
-  min-height: min(72vw, 15rem);
+  height: 450px;
   display: flex;
 }
 
@@ -677,9 +679,9 @@ main {
 
 .paragraph-div {
   color: var(--color-text-muted);
-  line-height: 1.7;
+  font-size: 16px;
   height: 100%;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .details-div {

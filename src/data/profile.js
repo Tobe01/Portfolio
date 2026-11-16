@@ -1,8 +1,8 @@
 const profile = {
   name: 'Tobechi Duru',
-  role: 'Frontend Engineer',
+  role: 'Software Engineer',
   hero: {
-    eyebrow: 'Top-rated Frontend Engineer',
+    eyebrow: 'Top-rated Software Engineer',
     headline: 'Tobechi Duru',
     title: 'Building resilient interfaces for real products',
     valueStatement:
@@ -19,9 +19,9 @@ const profile = {
   about: {
     title: 'About Me',
     paragraphs: [
-      'I am a top-rated frontend engineer with years of experience shipping React applications from MVP to enterprise scale. My recent work has focused on building and maintaining reusable UI systems, setting frontend standards that keep teams aligned, and improving performance and accessibility in ways that show up in real user experience.',
+      'I am a top-rated software engineer with years of experience shipping React mobile and web applications from MVP to enterprise scale. My recent work has focused on building and maintaining reusable UI systems, setting frontend standards that keep teams aligned, and improving performance and accessibility in ways that show up in real user experience.',
 
-      'I’m comfortable operating across design and engineering, translating product goals into clear interfaces, and owning the details that make apps feel polished as features and contributors grow.',
+      'I’m comfortable operating across design and engineering, translating product goals into clear interfaces, and owning the details that make apps feel polished as features and users grow.',
     ],
     focusAreas: [
       'Frontend architecture and maintainable component design',
@@ -32,7 +32,7 @@ const profile = {
   contact: {
     title: 'Contact',
     intro:
-      'I’m open to frontend opportunities where I can take end-to-end ownership of product experiences, push for high UI quality and performance, and build scalable component systems and patterns that keep teams shipping confidently as the product grows.',
+      'I’m open to mobile and web software engineering opportunities where I can take end-to-end ownership of product experiences, push for high UI quality and performance, and build scalable component systems and patterns that keep teams shipping confidently as the product grows.',
     email: 'tobechi.duru001@gmail.com',
   },
   resume: {

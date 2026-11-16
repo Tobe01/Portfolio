@@ -59,7 +59,7 @@ const skillCategories = [
     title: 'Frameworks',
     item1: {
       icon: `${react}`,
-      label: 'React'
+      label: 'React-Native'
     },
 
     item2: {

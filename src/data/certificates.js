@@ -17,6 +17,7 @@ import typescriptoperators from '../../public/certificates/Coursera 94WS65K91CBQ
 import typescriptvariables from '../../public/certificates/Coursera JTYF0WGNK1Z0.pdf';
 import mongodbcrud from '../../public/certificates/MongoDB CRUD Operations in Node.js.pdf';
 import mongodbshell from '../../public/certificates/Shell.pdf';
+import agenticSearch from '../../public/certificates/tavily-agentic-web-search-basics-skill-badge.pdf';
 
 const certificates = [
   {
@@ -151,6 +152,13 @@ const certificates = [
     issuer: 'MongoDB',
     year: 2025,
     credentialUrl: mongodbshell,
+  },
+  {
+    id: 'cert-20',
+    title: 'Agentic Web Search',
+    issuer: 'Nebius Academy',
+    year: 2026,
+    credentialUrl: agenticSearch,
   },
 ]
 
