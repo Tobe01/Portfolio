@@ -164,7 +164,7 @@ function ProjectsSection({
     <section className="section section--projects" id={id}>
       <Container>
         <Reveal as="div" className="section-heading">
-          <p className="section-eyebrow">Selected Projects</p>
+          <p className="section-eyebrow">Selected</p>
           <h2>{title}</h2>
           <p className="section-description">{description}</p>
         </Reveal>

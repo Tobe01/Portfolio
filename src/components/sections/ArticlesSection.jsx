@@ -27,7 +27,7 @@ function ArticlesSection({
     <section className="section" id={id}>
       <Container>
         <Reveal as="div" className="section-heading">
-          <p className="section-eyebrow">Latest Articles</p>
+          <p className="section-eyebrow">Latest</p>
           <h2>{title}</h2>
           <p className="section-description">{description}</p>
         </Reveal>
