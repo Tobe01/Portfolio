@@ -19,7 +19,6 @@ import spacewrap from'../../public/speaking/IMG_2398 (1).webp';
 import moment1 from '../../public/speaking/IMG_2665.JPG';
 import moment2 from '../../public/speaking/IMG_2666.JPG';
 import moment3 from '../../public/speaking/IMG_2674.JPG';
-import moment4 from '../../public/speaking/Tobechi-Duru-Moment-Conference-4x5-impact (1) (1).png';
 import eventGuest from '../../public/speaking/Event Flier.png';
 
 const speakingItems = [
@@ -47,7 +46,6 @@ const speakingItems = [
     images:{
       image1: moment1,
       image2: moment2,
-      image3: moment4,
       image4: moment3,
     },
     videos: [
