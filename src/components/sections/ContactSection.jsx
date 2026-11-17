@@ -28,7 +28,7 @@ function ContactSection() {
               type="button"
             >
               <Icon name={isCopied ? 'check' : 'copy'} size={16} />
-              <span>{isCopied ? 'Copied' : 'Copy Email'}</span>
+              <span>{isCopied ? 'Copied' : 'Copy'}</span>
             </button>
           </div>
 

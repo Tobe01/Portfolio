@@ -58,16 +58,22 @@ const profile = {
         'Talks, workshops, and community initiatives around frontend engineering quality.',
     },
   },
-  navigation: [
+    navigation: [
     { id: 'home', label: 'Home', to: '/' },
-    { id: 'about', label: 'About', to: '/#about' },
-    { id: 'skills', label: 'Skills', to: '/#skills' },
+    {
+      id: 'about',
+      label: 'About',
+      to: '/#about',
+      children: [
+        { id: 'skills', label: 'Skills', to: '/#skills' },
+        { id: 'articles', label: 'Articles', to: '/articles' },
+        { id: 'certificates', label: 'Certificates', to: '/#certificates' },
+        { id: 'contact', label: 'Contact', to: '/#contact' },
+      ],
+    },
     { id: 'projects', label: 'Projects', to: '/projects' },
-    { id: 'articles', label: 'Articles', to: '/articles' },
     { id: 'speaking', label: 'Speaking', to: '/speaking' },
-    { id: 'certificates', label: 'Certificates', to: '/#certificates' },
     { id: 'resume', label: 'Resume', to: '/resume' },
-    { id: 'contact', label: 'Contact', to: '/#contact' },
   ],
   socialLinks: [
     {

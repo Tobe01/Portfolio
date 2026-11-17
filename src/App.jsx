@@ -1,8 +1,8 @@
-
 import { ToastContainer } from 'react-toastify'
 import { Route, Routes } from 'react-router-dom'
 import SiteLayout from './components/layout/SiteLayout'
 import ScrollToHash from './routes/ScrollToHash'
+import CookieConsent from './components/ui/CookieConsent'
 import useTheme from './hooks/useTheme'
 import HomePage from './pages/HomePage'
 import ProjectsPage from './pages/ProjectsPage'
@@ -41,6 +41,7 @@ function App() {
         theme={theme === 'dark' ? 'dark' : 'light'}
         toastClassName="app-toast"
       />
+      <CookieConsent />
     </>
   )
 }
