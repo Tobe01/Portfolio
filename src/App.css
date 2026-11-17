@@ -665,7 +665,6 @@ main {
 }
 
 .radio-arrow-button {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -731,9 +730,15 @@ main {
   padding: 20px;
   height: 450px;
   display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .project-description-panel__content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: thin;
   display: flex;
   flex-direction: column;
   animation: project-description-enter 260ms ease;
@@ -748,8 +753,15 @@ main {
 .paragraph-div {
   color: var(--color-text-muted);
   font-size: 16px;
-  height: 100%;
   padding-top: 20px;
+}
+
+.project-description-panel__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
 }
 
 .details-div {

@@ -248,54 +248,49 @@ function ProjectsSection({
                     <div className="paragraph-div">
                       <p>{projectPanelDescription}</p>
                     </div>
-                    <div className="details-div">
-                      <button
-                        aria-label={`Open project details for ${activeProject.name}`}
-                        className="button button--secondary"
-                        onClick={handleProjectDetailsClick}
-                        type="button"
-                      >
-                        {activeProject.cta}
-                      </button>
-                    </div>
-
-                    <Reveal
-                      as="div"
-                      className="slider-controls slider-controls--projects projects-controls-row"
-                      delay={140}
-                    >
-                      <div
-                        aria-label="Project pagination"
-                        className="projects-controls__dots"
-                        role="radiogroup"
-                      >
-                        <div className="radio-arrow-button">
-                          <button
-                            aria-label="Previous project"
-                            className="slider-arrow"
-                            onClick={goToPreviousProject}
-                            type="button"
-                          >
-                            <Icon name="arrow-left" size={16} />
-                          </button>
-
-                          <button
-                            aria-label="Next project"
-                            className="slider-arrow"
-                            onClick={goToNextProject}
-                            type="button"
-                          >
-                            <Icon name="arrow-right" size={16} />
-                          </button>
-                        </div>
-                      </div>
-                    </Reveal>
                   </div>
                 ) : (
                   <p className="section-muted">
                     Project details will be available soon.
                   </p>
                 )}
+
+                {activeProject ? (
+                 <div className="project-description-panel__footer">
+                    <div
+                      aria-label="Project pagination"
+                      className="radio-arrow-button"
+                      role="group"
+                    >
+                      <button
+                        aria-label="Previous project"
+                        className="slider-arrow"
+                        onClick={goToPreviousProject}
+                        type="button"
+                      >
+                        <Icon name="arrow-left" size={16} />
+                      </button>
+
+                      <button
+                        aria-label="Next project"
+                        className="slider-arrow"
+                        onClick={goToNextProject}
+                        type="button"
+                      >
+                        <Icon name="arrow-right" size={16} />
+                      </button>
+                    </div>
+
+                    <button
+                      aria-label={`Open project details for ${activeProject.name}`}
+                      className="button button--secondary"
+                      onClick={handleProjectDetailsClick}
+                      type="button"
+                    >
+                      {activeProject.cta}
+                    </button>
+                  </div>
+                ) : null}
               </Reveal>
             </div>
           </div>
