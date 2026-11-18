@@ -20,6 +20,8 @@ const profile = {
     title: 'About Me',
     paragraphs: [
       'I am a top-rated software engineer with years of experience shipping React mobile and web applications from MVP to enterprise scale. My recent work has focused on building and maintaining reusable UI systems, setting frontend standards that keep teams aligned, and improving performance and accessibility in ways that show up in real user experience.',
+      
+      'I also bring a strong focus on the engineering practices behind reliable products: writing maintainable code, creating consistent patterns, and working closely with designers and product teams to turn requirements into thoughtful solutions. I enjoy helping teams move quickly while keeping quality high as applications grow.',
 
       'I’m comfortable operating across design and engineering, translating product goals into clear interfaces, and owning the details that make apps feel polished as features and users grow.',
     ],

@@ -1,8 +1,7 @@
 import profile from '../../data/profile'
 import Container from '../layout/Container'
 import Reveal from '../ui/Reveal'
-import top100 from '../../../public/images/top.webp'
-import gitista from '../../../public/images/IMG_3166.webp'
+import conferenceImage from '../../../public/images/personal/IMG_5431.JPG'
 
 function AboutSection() {
   const { about } = profile
@@ -23,8 +22,7 @@ function AboutSection() {
           </div>
           <Reveal as="div" className="about-focus" delay={140}>
             <a href='https://gitista.com/nigeria/'>
-              <img src={top100} alt='stats' loading='lazy' />
-              <img src={gitista} alt='stats' loading='lazy' />
+              <img src={conferenceImage} alt='TobeSpeaking' loading='lazy' />
             </a>
           </Reveal>
         </div>
