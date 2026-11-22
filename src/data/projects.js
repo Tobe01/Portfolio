@@ -36,7 +36,7 @@ const projects = [
     featured: true,
     cta: 'Project Details',
   },
-  {
+{
     id: 'Zayra Stores',
     name: 'Zayra Stores',
     tagline: 'Modern e-commerce storefront with a clean UI system, fast product discovery, and checkout-ready flows.',
@@ -71,8 +71,7 @@ const projects = [
     coverImage: zee,
     featured: true,
     cta: 'Project Details',
-  },
-  {
+  },{
     id: 'DevByte Developer Community Platform (DCP)',
     name: 'DevByte Developer Community Platform (DCP)',
     tagline: 'Scalable community MVP with real users, and admin tools.',
@@ -115,7 +114,8 @@ const projects = [
     featured: true,
     cta: 'Project Details',
   },
-  {
+
+{
     id: 'Expense Management App',
     name: 'Expense Management App',
     tagline: 'Type-safe personal finance tracker with income/expense flows, charts, and reliable activity feedback.',
@@ -149,7 +149,7 @@ const projects = [
     featured: false,
     cta: 'Project Details',
   },
-  {
+{
     id: 'AI Chatbot (In Progress)',
     name: 'AI Chatbot (In Progress)',
     tagline: 'Real-time conversational UI powered by external APIs with streaming-ready message handling.',

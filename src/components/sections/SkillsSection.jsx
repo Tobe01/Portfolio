@@ -7,7 +7,7 @@ function SkillsSection() {
     <section className="section" id="skills">
       <Container>
         <Reveal as="div" className="section-heading">
-          <h2>Skills &amp; Technologies</h2>
+          <h2>Infra &amp; Technologies</h2>
         </Reveal>
 
         <Reveal as="div" className="skills-marquee" delay={40}>
