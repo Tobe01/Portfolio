@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import speakingItems from "../../data/speaking";
 import Container from "../layout/Container";
+import useScrollEdges from "../../hooks/useScrollEdges";
 import Icon from "../ui/Icon";
 import Modal from "../ui/Modal";
 import Reveal from "../ui/Reveal";
 
-const MOBILE_VIEWPORT_QUERY = "(max-width: 54rem)";
+const MOBILE_VIEWPORT_QUERY = "(max-width: 64rem)";
 const CARD_DRAG_THRESHOLD = 8;
 const EVENT_LINK_TYPES = {
   attendee: "Attendee",
@@ -186,6 +187,7 @@ function SpeakingSection({
   title = "Speaking & Community",
 }) {
   const sliderViewportRef = useRef(null);
+  const { canScrollBack, canScrollForward } = useScrollEdges(sliderViewportRef);
   const pointerStateRef = useRef({
     isPointerDown: false,
     isDragging: false,
@@ -223,7 +225,8 @@ function SpeakingSection({
     selectedEventVideos.length > 0
       ? Math.min(activeVideoIndex, selectedEventVideos.length - 1)
       : 0;
-  const activeEventVideo = selectedEventVideos[normalizedActiveVideoIndex] || null;
+  const activeEventVideo =
+    selectedEventVideos[normalizedActiveVideoIndex] || null;
   const activeEventVideoSource = activeEventVideo?.src || "";
   const activeEventVideoEmbedUrl = getEmbedVideoUrl(activeEventVideoSource);
   const activeEventVideoIsEmbed = Boolean(activeEventVideoEmbedUrl);
@@ -373,7 +376,11 @@ function SpeakingSection({
   }, [pauseActiveVideo, selectedEventVideos.length]);
 
   useEffect(() => {
-    if (!selectedEvent || selectedEventImages.length <= 1 || isVideoOverlayOpen) {
+    if (
+      !selectedEvent ||
+      selectedEventImages.length <= 1 ||
+      isVideoOverlayOpen
+    ) {
       return undefined;
     }
 
@@ -588,7 +595,7 @@ function SpeakingSection({
           {!isMobileViewport ? (
             <button
               aria-label="Previous speaking items"
-              className="slider-arrow"
+              className={`slider-arrow slider-arrow--prev${canScrollBack ? "" : " is-hidden"}`}
               onClick={() => moveSlider(-1)}
               type="button"
             >
@@ -598,6 +605,8 @@ function SpeakingSection({
 
           <div
             className="row-slider__viewport"
+            data-can-scroll-back={canScrollBack}
+            data-can-scroll-forward={canScrollForward}
             onPointerCancel={handleViewportPointerCancel}
             onPointerDown={handleViewportPointerDown}
             onPointerMove={handleViewportPointerMove}
@@ -698,192 +707,133 @@ function SpeakingSection({
                 }}
               >
                 {selectedEventImages.length ? (
-                <>
+                  <>
+                    <div
+                      style={{
+                        alignItems: "center",
+                        background: "var(--color-bg-soft)",
+                        border: "1px solid var(--color-border)",
+                        borderRadius: "var(--radius-md)",
+                        display: "grid",
+                        minHeight: "min(68vh, 33rem)",
+                        overflow: "hidden",
+                        position: "relative",
+                      }}
+                    >
+                      <div
+                        style={{
+                          display: "flex",
+                          height: "100%",
+                          transform: `translateX(${galleryTranslateOffset})`,
+                          transition: "transform var(--transition-base)",
+                          width: "100%",
+                        }}
+                      >
+                        {selectedEventImages.map((imagePath, index) => (
+                          <figure
+                            key={`${selectedEvent.id}-gallery-image-${index + 1}`}
+                            style={{
+                              boxSizing: "border-box",
+                              display: "grid",
+                              flex: "0 0 100%",
+                              height: "100%",
+                              margin: 0,
+                              minWidth: 0,
+                              padding: "var(--space-2)",
+                              placeItems: "center",
+                              width: "100%",
+                            }}
+                          >
+                            <img
+                              alt={`${selectedEvent.title} image ${index + 1}`}
+                              loading={
+                                index === activeImageIndex ? "eager" : "lazy"
+                              }
+                              src={imagePath}
+                              style={{
+                                borderRadius: "calc(var(--radius-md) - 0.2rem)",
+                                height: "100%",
+                                maxHeight: "min(66vh, 31rem)",
+                                objectFit: "contain",
+                                width: "100%",
+                              }}
+                            />
+                          </figure>
+                        ))}
+                      </div>
+
+                      {selectedEventImages.length > 1 ? (
+                        <>
+                          <button
+                            aria-label="Show previous event image"
+                            className={`slider-arrow slider-arrow--prev${canScrollBack ? "" : " is-hidden"}`}
+                            onClick={showPreviousImage}
+                            style={{
+                              backdropFilter: "blur(6px)",
+                              left: "var(--space-3)",
+                              position: "absolute",
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                            }}
+                            type="button"
+                          >
+                            <Icon name="arrow-left" size={16} />
+                          </button>
+                          <button
+                            aria-label="Show next event image"
+                            className="slider-arrow"
+                            onClick={showNextImage}
+                            style={{
+                              backdropFilter: "blur(6px)",
+                              position: "absolute",
+                              right: "var(--space-3)",
+                              top: "50%",
+                              transform: "translateY(-50%)",
+                            }}
+                            type="button"
+                          >
+                            <Icon name="arrow-right" size={16} />
+                          </button>
+                        </>
+                      ) : null}
+                    </div>
+
+                    <div
+                      style={{
+                        alignItems: "center",
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "var(--space-2)",
+                        justifyContent: "flex-end",
+                      }}
+                    >
+                      <p
+                        aria-live="polite"
+                        style={{
+                          fontVariantNumeric: "tabular-nums",
+                          margin: 0,
+                        }}
+                      >
+                        {activeImageIndex + 1} / {selectedEventImages.length}
+                      </p>
+                    </div>
+                  </>
+                ) : (
                   <div
                     style={{
-                      alignItems: "center",
-                      background: "var(--color-bg-soft)",
                       border: "1px solid var(--color-border)",
                       borderRadius: "var(--radius-md)",
                       display: "grid",
-                      minHeight: "min(68vh, 33rem)",
-                      overflow: "hidden",
-                      position: "relative",
+                      gap: "var(--space-3)",
+                      padding: "var(--space-4)",
                     }}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        height: "100%",
-                        transform: `translateX(${galleryTranslateOffset})`,
-                        transition: "transform var(--transition-base)",
-                        width: "100%",
-                      }}
-                    >
-                      {selectedEventImages.map((imagePath, index) => (
-                        <figure
-                          key={`${selectedEvent.id}-gallery-image-${index + 1}`}
-                          style={{
-                            boxSizing: "border-box",
-                            display: "grid",
-                            flex: "0 0 100%",
-                            height: "100%",
-                            margin: 0,
-                            minWidth: 0,
-                            padding: "var(--space-2)",
-                            placeItems: "center",
-                            width: "100%",
-                          }}
-                        >
-                          <img
-                            alt={`${selectedEvent.title} image ${index + 1}`}
-                            loading={
-                              index === activeImageIndex ? "eager" : "lazy"
-                            }
-                            src={imagePath}
-                            style={{
-                              borderRadius: "calc(var(--radius-md) - 0.2rem)",
-                              height: "100%",
-                              maxHeight: "min(66vh, 31rem)",
-                              objectFit: "contain",
-                              width: "100%",
-                            }}
-                          />
-                        </figure>
-                      ))}
-                    </div>
-
-                    {selectedEventImages.length > 1 ? (
-                      <>
-                        <button
-                          aria-label="Show previous event image"
-                          className="slider-arrow"
-                          onClick={showPreviousImage}
-                          style={{
-                            backdropFilter: "blur(6px)",
-                            left: "var(--space-3)",
-                            position: "absolute",
-                            top: "50%",
-                            transform: "translateY(-50%)",
-                          }}
-                          type="button"
-                        >
-                          <Icon name="arrow-left" size={16} />
-                        </button>
-                        <button
-                          aria-label="Show next event image"
-                          className="slider-arrow"
-                          onClick={showNextImage}
-                          style={{
-                            backdropFilter: "blur(6px)",
-                            position: "absolute",
-                            right: "var(--space-3)",
-                            top: "50%",
-                            transform: "translateY(-50%)",
-                          }}
-                          type="button"
-                        >
-                          <Icon name="arrow-right" size={16} />
-                        </button>
-                      </>
-                    ) : null}
-                  </div>
-
-                  <div
-                    style={{
-                      alignItems: "center",
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: "var(--space-2)",
-                      justifyContent: "flex-end",
-                    }}
-                  >
-                    <p
-                      aria-live="polite"
-                      style={{
-                        fontVariantNumeric: "tabular-nums",
-                        margin: 0,
-                      }}
-                    >
-                      {activeImageIndex + 1} / {selectedEventImages.length}
+                    <p className="section-muted">
+                      Event gallery images are not available yet for this item.
                     </p>
                   </div>
-                </>
-                ) : (
-                <div
-                  style={{
-                    border: "1px solid var(--color-border)",
-                    borderRadius: "var(--radius-md)",
-                    display: "grid",
-                    gap: "var(--space-3)",
-                    padding: "var(--space-4)",
-                  }}
-                >
-                  <p className="section-muted">
-                    Event gallery images are not available yet for this item.
-                  </p>
-                </div>
                 )}
 
-              <section
-                style={{
-                  border: "1px solid var(--color-border)",
-                  borderRadius: "var(--radius-md)",
-                  display: "grid",
-                  gap: "var(--space-3)",
-                  padding: "var(--space-4)",
-                }}
-              >
-                <h3
-                  id={modalTitleId}
-                  style={{
-                    fontFamily: "var(--font-heading)",
-                    fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
-                    margin: 0,
-                  }}
-                >
-                  Event Details
-                </h3>
-
-                <div style={{ display: "grid", gap: "var(--space-2)" }}>
-                  <p style={{ lineHeight: 1.55, margin: 0 }}>
-                    <span
-                      style={{
-                        color: "var(--color-text-muted)",
-                        fontWeight: 500,
-                      }}
-                    >
-                      Event:
-                    </span>{" "}
-                    <span>{selectedEvent.title}</span>
-                  </p>
-
-                  {selectedEventDetails.map((detailItem) => (
-                    <p
-                      key={`${selectedEvent.id}-${detailItem.label}`}
-                      style={{ lineHeight: 1.55, margin: 0 }}
-                    >
-                      <span
-                        style={{
-                          color: "var(--color-text-muted)",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {detailItem.label}:
-                      </span>{" "}
-                      <span>{detailItem.value}</span>
-                    </p>
-                  ))}
-                </div>
-
-                {selectedEvent.description ? (
-                  <p style={{ lineHeight: 1.65, margin: 0 }}>
-                    {selectedEvent.description}
-                  </p>
-                ) : null}
-              </section>
-
-              {selectedEventLinks.length ? (
                 <section
                   style={{
                     border: "1px solid var(--color-border)",
@@ -893,39 +843,98 @@ function SpeakingSection({
                     padding: "var(--space-4)",
                   }}
                 >
-                  <h4
+                  <h3
+                    id={modalTitleId}
                     style={{
                       fontFamily: "var(--font-heading)",
-                      fontSize: "1.08rem",
+                      fontSize: "clamp(1.2rem, 2.2vw, 1.5rem)",
                       margin: 0,
                     }}
                   >
-                    Links
-                  </h4>
-                  <div
-                    style={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: "var(--space-2)",
-                    }}
-                  >
-                    {selectedEventLinks.map((eventLink, index) => (
-                      <a
-                        className="button button--secondary"
-                        href={eventLink.url}
-                        key={`${selectedEvent.id}-link-${index + 1}`}
-                        rel="noreferrer"
-                        style={{ minHeight: "2.4rem" }}
-                        target="_blank"
+                    Event Details
+                  </h3>
+
+                  <div style={{ display: "grid", gap: "var(--space-2)" }}>
+                    <p style={{ lineHeight: 1.55, margin: 0 }}>
+                      <span
+                        style={{
+                          color: "var(--color-text-muted)",
+                          fontWeight: 500,
+                        }}
                       >
-                        {eventLink.type
-                          ? `${eventLink.type}: ${eventLink.label}`
-                          : eventLink.label}
-                      </a>
+                        Event:
+                      </span>{" "}
+                      <span>{selectedEvent.title}</span>
+                    </p>
+
+                    {selectedEventDetails.map((detailItem) => (
+                      <p
+                        key={`${selectedEvent.id}-${detailItem.label}`}
+                        style={{ lineHeight: 1.55, margin: 0 }}
+                      >
+                        <span
+                          style={{
+                            color: "var(--color-text-muted)",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {detailItem.label}:
+                        </span>{" "}
+                        <span>{detailItem.value}</span>
+                      </p>
                     ))}
                   </div>
+
+                  {selectedEvent.description ? (
+                    <p style={{ lineHeight: 1.65, margin: 0 }}>
+                      {selectedEvent.description}
+                    </p>
+                  ) : null}
                 </section>
-              ) : null}
+
+                {selectedEventLinks.length ? (
+                  <section
+                    style={{
+                      border: "1px solid var(--color-border)",
+                      borderRadius: "var(--radius-md)",
+                      display: "grid",
+                      gap: "var(--space-3)",
+                      padding: "var(--space-4)",
+                    }}
+                  >
+                    <h4
+                      style={{
+                        fontFamily: "var(--font-heading)",
+                        fontSize: "1.08rem",
+                        margin: 0,
+                      }}
+                    >
+                      Links
+                    </h4>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "var(--space-2)",
+                      }}
+                    >
+                      {selectedEventLinks.map((eventLink, index) => (
+                        <a
+                          className="button button--secondary"
+                          href={eventLink.url}
+                          key={`${selectedEvent.id}-link-${index + 1}`}
+                          rel="noreferrer"
+                          style={{ minHeight: "2.4rem" }}
+                          target="_blank"
+                        >
+                          {eventLink.type
+                            ? `${eventLink.type}: ${eventLink.label}`
+                            : eventLink.label}
+                        </a>
+                      ))}
+                    </div>
+                  </section>
+                ) : null}
 
                 <button
                   className="button button--secondary"

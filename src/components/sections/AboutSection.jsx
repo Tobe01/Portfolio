@@ -1,10 +1,10 @@
-import profile from '../../data/profile'
-import Container from '../layout/Container'
-import Reveal from '../ui/Reveal'
-import conferenceImage from '../../../public/images/personal/IMG_5431.JPG'
+import profile from "../../data/profile";
+import Container from "../layout/Container";
+import Reveal from "../ui/Reveal";
+import conferenceImage from "../../../public/images/personal/IMG_5431.JPG";
 
 function AboutSection() {
-  const { about } = profile
+  const { about } = profile;
 
   return (
     <section className="section" id="about">
@@ -21,14 +21,18 @@ function AboutSection() {
             ))}
           </div>
           <Reveal as="div" className="about-focus" delay={140}>
-            <a href='https://gitista.com/nigeria/'>
-              <img src={conferenceImage} alt='TobeSpeaking' loading='lazy' />
+            <a
+              href="https://committers.app/nigeria?search=tobe&mode=contributions"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={conferenceImage} alt="TobeSpeaking" loading="lazy" />
             </a>
           </Reveal>
         </div>
       </Container>
     </section>
-  )
+  );
 }
 
-export default AboutSection
+export default AboutSection;

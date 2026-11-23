@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import projects from "../../data/projects";
+import useScrollEdges from "../../hooks/useScrollEdges";
 import Container from "../layout/Container";
 import Chip from "../ui/Chip";
 import Icon from "../ui/Icon";
@@ -18,6 +19,7 @@ function ProjectsSection({
   );
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const projectsViewportRef = useRef(null);
+  const { canScrollBack, canScrollForward } = useScrollEdges(projectsViewportRef);
 
   const activeProject = useMemo(
     () =>
@@ -65,14 +67,19 @@ function ProjectsSection({
           <Reveal as="div" className="projects-row" delay={50}>
             <button
               aria-label="Previous projects"
-              className="slider-arrow projects-row__arrow projects-row__arrow--prev"
+              className={`slider-arrow slider-arrow--prev projects-row__arrow projects-row__arrow--prev${canScrollBack ? "" : " is-hidden"}`}
               onClick={() => scrollProjects(-1)}
               type="button"
             >
               <Icon name="arrow-left" size={16} />
             </button>
 
-            <div className="projects-row__viewport" ref={projectsViewportRef}>
+            <div
+              className="projects-row__viewport"
+              data-can-scroll-back={canScrollBack}
+              data-can-scroll-forward={canScrollForward}
+              ref={projectsViewportRef}
+            >
               <div className="projects-row__track">
                 {projects.map((project) => (
                   <article className="project-card" key={project.id}>
