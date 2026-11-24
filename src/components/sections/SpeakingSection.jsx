@@ -672,7 +672,7 @@ function SpeakingSection({
           {!isMobileViewport ? (
             <button
               aria-label="Next speaking items"
-              className="slider-arrow"
+              className={`slider-arrow slider-arrow--next${canScrollForward ? "" : " is-hidden"}`}
               onClick={() => moveSlider(1)}
               type="button"
             >

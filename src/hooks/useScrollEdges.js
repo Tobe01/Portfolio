@@ -12,9 +12,9 @@ function useScrollEdges(viewportRef) {
     }
 
     const updateEdges = () => {
-      setCanScrollBack(viewport.scrollLeft > 1)
+      setCanScrollBack(viewport.scrollLeft > 2)
       setCanScrollForward(
-        viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 1,
+        viewport.scrollLeft + viewport.clientWidth < viewport.scrollWidth - 2,
       )
     }
 

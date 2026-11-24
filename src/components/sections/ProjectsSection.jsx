@@ -135,7 +135,7 @@ function ProjectsSection({
 
             <button
               aria-label="Next projects"
-              className="slider-arrow projects-row__arrow projects-row__arrow--next"
+              className={`slider-arrow slider-arrow--next projects-row__arrow projects-row__arrow--next${canScrollForward ? "" : " is-hidden"}`}
               onClick={() => scrollProjects(1)}
               type="button"
             >
