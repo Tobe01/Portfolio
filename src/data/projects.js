@@ -1,21 +1,22 @@
-import bot from '../../public/images/projects/bot.webp';
-import qnap from '../../public/images/projects/qnap.webp';
-import zee from '../../public/images/projects/zee.webp';
-import dee from '../../public/images/projects/dee.webp';
-import flow from '../../public/images/projects/flowapp.webp';
+import qnap from "../../public/images/projects/qnap.webp";
+import zee from "../../public/images/projects/zee.webp";
+import dee from "../../public/images/projects/dee.webp";
+import flow from "../../public/images/projects/flowapp.webp";
 
 const projects = [
   {
-    id: 'StockFlow',
-    name: 'StockFlow',
-    tagline: 'Order-driven inventory system for a restaurant (with real-world constraints)',
+    id: "StockFlow",
+    name: "StockFlow",
+    tagline:
+      "Order-driven inventory system for a restaurant (with real-world constraints)",
     longDescription:
-      'StockFlow is a frontend-focused simulation of a restaurant operating system designed to reflect real-world workflows in high-volume environments. The application models how orders, inventory, and kitchen operations interact, with a strong emphasis on state-driven UI, real-time updates, and offline-first behavior. At its core, the system implements an order-driven inventory model where menu items are mapped to ingredient-level recipes. When orders are placed via a POS interface, inventory is automatically adjusted based on ingredient consumption, ensuring consistency between sales and stock levels. The project also simulates a full order lifecycle (Pending → Preparing → Completed), demonstrating how UI state transitions mirror real operational processes within a restaurant setting. This approach highlights system thinking beyond traditional CRUD applications.',
+      "StockFlow is a frontend-focused simulation of a restaurant operating system designed to reflect real-world workflows in high-volume environments. The application models how orders, inventory, and kitchen operations interact, with a strong emphasis on state-driven UI, real-time updates, and offline-first behavior. At its core, the system implements an order-driven inventory model where menu items are mapped to ingredient-level recipes. When orders are placed via a POS interface, inventory is automatically adjusted based on ingredient consumption, ensuring consistency between sales and stock levels. The project also simulates a full order lifecycle (Pending → Preparing → Completed), demonstrating how UI state transitions mirror real operational processes within a restaurant setting. This approach highlights system thinking beyond traditional CRUD applications.",
     briefDescription:
-      'An order-driven restaurant inventory system that models real-world POS workflows, where orders placed through a cashier interface automatically trigger ingredient-level stock deductions. The system emphasizes real-time updates, clear order lifecycle management, and offline-first behavior to simulate operations in environments with unreliable network conditions.',
+      "An order-driven restaurant inventory system that models real-world POS workflows, where orders placed through a cashier interface automatically trigger ingredient-level stock deductions. The system emphasizes real-time updates, clear order lifecycle management, and offline-first behavior to simulate operations in environments with unreliable network conditions.",
     involvement:
-      'Designed and built the entire frontend architecture, including POS workflows, order lifecycle management, and inventory logic. Defined the system behavior, data flow, and UI state transitions, with a focus on performance, usability, and real-world constraints.',
-    stack: [ "React.js",
+      "Designed and built the entire frontend architecture, including POS workflows, order lifecycle management, and inventory logic. Defined the system behavior, data flow, and UI state transitions, with a focus on performance, usability, and real-world constraints.",
+    stack: [
+      "React.js",
       "Tailwind CSS",
       "Zustand (State Management)",
       "IndexedDB (Offline Storage)",
@@ -26,27 +27,29 @@ const projects = [
       "Handling state consistency between orders and inventory in a real-time UI",
       "Simulating offline-first behavior with local storage and sync logic",
       "Modeling a multi-state order lifecycle (Pending → Preparing → Completed)",
-      "Structuring the frontend to reflect real-world POS workflows instead of simple CRUD patterns"
+      "Structuring the frontend to reflect real-world POS workflows instead of simple CRUD patterns",
     ],
     links: {
-      liveUrl: '',
-      repoUrl: '',
+      liveUrl: "",
+      repoUrl: "",
     },
     coverImage: flow,
     featured: true,
-    cta: 'Project Details',
+    cta: "Project Details",
   },
-{
-    id: 'Zayra Stores',
-    name: 'Zayra Stores',
-    tagline: 'Modern e-commerce storefront with a clean UI system, fast product discovery, and checkout-ready flows.',
+  {
+    id: "Zayra Stores",
+    name: "Zayra Stores",
+    tagline:
+      "Modern e-commerce storefront with a clean UI system, fast product discovery, and checkout-ready flows.",
     longDescription:
-      'Zayra Stores is a production-grade e-commerce frontend built with React, Tailwind CSS, and shadcn/ui, focused on responsive layout, reusable UI primitives, and performance-friendly rendering. It covers the full shopping journey from browsing and search to cart management and order flow UX, with careful attention to state consistency, loading states, and edge-case handling across devices. The codebase is structured for scalability with component-driven design, data mapping for product content, and predictable UI behavior as the catalog and features grow.',
+      "Zayra Stores is a production-grade e-commerce frontend built with React, Tailwind CSS, and shadcn/ui, focused on responsive layout, reusable UI primitives, and performance-friendly rendering. It covers the full shopping journey from browsing and search to cart management and order flow UX, with careful attention to state consistency, loading states, and edge-case handling across devices. The codebase is structured for scalability with component-driven design, data mapping for product content, and predictable UI behavior as the catalog and features grow.",
     briefDescription:
-      'A production-ready e-commerce frontend built with React, Tailwind, and shadcn/ui, with responsive browsing, search/filtering, cart persistence, and a checkout-ready flow. Built on reusable UI components with solid loading/empty states and performance-aware rendering that scales as the catalog grows.',
+      "A production-ready e-commerce frontend built with React, Tailwind, and shadcn/ui, with responsive browsing, search/filtering, cart persistence, and a checkout-ready flow. Built on reusable UI components with solid loading/empty states and performance-aware rendering that scales as the catalog grows.",
     involvement:
-      'Built the UI architecture end-to-end, designed reusable components (cards, drawers/modals, filters, forms), implemented app-wide state patterns for cart and UI preferences, and optimized UX flows for responsiveness and perceived performance.',
-    stack: ["React",
+      "Built the UI architecture end-to-end, designed reusable components (cards, drawers/modals, filters, forms), implemented app-wide state patterns for cart and UI preferences, and optimized UX flows for responsiveness and perceived performance.",
+    stack: [
+      "React",
       "JavaScript",
       "Vite",
       "Tailwind CSS",
@@ -65,23 +68,25 @@ const projects = [
       "Managing loading, empty, and error states cleanly across data-driven UI while keeping UX snappy.",
     ],
     links: {
-      liveUrl: 'https://tobe-zayra-stores.vercel.app/',
-      repoUrl: 'https://github.com/Tobe01/zayraStores',
+      liveUrl: "https://tobe-zayra-stores.vercel.app/",
+      repoUrl: "https://github.com/Tobe01/zayraStores",
     },
     coverImage: zee,
     featured: true,
-    cta: 'Project Details',
-  },{
-    id: 'DevByte Developer Community Platform (DCP)',
-    name: 'DevByte Developer Community Platform (DCP)',
-    tagline: 'Scalable community MVP with real users, and admin tools.',
+    cta: "Project Details",
+  },
+  {
+    id: "DevByte Developer Community Platform (DCP)",
+    name: "DevByte Developer Community Platform (DCP)",
+    tagline: "Scalable community MVP with real users, and admin tools.",
     longDescription:
-      'DevByte DCP is a full-stack community platform progressing toward MVP maturity, used by real community members. It supports authentication, user onboarding, profile management, tech stack/skills updates, project listings per member, and an admin workflow for publishing blogs and upcoming events. As Engineering Lead, I coordinated delivery across the frontend and backend teams, enforced code quality through PR reviews, and maintained repo health and release discipline. The system uses a RESTful backend with Node.js, Express, PostgreSQL, and Sequelize, while the frontend is a React + Tailwind + shadcn/ui app structured around reusable components, maintainable state, and predictable data fetching patterns.',
+      "DevByte DCP is a full-stack community platform progressing toward MVP maturity, used by real community members. It supports authentication, user onboarding, profile management, tech stack/skills updates, project listings per member, and an admin workflow for publishing blogs and upcoming events. As Engineering Lead, I coordinated delivery across the frontend and backend teams, enforced code quality through PR reviews, and maintained repo health and release discipline. The system uses a RESTful backend with Node.js, Express, PostgreSQL, and Sequelize, while the frontend is a React + Tailwind + shadcn/ui app structured around reusable components, maintainable state, and predictable data fetching patterns.",
     briefDescription:
-      'A real-user developer community platform nearing MVP, with profiles, member projects, onboarding, and admin publishing for blogs and events. Built with React and REST APIs, optimized for maintainable UI and reliable data fetching.',
+      "A real-user developer community platform nearing MVP, with profiles, member projects, onboarding, and admin publishing for blogs and events. Built with React and REST APIs, optimized for maintainable UI and reliable data fetching.",
     involvement:
-      'Served as Engineering Lead and Developer Lead: drove technical direction, coordinated contributors, reviewed PRs, maintained the repo, enforced standards, and shipped frontend features with stable API integration and quality gates.',
-    stack: ["React",
+      "Served as Engineering Lead and Developer Lead: drove technical direction, coordinated contributors, reviewed PRs, maintained the repo, enforced standards, and shipped frontend features with stable API integration and quality gates.",
+    stack: [
+      "React",
       "JavaScript",
       "Vite",
       "Tailwind CSS",
@@ -107,25 +112,26 @@ const projects = [
       "Handling authentication states and protected routes without creating brittle navigation edge cases.",
     ],
     links: {
-      liveUrl: '',
-      repoUrl: '',
+      liveUrl: "",
+      repoUrl: "",
     },
     coverImage: dee,
     featured: true,
-    cta: 'Project Details',
+    cta: "Project Details",
   },
-
-{
-    id: 'Expense Management App',
-    name: 'Expense Management App',
-    tagline: 'Type-safe personal finance tracker with income/expense flows, charts, and reliable activity feedback.',
+  {
+    id: "Expense Management App",
+    name: "Expense Management App",
+    tagline:
+      "Type-safe personal finance tracker with income/expense flows, charts, and reliable activity feedback.",
     longDescription:
-      'A TypeScript-first expense tracker that lets users log income and expenses with structured metadata, then view summaries through charts and categorized breakdowns. The app emphasizes type safety, predictable state updates, and a clean UI that keeps financial entries readable and easy to audit. Toast notifications provide immediate feedback for create/edit actions, and the visualization layer turns raw transactions into actionable insights without overwhelming the interface.',
+      "A TypeScript-first expense tracker that lets users log income and expenses with structured metadata, then view summaries through charts and categorized breakdowns. The app emphasizes type safety, predictable state updates, and a clean UI that keeps financial entries readable and easy to audit. Toast notifications provide immediate feedback for create/edit actions, and the visualization layer turns raw transactions into actionable insights without overwhelming the interface.",
     briefDescription:
-      'A TypeScript-first expense tracker for logging income and expenses with structured details, then viewing charts and category summaries. Focused on type-safe state handling, validated forms, toast feedback, and clean data transformations that keep totals and trends accurate as records increase.',
+      "A TypeScript-first expense tracker for logging income and expenses with structured details, then viewing charts and category summaries. Focused on type-safe state handling, validated forms, toast feedback, and clean data transformations that keep totals and trends accurate as records increase.",
     involvement:
-      'Designed the domain model for transactions, implemented type-safe UI and state handling, built the form and validation flow, and wired chart summaries with clean, predictable data transformations.',
-    stack: ["React",
+      "Designed the domain model for transactions, implemented type-safe UI and state handling, built the form and validation flow, and wired chart summaries with clean, predictable data transformations.",
+    stack: [
+      "React",
       "TypeScript",
       "Vite",
       "React Hook Form",
@@ -142,46 +148,13 @@ const projects = [
       "Keeping UI feedback reliable across actions while avoiding duplicated toasts and inconsistent states.",
     ],
     links: {
-      liveUrl: 'https://tobe-quiknapp.vercel.app/',
-      repoUrl: 'https://github.com/Tobe01/QuikNapp',
+      liveUrl: "https://tobe-quiknapp.vercel.app/",
+      repoUrl: "https://github.com/Tobe01/QuikNapp",
     },
     coverImage: qnap,
     featured: false,
-    cta: 'Project Details',
+    cta: "Project Details",
   },
-{
-    id: 'AI Chatbot (In Progress)',
-    name: 'AI Chatbot (In Progress)',
-    tagline: 'Real-time conversational UI powered by external APIs with streaming-ready message handling.',
-    longDescription:
-      'An AI chatbot interface built with React and external APIs, designed for fast conversational UX with clean message rendering, typing states, and robust request handling. The focus is on a production-style chat experience: message history, structured prompts, loading indicators, error recovery, and safe retries. The architecture is being built to support API evolution, response formatting, and optional streaming behaviors without rewriting core components.',
-    briefDescription:
-      'A React chatbot powered by external APIs, delivering a smooth chat experience with history, typing states, and resilient request handling. Designed for scalable message state, graceful error recovery, and optional streaming-ready rendering, with careful formatting for long replies, links, and code blocks.',
-    involvement:
-      "Building the frontend chat architecture, implementing message state and UX flows, integrating external APIs, and designing a scalable structure for future features like streaming responses and conversation persistence.",
-    stack: ["React",
-      "JavaScript",
-      "Vite",
-      "React Hook Form",
-      "Zod",
-      "Axios",
-      "TanStack Query",
-      "React Toastify",
-      "LocalStorage (conversation persistence)",
-    ],
-    challenges: [
-      "Designing chat state management that stays stable under rapid user input and asynchronous responses.",
-      "Building a resilient request layer with timeouts, retries, and graceful error UI without breaking the conversation flow.",
-      "Handling response formatting and message rendering (links, code blocks, long text) while keeping UI clean.",
-    ],
-    links: {
-      liveUrl: '',
-      repoUrl: '',
-    },
-    coverImage: bot,
-    featured: false,
-    cta: 'Project Details',
-  },
-]
+];
 
-export default projects
+export default projects;
